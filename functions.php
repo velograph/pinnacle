@@ -82,6 +82,52 @@ function pinnacle_widgets_init() {
 }
 add_action( 'widgets_init', 'pinnacle_widgets_init' );
 
+// Register Custom Post Type
+function work_custom_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Work', 'Post Type General Name', 'pinnacle' ),
+		'singular_name'       => _x( 'Work', 'Post Type Singular Name', 'pinnacle' ),
+		'menu_name'           => __( 'Work', 'pinnacle' ),
+		'name_admin_bar'      => __( 'Work', 'pinnacle' ),
+		'parent_item_colon'   => __( 'Parent Work Item:', 'pinnacle' ),
+		'all_items'           => __( 'All Work Items', 'pinnacle' ),
+		'add_new_item'        => __( 'Add New Work Item', 'pinnacle' ),
+		'add_new'             => __( 'Add New Work', 'pinnacle' ),
+		'new_item'            => __( 'New Work Item', 'pinnacle' ),
+		'edit_item'           => __( 'Edit Work Item', 'pinnacle' ),
+		'update_item'         => __( 'Update Work Item', 'pinnacle' ),
+		'view_item'           => __( 'View Work Item', 'pinnacle' ),
+		'search_items'        => __( 'Search Work Items', 'pinnacle' ),
+		'not_found'           => __( 'Not found', 'pinnacle' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'pinnacle' ),
+	);
+	$args = array(
+		'label'               => __( 'work', 'pinnacle' ),
+		'description'         => __( 'Work Examples', 'pinnacle' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'page-attributes', ),
+		'taxonomies'          => array( 'taxonomy' ),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 5,
+		'show_in_admin_bar'   => true,
+		'show_in_nav_menus'   => true,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'work', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'work_custom_post_type', 0 );
+
 /**
  * Enqueue scripts and styles.
  */
