@@ -83,6 +83,52 @@ function pinnacle_widgets_init() {
 add_action( 'widgets_init', 'pinnacle_widgets_init' );
 
 // Register Custom Post Type
+// Register Custom Post Type
+function people_custom_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'People', 'Post Type General Name', 'pinnacle' ),
+		'singular_name'       => _x( 'Person', 'Post Type Singular Name', 'pinnacle' ),
+		'menu_name'           => __( 'People', 'pinnacle' ),
+		'name_admin_bar'      => __( 'People', 'pinnacle' ),
+		'parent_item_colon'   => __( 'Parent Person:', 'pinnacle' ),
+		'all_items'           => __( 'All People', 'pinnacle' ),
+		'add_new_item'        => __( 'Add New Person', 'pinnacle' ),
+		'add_new'             => __( 'Add New People', 'pinnacle' ),
+		'new_item'            => __( 'New Person', 'pinnacle' ),
+		'edit_item'           => __( 'Edit Person', 'pinnacle' ),
+		'update_item'         => __( 'Update Person', 'pinnacle' ),
+		'view_item'           => __( 'View Person', 'pinnacle' ),
+		'search_items'        => __( 'Search People', 'pinnacle' ),
+		'not_found'           => __( 'Not found', 'pinnacle' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'pinnacle' ),
+	);
+	$args = array(
+		'label'               => __( 'People', 'pinnacle' ),
+		'description'         => __( 'People at Pinnacle', 'pinnacle' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'page-attributes', ),
+		'taxonomies'          => array( 'taxonomy' ),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 5,
+		'show_in_admin_bar'   => true,
+		'show_in_nav_menus'   => true,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'People', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'people_custom_post_type', 0 );
+
 function work_custom_post_type() {
 
 	$labels = array(
