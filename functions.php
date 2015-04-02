@@ -28,7 +28,7 @@ function pinnacle_setup() {
 	 * If you're building a theme based on Pinnacle Exhibits, use a find and replace
 	 * to change 'Pinnacle Exhibits' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'pinnacleexhibits', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'pinnacle', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ function pinnacle_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'pinnacleexhibits' ),
+		'primary' => __( 'Primary Menu', 'pinnacle' ),
 	) );
 
 	/*
@@ -71,7 +71,7 @@ add_action( 'after_setup_theme', 'pinnacle_setup' );
  */
 function pinnacle_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'pinnacleexhibits' ),
+		'name'          => __( 'Sidebar', 'pinnacle' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
