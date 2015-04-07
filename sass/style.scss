@@ -19,9 +19,42 @@
 
 @import "variables";
 
+.body-border {
+	background: $white;
+	display: inline-block;
+	position: fixed;
+	z-index: 1;
+}
+
+.top-body-border {
+	height: 16px;
+	width: 100%;
+	top: 0;
+}
+
+.right-body-border {
+	height: 100%;
+	width: 16px;
+	top: 0;
+}
+
+.bottom-body-border {
+	bottom: 0;
+	height: 16px;
+	width: 100%;
+}
+
+.left-body-border {
+	height: 100%;
+	width: 16px;
+	right: 0;
+}
 
 body {
-	margin: 16px;
+	margin: 0;
+	@include media( $large-screen ) {
+		position: relative;
+	}
 	.skip-link {
 		position: absolute;
 		text-indent: -9999px;
@@ -30,9 +63,103 @@ body {
 		height: auto;
 		max-width: 100%;
 	}
-	.site-header,
-	.site-content,
-	.site-footer {
+	@include media( $large-screen ) {
+		.body-top-border {
+			background: $white;
+			display: inline-block;
+			height: 16px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+		.body-bottom-border {
+			background: $white;
+			bottom: 0;
+			display: inline-block;
+			height: 16px;
+			position: fixed;
+			width: 100%;
+		}
+	}
+}
+
+@include media( $large-screen ) {
+	.sticky-wrapper {
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		.site-header {
+			transition: all .75s ease-in-out;
+			.inner-header {
+				@include outer-container;
+				a {
+					color: $white;
+				}
+				.site-branding {
+					@include pad(15px 15px 15px 0);
+					float: left;
+				}
+				.main-navigation {
+					@include pad(15px 0 15px 15px);
+					float: right;
+					margin-top: 15px;
+					ul {
+						li {
+							display: inline-block;
+							margin-left: 50px;
+							&:first-child {
+								margin: 0;
+							}
+							a {
+								text-transform: uppercase;
+								&:hover {
+									color: #999;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.sticky-wrapper.is-sticky {
+		.site-header {
+			background: #fafafa;
+			z-index: 1;
+			.inner-header {
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+}
+.site-content {
+	background: $white;
+}
+
+.home {
+	.featured-home-image {
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	position: absolute;
+	.home-description {
+		@include outer-container;
+		color: $white;
+		font: {
+			size: 60px;
+			weight: 900;
+		}
+		position: absolute;
+		width: 750px;
+	}
+	.home-page-content {
 		@include outer-container;
 	}
+}
+
+.site-footer {
+	@include outer-container;
 }

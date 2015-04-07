@@ -12,35 +12,10 @@
 
 get_header(); ?>
 
+
 	<div id="primary" class="content-area">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php $hero_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile-hero' ); ?>
-			<?php $hero_tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet-hero' ); ?>
-			<?php $hero_desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop-hero' ); ?>
-			<?php $hero_retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina-hero' ); ?>
-
-			<picture class="featured-image">
-				<!--[if IE 9]><video style="display: none"><![endif]-->
-				<source
-					data-srcset="<?php echo $hero_mobile[0]; ?>"
-					media="(max-width: 500px)" />
-				<source
-					data-srcset="<?php echo $hero_tablet[0]; ?>"
-					media="(max-width: 860px)" />
-				<source
-					data-srcset="<?php echo $hero_desktop[0]; ?>"
-					media="(max-width: 1180px)" />
-				<source
-					data-srcset="<?php echo $hero_retina[0]; ?>"
-					media="(min-width: 1181px)" />
-			<!--[if IE 9]></video><![endif]-->
-			<img
-					src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-					class="lazyload"
-					alt="Pinnacle Exhibits" />
-			</picture>
 
 			<?php if( have_rows('home_page_sections') ) : ?>
 
@@ -50,16 +25,17 @@ get_header(); ?>
 
 					<?php if( get_row_layout() == 'home_page_content' ) : ?>
 
-						<?php the_sub_field('title'); ?>
-						<?php the_sub_field('content'); ?>
-
+						<article class="home-page-content">
+							<?php the_sub_field('title'); ?>
+							<?php the_sub_field('content'); ?>
+						</article>
 
 						<?php $hero_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-hero'); ?>
 						<?php $hero_tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-hero'); ?>
 						<?php $hero_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-hero'); ?>
 						<?php $hero_retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-hero'); ?>
 
-						<picture>
+						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
 								data-srcset="<?php echo $hero_mobile[0]; ?>"
