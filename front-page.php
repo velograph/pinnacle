@@ -26,8 +26,12 @@ get_header(); ?>
 					<?php if( get_row_layout() == 'home_page_content' ) : ?>
 
 						<article class="home-page-content">
-							<?php the_sub_field('title'); ?>
-							<?php the_sub_field('content'); ?>
+							<div class="content-title">
+								<h2><?php the_sub_field('title'); ?></h2>
+							</div>
+							<div class="entry-content">
+								<?php the_sub_field('content'); ?>
+							</div>
 						</article>
 
 						<?php $hero_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-hero'); ?>
@@ -64,7 +68,9 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
-		FEATURED WORK EXAMPLES - 3 UP
+		<section class="work-portals">
+			FEATURED WORK EXAMPLES - 3 UP
+		</section>
 
 	</div><!-- #primary -->
 

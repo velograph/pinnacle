@@ -21,7 +21,7 @@ $(document).ready(function() {
 });
 
 var fadeStart=200, // 100px scroll or less will equiv to 1 opacity
-    fadeUntil=750, // 200px scroll or more will equiv to 0 opacity
+    fadeUntil=700, // 200px scroll or more will equiv to 0 opacity
     fading = $('.featured-home-image');
 
 $(window).bind('scroll', function(){
