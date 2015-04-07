@@ -229,8 +229,6 @@ function pinnacle_scripts() {
 
 	wp_enqueue_script( 'pinnacle-lazySizes', get_template_directory_uri() . '/js/lazysizes.min.js', false, filemtime( get_stylesheet_directory().'/js/lazysizes.min.js' ), true );
 
-	wp_enqueue_script( 'pinnacle-parallax', get_template_directory_uri() . '/js/parallax.min.js', false, filemtime( get_stylesheet_directory().'/js/parallax.min.js' ), true );
-
 	wp_enqueue_script( 'pinnacle-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', false, filemtime( get_stylesheet_directory().'/js/jquery.sticky.js' ), true );
 
 	wp_enqueue_script( 'pinnacle-site-scripts', get_template_directory_uri() . '/js/site-scripts.js', false, filemtime( get_stylesheet_directory().'/js/site-scripts.js' ), true );
