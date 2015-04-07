@@ -63,27 +63,93 @@ body {
 		height: auto;
 		max-width: 100%;
 	}
-	@include media( $large-screen ) {
-		.body-top-border {
-			background: $white;
-			display: inline-block;
-			height: 16px;
-			position: fixed;
-			top: 0;
-			width: 100%;
+}
+
+.home {
+	.sticky-wrapper {
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		z-index: 1;
+		.site-header {
+			background: transparent;
+			padding: 15px;
+			width: 100% !important;
+			transition: all .75s ease-in-out;
+			.inner-header {
+				.site-branding {
+					float: left;
+					margin-left: 32px;
+					a {
+						color: $white;
+					}
+				}
+				.main-navigation {
+					display: none;
+					margin-right: 32px;
+				}
+				#trigger-overlay {
+					float: right;
+					margin-right: 16px;
+					svg {
+						path {
+							fill: $white;
+						}
+					}
+				}
+			}
 		}
-		.body-bottom-border {
+	}
+	.sticky-wrapper.is-sticky {
+		.site-header {
 			background: $white;
-			bottom: 0;
-			display: inline-block;
-			height: 16px;
-			position: fixed;
-			width: 100%;
+			.inner-header {
+				.site-branding {
+					a {
+						color: $black;
+					}
+				}
+				.main-navigation {
+				}
+				#trigger-overlay {
+					svg {
+						path {
+							fill: #7E7D7E;
+						}
+					}
+				}
+			}
 		}
 	}
 }
 
 @include media( $large-screen ) {
+	.home {
+		.sticky-wrapper {
+			position: absolute;
+			top: 16px;
+			.site-header {
+				background: transparent;
+				.inner-header {
+					.site-branding {
+						a {
+							color: $white;
+						}
+					}
+					.main-navigation {
+						display: block;
+						ul {
+							li {
+								a {
+									color: $white;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.sticky-wrapper {
 		position: absolute;
 		top: 50px;
@@ -92,15 +158,13 @@ body {
 			transition: all .75s ease-in-out;
 			.inner-header {
 				@include outer-container;
-				a {
-					color: $white;
-				}
 				.site-branding {
 					@include pad(15px 15px 15px 0);
 					float: left;
 				}
 				.main-navigation {
 					@include pad(15px 0 15px 15px);
+					display: block;
 					float: right;
 					margin-top: 15px;
 					ul {
@@ -111,7 +175,36 @@ body {
 								margin: 0;
 							}
 							a {
+								color: $black;
 								text-transform: uppercase;
+								&:hover {
+									color: #999;
+								}
+							}
+						}
+					}
+				}
+				.hamburger {
+					display: none;
+				}
+			}
+		}
+	}
+	.sticky-wrapper.is-sticky {
+		.site-header {
+			background: #fafafa;
+			z-index: 1;
+			.inner-header {
+				.site-branding {
+					a {
+						color: $black;
+					}
+				}
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $black;
 								&:hover {
 									color: #999;
 								}
@@ -122,18 +215,145 @@ body {
 			}
 		}
 	}
-	.sticky-wrapper.is-sticky {
-		.site-header {
-			background: #fafafa;
-			z-index: 1;
-			.inner-header {
-				a {
-					color: $black;
-				}
-			}
+}
+
+/* Overlay style */
+#trigger-overlay {
+	background: transparent;
+	float: right;
+	z-index: 1;
+	svg {
+		width: $thirty;
+	}
+	@include media( $large-screen ) {
+		display: none;
+	}
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: $black;
+	z-index: 2;
+	.social-links {
+		svg {
+			margin: 0 $ten;
+			width: $twentyfive;
 		}
 	}
 }
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: transparent;
+	outline: none;
+	z-index: 100;
+	svg {
+		height: $twentyfive;
+		width: $twentyfive;
+	}
+}
+
+/* Menu style */
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 50%;
+	font-size: 24px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 5);
+	min-height: 54px;
+}
+
+.overlay ul li a {
+	color: #fff;
+	display: block;
+	font-weight: 300;
+	position: relative;
+	text-transform: uppercase;
+	top: 50%;
+	@include transform(color(0.2s));
+	@include transform(translateY(-50%));
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #e3fcb1;
+}
+
+/* Effects */
+.overlay-pinnacle {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-pinnacle.open {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.overlay-pinnacle nav {
+	-webkit-perspective: 1200px;
+	perspective: 1200px;
+}
+
+.overlay-pinnacle nav ul {
+	opacity: 0.4;
+	-webkit-transform: translateY(-25%) rotateX(35deg);
+	transform: translateY(-25%) rotateX(35deg);
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-pinnacle.open nav ul {
+	opacity: 1;
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.overlay-pinnacle.close nav ul {
+	-webkit-transform: translateY(25%) rotateX(-35deg);
+	transform: translateY(25%) rotateX(-35deg);
+}
+
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
+
 .site-content {
 	background: $white;
 }
@@ -153,7 +373,9 @@ body {
 			weight: 900;
 		}
 		position: absolute;
-		width: 750px;
+		@include media( $large-screen ) {
+			width: 750px;
+		}
 	}
 	.home-page-content {
 		@include outer-container;
@@ -175,11 +397,63 @@ body {
 		}
 	}
 	.work-portals {
-		// @include outer-container;
+		@include outer-container;
+		.portal {
+			@include span-columns(4);
+		}
+	}
+}
+//
+.archive {
+	.site-content {
+		margin: 16px;
+		position: relative;
+		top: 150px;
+		.page-title {
+			@include outer-container;
+			padding: 150px 0;
+		}
+		.person {
+			@include span-columns(6);
+			@include omega(2);
+		}
+		.people-container {
+			@include outer-container(100%);
+			@include media( $large-screen ) {
+				.person {
+					@include span-columns(4);
+					@include omega(3);
+				}
+			}
+		}
 	}
 }
 
 .site-footer {
 	@include outer-container;
 	margin-bottom: 16px;
+	position: relative;
+	top: 150px;
+	.footer-locations,
+	.client-tools {
+		border-right: 1px solid #999;
+		height: 100%;
+	}
+	.footer-locations,
+	.client-tools,
+	.careers {
+		@include span-columns(2);
+	}
+	.social-links {
+		@include span-columns(6);
+		@include omega;
+		text-align: right;
+	}
+	.footer-row {
+		@include row();
+		border-top: 1px solid #999;
+		.site-info {
+			text-align: right;
+		}
+	}
 }

@@ -9,22 +9,50 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="archive-page content-area">
 
-		<h1><?php the_field('page_title', 90); ?></h1>
+		<section class="page-title">
+			<h1><?php the_field('page_title', 90); ?></h1>
+		</section>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<section class="people-container">
 
-				<?php the_post_thumbnail(); ?>
-				<h2><?php the_title(); ?></h2>
-				<?php the_field('location'); ?> /
-				<?php the_field('position'); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+					<article class="person">
 
-			<?php basis_paging_nav(); ?>
+						<?php the_post_thumbnail(); ?>
+						<h2><?php the_title(); ?></h2>
+						<?php the_field('location'); ?> /
+						<?php the_field('position'); ?>
+
+					</article>
+
+					<article class="person">
+
+						<?php the_post_thumbnail(); ?>
+						<h2><?php the_title(); ?></h2>
+						<?php the_field('location'); ?> /
+						<?php the_field('position'); ?>
+
+					</article>
+
+					<article class="person">
+
+						<?php the_post_thumbnail(); ?>
+						<h2><?php the_title(); ?></h2>
+						<?php the_field('location'); ?> /
+						<?php the_field('position'); ?>
+
+					</article>
+
+				<?php endwhile; ?>
+
+				<?php basis_paging_nav(); ?>
+
+			</section>
 
 		<?php endif; ?>
 

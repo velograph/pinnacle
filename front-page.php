@@ -68,9 +68,32 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
-		<section class="work-portals">
-			FEATURED WORK EXAMPLES - 3 UP
-		</section>
+		<?php
+
+			$args = array(
+			'post_type' => 'work',
+			'posts_per_page' => 3
+			);
+			$query = new WP_Query($args);
+
+			if($query->have_posts()) : ?>
+
+			<section class="work-portals">
+
+				<?php while($query->have_posts()) : ?>
+
+					<?php $query->the_post(); ?>
+
+					<div class="portal">
+						<h1><?php the_title() ?></h1>
+						<div class="post-content"><?php the_content(); ?></div>
+					</div>
+
+				<?php endwhile; ?>
+
+			</section>
+
+		<?php endif; ?>
 
 	</div><!-- #primary -->
 
