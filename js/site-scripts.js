@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 if (jQuery(window).width() > 860) {
 
 	$(document).ready(function(){
@@ -7,6 +9,18 @@ if (jQuery(window).width() > 860) {
 	});
 
 }
+
+else if (jQuery(window).width() < 860) {
+
+	$(document).ready(function(){
+		$(".site-header").sticky({
+			topSpacing: 15
+		});
+	});
+
+}
+
+});
 
 $(document).ready(function() {
   function setHeight() {
