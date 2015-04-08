@@ -632,6 +632,15 @@ body {
 		@include span-columns(6);
 		@include omega;
 		text-align: right;
+		a {
+			margin-left: $fifteen;
+			&:first-child {
+				margin-left: 0;
+			}
+			svg {
+				width: 25px;
+			}
+		}
 	}
 	.footer-row {
 		@include row();
