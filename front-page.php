@@ -34,10 +34,10 @@ get_header(); ?>
 							</div>
 						</article>
 
-						<?php $hero_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-hero'); ?>
-						<?php $hero_tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-hero'); ?>
-						<?php $hero_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-hero'); ?>
-						<?php $hero_retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-hero'); ?>
+						<?php $hero_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-home-featured'); ?>
+						<?php $hero_tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-home-featured'); ?>
+						<?php $hero_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-home-featured'); ?>
+						<?php $hero_retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-home-featured'); ?>
 
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->

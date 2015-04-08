@@ -283,3 +283,8 @@ add_image_size( 'retina-hero', 2600, 1733, false);
 add_image_size( 'desktop-hero', 1180, 787, false);
 add_image_size( 'tablet-hero', 860, 573, false);
 add_image_size( 'mobile-hero', 480, 480, true);
+
+add_image_size( 'retina-home-featured', 2600, 842, false);
+add_image_size( 'desktop-home-featured', 1400, 453, false);
+add_image_size( 'tablet-home-featured', 780, 253, false);
+add_image_size( 'mobile-home-featured', 400, 350, true);
