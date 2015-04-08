@@ -404,7 +404,8 @@ body {
 	}
 }
 //
-.archive {
+.archive,
+.page-template-contact {
 	.site-content {
 		margin: 16px;
 		position: relative;
@@ -423,6 +424,106 @@ body {
 				.person {
 					@include span-columns(4);
 					@include omega(3);
+				}
+			}
+		}
+	}
+}
+
+.page-template-contact {
+	.location-sub-nav {
+		@include outer-container;
+		margin-bottom: 50px;
+		a {
+			color: $black;
+			margin-right: 50px;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	.mobile-image-container {
+		.mobile-image {
+			@include span-columns(6);
+			position: relative;
+			text-align: center;
+			.location-portal-overlay {
+				background: #08c;
+				height: 100%;
+				opacity: .8;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+			.location-portal {
+				left: 50%;
+				opacity: 1;
+				position: absolute;
+				text-transform: uppercase;
+				top: 50%;
+				@include transform(translate(-50%,-50%));
+				width: 100%;
+				a {
+					color: $white;
+				}
+			}
+		}
+	}
+	.desktop-image-container {
+		display: none;
+	}
+	@include media( $large-screen ) {
+		.mobile-image-container {
+			display: none;
+		}
+		.desktop-image-container {
+			display: block;
+			.desktop-image {
+				@include span-columns(4);
+				@include omega(3);
+				position: relative;
+				text-align: center;
+				margin-bottom: 2.35765%;
+				.location-portal-overlay {
+					background: #08c;
+					height: 100%;
+					opacity: .8;
+					position: absolute;
+					top: 0;
+					transition: opacity .2s ease-in-out;
+					width: 100%;
+				}
+				.location-portal {
+					color: $white;
+					left: 50%;
+					opacity: 1;
+					position: absolute;
+					text-transform: uppercase;
+					top: 50%;
+					transition: opacity .2s ease-in-out;
+					@include transform(translate(-50%,-50%));
+					width: 100%;
+					a {
+						color: $white;
+					}
+				}
+				&:hover {
+					.location-portal-overlay {
+						opacity: .8;
+					}
+					.location-portal {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	@include media( $xlarge-screen ) {
+		.desktop-image-container {
+			.desktop-image {
+				.location-portal-overlay,
+				.location-portal {
+					opacity: 0;
 				}
 			}
 		}
