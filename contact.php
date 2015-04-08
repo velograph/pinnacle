@@ -12,11 +12,13 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="archive-page content-area">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<h1><?php the_field('lead_in_title'); ?></h1>
+			<section class="page-title">
+				<h1><?php the_field('lead_in_title'); ?></h1>
+			</section>
 
 		<?php endwhile; // end of the loop. ?>
 
@@ -29,15 +31,17 @@ get_header(); ?>
 
 			if($query->have_posts()) : ?>
 
-			<h4>Locations</h4>
+			<div class="location-sub-nav">
 
-			<?php while($query->have_posts()) : ?>
+				<?php while($query->have_posts()) : ?>
 
-				<?php $query->the_post(); ?>
+					<?php $query->the_post(); ?>
 
-				<a href=""><?php the_field('short_title') ?></a>
+					<a href=""><?php the_field('short_title') ?></a>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
+
+			</div>
 
 		<?php endif; ?>
 
@@ -54,22 +58,67 @@ get_header(); ?>
 
 				<?php $query->the_post(); ?>
 
+				<!-- Mobile version -->
 				<?php if( have_rows('location_images') ) : ?>
 
-					<div class="location-image-container">
+					<div class="mobile-image-container">
 
 				  		<?php while ( have_rows('location_images') ) : ?>
 
 				    	<?php the_row(); ?>
 
-						<div class="location-image">
+						<?php if( get_sub_field('mobile_only') ) : ?>
+
+							<div class="mobile-image">
+
+					      		<img src="<?php the_sub_field('image'); ?>" />
+
+								<?php if( get_sub_field('link_to_map') ) : ?>
+
+									<div class="location-portal-overlay"></div>
+									<div class="location-portal">
+										<a href="">
+											View Map:
+											<h1><?php the_field('city_only'); ?></h1>
+											<?php the_field('location_title') ?>
+										</a>
+									</div>
+
+								<?php endif; ?>
+
+							</div>
+
+						<?php endif; ?>
+
+				  		<?php endwhile; ?>
+
+					</div>
+
+				<?php endif; ?>
+
+				<!-- Desktop version -->
+				<?php if( have_rows('location_images') ) : ?>
+
+					<div class="desktop-image-container">
+
+				  		<?php while ( have_rows('location_images') ) : ?>
+
+				    	<?php the_row(); ?>
+
+						<div class="desktop-image">
 
 				      		<img src="<?php the_sub_field('image'); ?>" />
 
 							<?php if( get_sub_field('link_to_map') ) : ?>
 
-								Visit our <?php the_field('location_title') ?>
-								<h1><?php the_field('city_only'); ?></h1>
+								<div class="location-portal-overlay"></div>
+								<div class="location-portal">
+									<a href="">
+										View Map:
+										<h1><?php the_field('city_only'); ?></h1>
+										<?php the_field('location_title') ?>
+									</a>
+								</div>
 
 							<?php endif; ?>
 
