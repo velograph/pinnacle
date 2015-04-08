@@ -44,7 +44,7 @@
 			<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?xml version="1.0" encoding="utf-8"?>
-					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					<svg width="200" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 92 14" enable-background="new 0 0 92 14" xml:space="preserve">
 					<g>
 						<path fill="#7E7D7E" d="M0.1,0.7h6.8c1.9,0,3.8,1,3.8,3.6C10.7,6.7,9.1,8,6.3,8H1.4v5.3H0.1c0,0,0,0,0-6.5C0.1,0.7,0.1,0.7,0.1,0.7

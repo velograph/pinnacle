@@ -130,16 +130,20 @@ get_header(); ?>
 
 				<?php endif; ?>
 
-				<div class="location-title">
-					<h1><?php the_title(); ?></h1>
-				</div>
+				<section class="location-meta">
 
-				<div class="location-info">
-					<?php the_field('location_title') ?>
-					<?php the_field('location_address') ?>
-					p: <?php the_field('phone_number') ?><br>
-					e: <a href="<?php the_field('email') ?>"><?php the_field('email') ?></a>
-				</div>
+					<div class="location-title">
+						<h1><?php the_title(); ?></h1>
+					</div>
+
+					<ul class="location-info">
+						<li><?php the_field('location_title') ?></li>
+						<li><?php the_field('location_address') ?></li>
+						<li><a href="tel:<?php the_field('phone_number') ?>"><?php the_field('phone_number') ?></a></li>
+						<li><a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a></li>
+					</ul>
+
+				</section>
 
 			<?php endwhile; ?>
 

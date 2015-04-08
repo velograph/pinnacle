@@ -65,28 +65,57 @@ body {
 	}
 }
 
-.home {
+.page {
 	.sticky-wrapper {
 		position: absolute;
 		top: 50px;
 		width: 100%;
 		z-index: 1;
 		.site-header {
-			background: transparent;
-			padding: 15px;
+			// background: #fafafa;
 			width: 100% !important;
 			transition: all .75s ease-in-out;
 			.inner-header {
 				.site-branding {
 					float: left;
-					margin-left: 32px;
-					a {
-						color: $white;
+					margin-left: 16px;
+					@include media( $xlarge-screen ) {
+						margin-left: 0;
+					}
+					svg {
+						width: 200px;
 					}
 				}
 				.main-navigation {
 					display: none;
 					margin-right: 32px;
+					@include media( $large-screen ) {
+						display: block;
+					}
+					@include media( $xlarge-screen ) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.home {
+	.sticky-wrapper {
+		.site-header {
+			.inner-header {
+				padding: 15px;
+				.site-branding {
+					svg {
+						width: 200px;
+						path {
+							fill: $white;
+						}
+					}
+				}
+				.main-navigation {
+					display: none;
 				}
 				#trigger-overlay {
 					float: right;
@@ -102,14 +131,15 @@ body {
 	}
 	.sticky-wrapper.is-sticky {
 		.site-header {
-			background: $white;
+			// background: #fafafa;
 			.inner-header {
 				.site-branding {
-					a {
-						color: $black;
+					svg {
+						width: 200px;
+						path {
+							fill: $black;
+						}
 					}
-				}
-				.main-navigation {
 				}
 				#trigger-overlay {
 					svg {
@@ -132,8 +162,11 @@ body {
 				background: transparent;
 				.inner-header {
 					.site-branding {
-						a {
-							color: $white;
+						svg {
+							width: 200px;
+							path {
+								fill: $white;
+							}
 						}
 					}
 					.main-navigation {
@@ -161,9 +194,15 @@ body {
 				.site-branding {
 					@include pad(15px 15px 15px 0);
 					float: left;
+					svg {
+						width: 200px;
+						path {
+							fill: $black;
+						}
+					}
 				}
 				.main-navigation {
-					@include pad(15px 0 15px 15px);
+					// @include pad(15px 0 15px 15px);
 					display: block;
 					float: right;
 					margin-top: 15px;
@@ -196,8 +235,11 @@ body {
 			z-index: 1;
 			.inner-header {
 				.site-branding {
-					a {
-						color: $black;
+					svg {
+						width: 200px;
+						path {
+							fill: $black;
+						}
 					}
 				}
 				.main-navigation {
@@ -217,10 +259,19 @@ body {
 	}
 }
 
+.home {
+	#trigger-overlay {
+		top: 15px;
+	}
+}
 /* Overlay style */
 #trigger-overlay {
 	background: transparent;
 	float: right;
+	padding: 0;
+	position: absolute;
+	right: 16px;
+	top: -5px;
 	z-index: 1;
 	svg {
 		width: $thirty;
@@ -369,8 +420,7 @@ body {
 		@include outer-container;
 		color: $white;
 		font: {
-			size: 60px;
-			weight: 900;
+			// size: 60px;
 		}
 		position: absolute;
 		@include media( $large-screen ) {
@@ -525,6 +575,26 @@ body {
 				.location-portal {
 					opacity: 0;
 				}
+			}
+		}
+	}
+	.location-meta {
+		@include outer-container;
+		.location-title {
+			@include span-columns(6);
+			h1 {
+				// margin-left: 50px;
+			}
+		}
+		.location-info {
+			@include span-columns(6);
+		}
+		@include media( $large-screen ) {
+			.location-title {
+				@include span-columns(8);
+			}
+			.location-info {
+				@include span-columns(4);
 			}
 		}
 	}
