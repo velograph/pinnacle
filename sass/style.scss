@@ -453,13 +453,17 @@ body {
 		}
 	}
 }
-//
+
+.archive {
+	.site-content {
+		top: 150px;
+	}
+}
 .archive,
 .page-template-contact {
 	.site-content {
 		margin: 16px;
 		position: relative;
-		top: 150px;
 		.page-title {
 			@include outer-container;
 			padding: 150px 0;
@@ -481,6 +485,12 @@ body {
 }
 
 .page-template-contact {
+	.sticky-wrapper {
+		position: relative;
+		top: -25px;
+		width: 100%;
+		z-index: 1;
+	}
 	.location-sub-nav {
 		background: $white;
 		margin-bottom: 50px;

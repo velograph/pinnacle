@@ -8,6 +8,10 @@ if (jQuery(window).width() > 860) {
 		});
 	});
 
+	$(".location-sub-nav").sticky({
+		topSpacing: 80
+	});
+
 }
 
 else if (jQuery(window).width() < 860) {
@@ -19,10 +23,6 @@ else if (jQuery(window).width() < 860) {
 	});
 
 }
-
-$(".location-sub-nav").sticky({
-	topSpacing: 80
-});
 
 
 });
