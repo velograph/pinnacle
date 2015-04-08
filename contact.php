@@ -96,8 +96,8 @@ $(function() {
 
 									<?php if( get_sub_field('link_to_map') ) : ?>
 
-										<div class="location-portal-overlay"></div>
-										<div class="location-portal">
+										<div class="square-portal-overlay"></div>
+										<div class="square-portal">
 											<a href="">
 												View Map:
 												<h1><?php the_field('city_only'); ?></h1>
@@ -132,8 +132,8 @@ $(function() {
 
 								<?php if( get_sub_field('link_to_map') ) : ?>
 
-									<div class="location-portal-overlay"></div>
-									<div class="location-portal">
+									<div class="square-portal-overlay"></div>
+									<div class="square-portal">
 										<a href="">
 											View Map:
 											<h1><?php the_field('city_only'); ?></h1>

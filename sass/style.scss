@@ -446,10 +446,56 @@ body {
 			}
 		}
 	}
-	.work-portals {
-		@include outer-container;
-		.portal {
+}
+
+.work-portals {
+	@include outer-container;
+	.square-portal-container {
+		@include media( $medium-screen ) {
 			@include span-columns(4);
+		}
+		position: relative;
+		text-align: center;
+		.square-portal-overlay {
+			background: #08c;
+			height: 100%;
+			opacity: .8;
+			position: absolute;
+			top: 0;
+			transition: opacity .2s ease-in-out;
+			width: 100%;
+		}
+		.square-portal {
+			color: $white;
+			left: 50%;
+			opacity: 1;
+			position: absolute;
+			text-transform: uppercase;
+			top: 50%;
+			transition: opacity .2s ease-in-out;
+			@include transform(translate(-50%,-50%));
+			width: 100%;
+			a {
+				color: $white;
+			}
+		}
+		&:hover {
+			.square-portal-overlay {
+				opacity: .8;
+			}
+			.square-portal {
+				opacity: 1;
+			}
+		}
+	}
+}
+@include media( $xlarge-screen ) {
+	.work-portals {
+		.square-portal-container {
+			.square-portal-overlay,
+			.square-portal {
+				opacity: 0;
+			}
 		}
 	}
 }
@@ -459,6 +505,7 @@ body {
 		top: 150px;
 	}
 }
+
 .archive,
 .page-template-contact {
 	.site-content {
@@ -510,7 +557,7 @@ body {
 			@include span-columns(6);
 			position: relative;
 			text-align: center;
-			.location-portal-overlay {
+			.square-portal-overlay {
 				background: #08c;
 				height: 100%;
 				opacity: .8;
@@ -518,7 +565,7 @@ body {
 				top: 0;
 				width: 100%;
 			}
-			.location-portal {
+			.square-portal {
 				left: 50%;
 				opacity: 1;
 				position: absolute;
@@ -547,7 +594,7 @@ body {
 				position: relative;
 				text-align: center;
 				margin-bottom: 2.35765%;
-				.location-portal-overlay {
+				.square-portal-overlay {
 					background: #08c;
 					height: 100%;
 					opacity: .8;
@@ -556,7 +603,7 @@ body {
 					transition: opacity .2s ease-in-out;
 					width: 100%;
 				}
-				.location-portal {
+				.square-portal {
 					color: $white;
 					left: 50%;
 					opacity: 1;
@@ -571,10 +618,10 @@ body {
 					}
 				}
 				&:hover {
-					.location-portal-overlay {
+					.square-portal-overlay {
 						opacity: .8;
 					}
-					.location-portal {
+					.square-portal {
 						opacity: 1;
 					}
 				}
@@ -584,8 +631,8 @@ body {
 	@include media( $xlarge-screen ) {
 		.desktop-image-container {
 			.desktop-image {
-				.location-portal-overlay,
-				.location-portal {
+				.square-portal-overlay,
+				.square-portal {
 					opacity: 0;
 				}
 			}
@@ -595,9 +642,6 @@ body {
 		@include outer-container;
 		.location-title {
 			@include span-columns(6);
-			h1 {
-				// margin-left: 50px;
-			}
 		}
 		.location-info {
 			@include span-columns(6);

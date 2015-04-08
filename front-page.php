@@ -84,9 +84,16 @@ get_header(); ?>
 
 					<?php $query->the_post(); ?>
 
-					<div class="portal">
-						<h1><?php the_title() ?></h1>
-						<div class="post-content"><?php the_content(); ?></div>
+					<div class="square-portal-container">
+
+					<div class="square-portal-overlay"></div>
+						<?php the_post_thumbnail(); ?>
+						<div class="square-portal">
+							<a href="<?php the_permalink(); ?>">
+								<h1><?php the_title() ?></h1>
+								<div class="post-content"><?php the_content(); ?></div>
+							</a>
+						</div>
 					</div>
 
 				<?php endwhile; ?>
