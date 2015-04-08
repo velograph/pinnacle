@@ -48,13 +48,17 @@ $(function() {
 
 			<div class="location-sub-nav">
 
-				<?php while($query->have_posts()) : ?>
+				<div class="subnav">
 
-					<?php $query->the_post(); ?>
+					<?php while($query->have_posts()) : ?>
 
-					<a href="#<?php the_field('city_only'); ?>"><?php the_field('short_title') ?></a>
+						<?php $query->the_post(); ?>
 
-				<?php endwhile; ?>
+						<a href="#<?php the_field('city_only'); ?>"><?php the_field('short_title') ?></a>
+
+					<?php endwhile; ?>
+
+				</div>
 
 			</div>
 

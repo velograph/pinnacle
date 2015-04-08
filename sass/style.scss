@@ -482,7 +482,7 @@ body {
 
 .page-template-contact {
 	.location-sub-nav {
-		@include outer-container;
+		background: $white;
 		margin-bottom: 50px;
 		a {
 			color: $black;
@@ -490,6 +490,9 @@ body {
 			&:last-child {
 				margin: 0;
 			}
+		}
+		.subnav {
+			@include outer-container;
 		}
 	}
 	.mobile-image-container {
