@@ -12,6 +12,21 @@
 
 get_header(); ?>
 
+<script>
+$(function() {
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						if (target.length) {
+								$('html,body').animate({ scrollTop: target.offset().top -150 }, 1500);
+				return false;
+				}
+			}
+			});
+		});
+</script>
+
 	<div id="primary" class="archive-page content-area">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -37,7 +52,7 @@ get_header(); ?>
 
 					<?php $query->the_post(); ?>
 
-					<a href=""><?php the_field('short_title') ?></a>
+					<a href="#<?php the_field('city_only'); ?>"><?php the_field('short_title') ?></a>
 
 				<?php endwhile; ?>
 
@@ -58,18 +73,56 @@ get_header(); ?>
 
 				<?php $query->the_post(); ?>
 
-				<!-- Mobile version -->
-				<?php if( have_rows('location_images') ) : ?>
+				<article id="<?php the_field('city_only'); ?>" class="location">
 
-					<div class="mobile-image-container">
+					<!-- Mobile version -->
+					<?php if( have_rows('location_images') ) : ?>
 
-				  		<?php while ( have_rows('location_images') ) : ?>
+						<div class="mobile-image-container">
 
-				    	<?php the_row(); ?>
+					  		<?php while ( have_rows('location_images') ) : ?>
 
-						<?php if( get_sub_field('mobile_only') ) : ?>
+					    	<?php the_row(); ?>
 
-							<div class="mobile-image">
+							<?php if( get_sub_field('mobile_only') ) : ?>
+
+								<div class="mobile-image">
+
+						      		<img src="<?php the_sub_field('image'); ?>" />
+
+									<?php if( get_sub_field('link_to_map') ) : ?>
+
+										<div class="location-portal-overlay"></div>
+										<div class="location-portal">
+											<a href="">
+												View Map:
+												<h1><?php the_field('city_only'); ?></h1>
+												<?php the_field('location_title') ?>
+											</a>
+										</div>
+
+									<?php endif; ?>
+
+								</div>
+
+							<?php endif; ?>
+
+					  		<?php endwhile; ?>
+
+						</div>
+
+					<?php endif; ?>
+
+					<!-- Desktop version -->
+					<?php if( have_rows('location_images') ) : ?>
+
+						<div class="desktop-image-container">
+
+					  		<?php while ( have_rows('location_images') ) : ?>
+
+					    	<?php the_row(); ?>
+
+							<div class="desktop-image">
 
 					      		<img src="<?php the_sub_field('image'); ?>" />
 
@@ -88,68 +141,32 @@ get_header(); ?>
 
 							</div>
 
-						<?php endif; ?>
-
-				  		<?php endwhile; ?>
-
-					</div>
-
-				<?php endif; ?>
-
-				<!-- Desktop version -->
-				<?php if( have_rows('location_images') ) : ?>
-
-					<div class="desktop-image-container">
-
-				  		<?php while ( have_rows('location_images') ) : ?>
-
-				    	<?php the_row(); ?>
-
-						<div class="desktop-image">
-
-				      		<img src="<?php the_sub_field('image'); ?>" />
-
-							<?php if( get_sub_field('link_to_map') ) : ?>
-
-								<div class="location-portal-overlay"></div>
-								<div class="location-portal">
-									<a href="">
-										View Map:
-										<h1><?php the_field('city_only'); ?></h1>
-										<?php the_field('location_title') ?>
-									</a>
-								</div>
-
-							<?php endif; ?>
+					  		<?php endwhile; ?>
 
 						</div>
 
-				  		<?php endwhile; ?>
+					<?php endif; ?>
 
-					</div>
+					<section class="location-meta">
 
-				<?php endif; ?>
+						<div class="location-title">
+							<h1><?php the_title(); ?></h1>
+						</div>
 
-				<section class="location-meta">
+						<ul class="location-info">
+							<li><?php the_field('location_title') ?></li>
+							<li><?php the_field('location_address') ?></li>
+							<li><a href="tel:<?php the_field('phone_number') ?>"><?php the_field('phone_number') ?></a></li>
+							<li><a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a></li>
+						</ul>
 
-					<div class="location-title">
-						<h1><?php the_title(); ?></h1>
-					</div>
+					</section>
 
-					<ul class="location-info">
-						<li><?php the_field('location_title') ?></li>
-						<li><?php the_field('location_address') ?></li>
-						<li><a href="tel:<?php the_field('phone_number') ?>"><?php the_field('phone_number') ?></a></li>
-						<li><a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a></li>
-					</ul>
+				<?php endwhile; ?>
 
-				</section>
+			<?php endif; ?>
 
-			<?php endwhile; ?>
-
-		<?php endif; ?>
-
-
+		</article>
 
 	</div><!-- #primary -->
 
