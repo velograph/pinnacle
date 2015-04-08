@@ -30,7 +30,7 @@
 
 
 	<?php
-		$target_post_id = '12';
+		$target_post_id = '12'; // Front Page
 		$src = wp_get_attachment_image_src( get_post_thumbnail_id($target_post_id), 'original-upload' );
 	?>
 	<div class="featured-home-image" style="background-image: url(<?php echo $src[0]; ?> ); background-size: cover;"></div>
@@ -99,6 +99,7 @@
 
 	</header><!-- #masthead -->
 
+	<!-- Overlay Menu -->
 	<div class="overlay overlay-pinnacle">
 		<button type="button" class="overlay-close">
 			<?xml version="1.0" encoding="utf-8"?>
