@@ -288,3 +288,7 @@ add_image_size( 'retina-home-featured', 2600, 842, false);
 add_image_size( 'desktop-home-featured', 1400, 453, false);
 add_image_size( 'tablet-home-featured', 780, 253, false);
 add_image_size( 'mobile-home-featured', 400, 350, true);
+
+add_image_size( 'desktop-squared', 1000, 1000, false);
+add_image_size( 'tablet-squared', 780, 780, false);
+add_image_size( 'mobile-squared', 400, 400, false);

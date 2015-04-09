@@ -87,7 +87,29 @@ get_header(); ?>
 					<div class="square-portal-container">
 
 					<div class="square-portal-overlay"></div>
-						<?php the_post_thumbnail(); ?>
+
+						<?php $square_mobile = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
+						<?php $square_tablet = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
+						<?php $square_desktop = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
+
+						<picture class="home-featured-image">
+							<!--[if IE 9]><video style="display: none"><![endif]-->
+							<source
+								data-srcset="<?php echo $square_mobile[0]; ?>"
+								media="(max-width: 500px)" />
+							<source
+								data-srcset="<?php echo $square_tablet[0]; ?>"
+								media="(max-width: 860px)" />
+							<source
+								data-srcset="<?php echo $square_desktop[0]; ?>"
+								media="(min-width: 861px)" />
+							<!--[if IE 9]></video><![endif]-->
+							<img
+								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+								class="lazyload"
+								alt="Pinnacle Exhibits" />
+						</picture>
+
 						<div class="square-portal">
 							<a href="<?php the_permalink(); ?>">
 								<h1><?php the_title() ?></h1>

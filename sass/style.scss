@@ -449,7 +449,7 @@ body {
 }
 
 .work-portals {
-	@include outer-container;
+	@include row();
 	.square-portal-container {
 		@include media( $medium-screen ) {
 			@include span-columns(4);
