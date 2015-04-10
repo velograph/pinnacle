@@ -21,30 +21,116 @@ h6 {
 
 h1 {
   font-size: $h1-font-size;
+  @include media( $large-screen ) {
+      font: {
+          size: 60px;
+          weight: 900;
+      }
+      line-height: 67px;
+  }
 }
 
 h2 {
   font-size: $h2-font-size;
+  @include media( $large-screen ) {
+      font: {
+          size: 40px;
+          weight: 900;
+      }
+  }
 }
 
 h3 {
   font-size: $h3-font-size;
+  @include media( $large-screen ) {
+      font: {
+          size: 32px;
+          weight: 400;
+      }
+      line-height: 48px;
+  }
 }
 
 h4 {
   font-size: $h4-font-size;
+  @include media( $large-screen ) {
+      font: {
+          size: 18px;
+          weight: 800;
+      }
+      line-height: 25px;
+      text-transform: uppercase;
+  }
 }
 
+// List Values
 h5 {
   font-size: $h5-font-size;
+  @include media( $large-screen ) {
+      font: {
+          size: 18px;
+          weight: 700;
+      }
+      line-height: 25px;
+  }
 }
 
+// List Keys
 h6 {
   font-size: $h6-font-size;
+  @include media( $large-screen ) {
+      font: {
+          size: 10px;
+          weight: 400;
+      }
+      line-height: 27px;
+      text-transform: uppercase;
+  }
 }
 
 p {
   margin: 0 0 ($base-spacing / 2);
+  font-size: $base-font-size;
+  @include media( $large-screen ) {
+      font: {
+          weight: 400;
+      }
+      line-height: 25px;
+      text-transform: uppercase;
+  }
+}
+
+.rollover-top {
+    @include media( $large-screen ) {
+        font: {
+            size: 18px;
+            weight: 700;
+        }
+        line-height: 25px;
+        text-transform: uppercase;
+    }
+}
+
+.rollover-middle {
+    @include media( $large-screen ) {
+        font: {
+            size: 40px;
+            weight: 900;
+        }
+        line-height: 48px;
+        text-transform: uppercase;
+    }
+}
+
+.rollover-bottom {
+    @include media( $large-screen ) {
+        font: {
+            size: 18px;
+            weight: 700;
+        }
+        line-height: 25px;
+        text-transform: uppercase;
+    }
 }
 
 a {

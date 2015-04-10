@@ -112,8 +112,9 @@ get_header(); ?>
 
 						<div class="square-portal">
 							<a href="<?php the_permalink(); ?>">
-								<h1><?php the_title() ?></h1>
-								<div class="post-content"><?php the_content(); ?></div>
+								<span class="rollover-top portal-text">Featured</span>
+								<span class="rollover-middle portal-text">TEXT HERE</span>
+								<span class="rollover-bottom portal-text">Text here</span>
 							</a>
 						</div>
 					</div>

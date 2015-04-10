@@ -119,9 +119,9 @@ $(function() {
 										<div class="square-portal-overlay"></div>
 										<div class="square-portal">
 											<a href="">
-												View Map:
-												<h1><?php the_field('city_only'); ?></h1>
-												<?php the_field('location_title') ?>
+												<span class="rollover-top portal-text">View Map:</span>
+												<span class="rollover-middle portal-text"><?php the_field('city_only'); ?></span>
+												<span class="rollover-bottom portal-text"><?php the_field('location_title') ?></span>
 											</a>
 										</div>
 
@@ -175,9 +175,9 @@ $(function() {
 									<div class="square-portal-overlay"></div>
 									<div class="square-portal">
 										<a href="">
-											View Map:
-											<h1><?php the_field('city_only'); ?></h1>
-											<?php the_field('location_title') ?>
+											<span class="rollover-top portal-text">View Map:</span>
+											<span class="rollover-middle portal-text"><?php the_field('city_only'); ?></span>
+											<span class="rollover-bottom portal-text"><?php the_field('location_title') ?></span>
 										</a>
 									</div>
 

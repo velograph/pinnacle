@@ -41,6 +41,12 @@
 
 			<?php endif; ?>
 
+			<script>
+			jQuery(function() {
+					jQuery('.client-tools, .footer-locations').matchHeight();
+			});
+			</script>
+
 			<div class="client-tools">
 				<h4>Client Tools</h4>
 				<?php if( have_rows('client_tools', 130) ) : ?>
@@ -61,7 +67,9 @@
 
 			<div class="careers">
 				<h4>Careers</h4>
-				<a href="#">Job Openings</a>
+				<ul>
+					<li><a href="#">Job Openings</a></li>
+				</ul>
 			</div>
 
 			<div class="social-links">
