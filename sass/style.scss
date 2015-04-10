@@ -65,7 +65,8 @@ body {
 	}
 }
 
-.page {
+.page,
+.single {
 	.sticky-wrapper {
 		position: absolute;
 		top: 50px;
@@ -498,13 +499,15 @@ body {
 	}
 }
 
-.archive {
+.archive,
+.single {
 	.site-content {
 		top: 150px;
 	}
 }
 
 .archive,
+.single,
 .page-template-contact {
 	.site-content {
 		margin: 16px;
@@ -535,13 +538,17 @@ body {
 	}
 }
 
-.page-template-contact {
+.page-template-contact,
+.single-work {
 	.sticky-wrapper {
 		position: relative;
 		top: -25px;
 		width: 100%;
 		z-index: 1;
 	}
+}
+
+.page-template-contact {
 	.location-sub-nav {
 		background: $white;
 		margin-bottom: 50px;
@@ -656,6 +663,48 @@ body {
 			}
 			.location-info {
 				@include span-columns(4);
+			}
+		}
+	}
+}
+
+.single-work {
+	.work-study {
+		.leading-container {
+			@include outer-container;
+			.entry-content {
+				@include media( $large-screen ) {
+					@include span-columns(6);
+				}
+				margin-bottom: $fifty;
+				h3 {
+					margin-bottom: $twentyfive;
+				}
+			}
+		}
+		.work-study-container {
+			@include outer-container;
+			@include media( $large-screen ) {
+				@include pad(150px 0);
+			}
+			.work-study-content {
+				@include media( $large-screen ) {
+					@include span-columns(6);
+				}
+			}
+		}
+		.project-details-container {
+			@include outer-container;
+			@include media( $large-screen ) {
+				@include pad(100px 0);
+			}
+			.detail-column {
+				@include media( $large-screen ) {
+					@include span-columns(4);
+				}
+				.project-detail {
+					margin-bottom: 25px;
+				}
 			}
 		}
 	}
