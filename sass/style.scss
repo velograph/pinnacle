@@ -730,18 +730,26 @@ body {
 	}
 	.footer-locations,
 	.client-tools {
-		border-right: $thin-border;
-		height: 100%;
+		border: 0;
+		@include media( $large-screen ) {
+			border-right: $thin-border;
+		}
 	}
 	.footer-locations,
 	.client-tools,
 	.careers {
-		@include span-columns(2);
+		@include media( $large-screen ) {
+			@include span-columns(2);
+		}
 	}
 	.social-links {
-		@include span-columns(6);
-		@include omega;
-		text-align: right;
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include omega;
+		}
+		@include media( $large-screen ) {
+			text-align: right;
+		}
 		a {
 			margin-left: $fifteen;
 			&:first-child {
@@ -755,6 +763,10 @@ body {
 	.footer-row {
 		@include row();
 		border-top: $thin-border;
+		margin: 0 32px;
+		@include media( $large-screen ) {
+			margin: 0;
+		}
 		&:first-child {
 			padding: $fifty 0;
 		}
