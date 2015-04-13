@@ -54,7 +54,7 @@ $(function() {
 
 						<?php $query->the_post(); ?>
 
-						<a href="#<?php the_field('city_only'); ?>"><?php the_field('short_title') ?></a>
+						<a href="#<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>"><?php the_field('short_title') ?></a>
 
 					<?php endwhile; ?>
 
@@ -77,7 +77,7 @@ $(function() {
 
 				<?php $query->the_post(); ?>
 
-				<article id="<?php the_field('city_only'); ?>" class="location">
+				<article id="<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>" class="location">
 
 					<!-- Mobile version -->
 					<?php if( have_rows('location_images') ) : ?>
