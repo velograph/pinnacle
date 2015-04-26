@@ -88,20 +88,20 @@ get_header(); ?>
 
 					<div class="square-portal-overlay"></div>
 
-						<?php $square_mobile = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
-						<?php $square_tablet = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
-						<?php $square_desktop = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
+						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
+						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
+						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
 
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								data-srcset="<?php echo $square_mobile[0]; ?>"
+								data-srcset="<?php echo $mobile_squared[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
-								data-srcset="<?php echo $square_tablet[0]; ?>"
+								data-srcset="<?php echo $tablet_squared[0]; ?>"
 								media="(max-width: 860px)" />
 							<source
-								data-srcset="<?php echo $square_desktop[0]; ?>"
+								data-srcset="<?php echo $desktop_squared[0]; ?>"
 								media="(min-width: 861px)" />
 							<!--[if IE 9]></video><![endif]-->
 							<img
@@ -112,9 +112,9 @@ get_header(); ?>
 
 						<div class="square-portal">
 							<a href="<?php the_permalink(); ?>">
-								<span class="rollover-top portal-text">Featured</span>
-								<span class="rollover-middle portal-text">TEXT HERE</span>
-								<span class="rollover-bottom portal-text">Text here</span>
+								<span class="rollover-top portal-text">Featured:</span>
+								<span class="rollover-middle portal-text"><?php the_title(); ?></span>
+								<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
 							</a>
 						</div>
 					</div>
