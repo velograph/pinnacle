@@ -93,7 +93,7 @@ function people_custom_post_type() {
 		'parent_item_colon'   => __( 'Parent Person:', 'pinnacle' ),
 		'all_items'           => __( 'All People', 'pinnacle' ),
 		'add_new_item'        => __( 'Add New Person', 'pinnacle' ),
-		'add_new'             => __( 'Add New People', 'pinnacle' ),
+		'add_new'             => __( 'Add a New Person', 'pinnacle' ),
 		'new_item'            => __( 'New Person', 'pinnacle' ),
 		'edit_item'           => __( 'Edit Person', 'pinnacle' ),
 		'update_item'         => __( 'Update Person', 'pinnacle' ),
