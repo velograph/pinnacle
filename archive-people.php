@@ -30,24 +30,6 @@ get_header(); ?>
 
 					</article>
 
-					<article class="person">
-
-						<?php the_post_thumbnail(); ?>
-						<h2><?php the_title(); ?></h2>
-						<?php the_field('location'); ?> /
-						<?php the_field('position'); ?>
-
-					</article>
-
-					<article class="person">
-
-						<?php the_post_thumbnail(); ?>
-						<h2><?php the_title(); ?></h2>
-						<?php the_field('location'); ?> /
-						<?php the_field('position'); ?>
-
-					</article>
-
 				<?php endwhile; ?>
 
 				<?php basis_paging_nav(); ?>
