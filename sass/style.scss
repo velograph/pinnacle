@@ -608,6 +608,9 @@ body {
 				position: relative;
 				text-align: center;
 				margin-bottom: 2.35765%;
+				img {
+					float: left;
+				}
 				.square-portal-overlay {
 					background: #08c;
 					height: 100%;
@@ -639,6 +642,9 @@ body {
 						opacity: 1;
 					}
 				}
+				&:nth-child(n+3) {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -654,6 +660,7 @@ body {
 	}
 	.location-meta {
 		@include outer-container;
+		clear: both;
 		.location-title {
 			@include span-columns(6);
 		}
@@ -661,6 +668,8 @@ body {
 			@include span-columns(6);
 		}
 		@include media( $large-screen ) {
+			@include row();
+			padding: ($fifty * 3) 0;
 			.location-title {
 				@include span-columns(8);
 			}
