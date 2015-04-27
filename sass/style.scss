@@ -459,7 +459,7 @@ body {
 		position: relative;
 		text-align: center;
 		.square-portal-overlay {
-			background: #08c;
+			background: $cyan;
 			height: 100%;
 			opacity: .8;
 			position: absolute;
@@ -553,6 +553,62 @@ body {
 	}
 }
 
+.people-archive {
+	.people-container {
+		.people-row {
+			@include row();
+		}
+	}
+	@include media( $large-screen ) {
+		.people-container {
+			.person {
+				margin-bottom: 2.35765%;
+				position: relative;
+				img {
+					float: left;
+				}
+				.square-portal-overlay {
+					background: $cyan;
+					display: none;
+					height: 100%;
+					opacity: .8;
+					position: absolute;
+					top: 0;
+					width: 100%;
+				}
+				.person-details {
+					bottom: $twentyfive;
+					color: $white;
+					display: none;
+					padding: $fifteen;
+					position: absolute;
+				}
+				&:hover {
+					.square-portal-overlay,
+					.person-details {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.pagination {
+		@include outer-container;
+		@include pad( $fifty 0 );
+		text-align: center;
+		.page-numbers {
+			margin: 0 $fifteen;
+			&.current {
+				color: $cyan;
+				font-weight: bold;
+			}
+		}
+		a {
+			color: $medium-grey;
+		}
+	}
+}
+
 .page-template-contact {
 	.location-sub-nav {
 		background: $white;
@@ -574,7 +630,7 @@ body {
 			position: relative;
 			text-align: center;
 			.square-portal-overlay {
-				background: #08c;
+				background: $cyan;
 				height: 100%;
 				opacity: .8;
 				position: absolute;
@@ -614,7 +670,7 @@ body {
 					float: left;
 				}
 				.square-portal-overlay {
-					background: #08c;
+					background: $cyan;
 					height: 100%;
 					opacity: .8;
 					position: absolute;
