@@ -285,6 +285,10 @@ add_image_size( 'desktop-squared', 1000, 1000, true);
 add_image_size( 'tablet-squared', 780, 780, true);
 add_image_size( 'mobile-squared', 400, 400, true);
 
+add_image_size( 'desktop-process-wide', 1420, 695, true);
+add_image_size( 'tablet-process-wide', 960, 470, true);
+add_image_size( 'mobile-process-wide', 500, 245, true);
+
 add_image_size( 'retina-hero', 2600, 1733, false);
 add_image_size( 'desktop-hero', 1180, 787, false);
 add_image_size( 'tablet-hero', 860, 573, false);
