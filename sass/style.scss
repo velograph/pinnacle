@@ -822,6 +822,13 @@ body {
 	}
 }
 
+.video-container {
+	iframe {
+		// height: 100%;
+		width: 100%;
+	}
+}
+
 .site-footer {
 	@include outer-container;
 	margin-bottom: 16px;
@@ -889,5 +896,29 @@ body {
 			font-size: 9px;
 			text-align: right;
 		}
+	}
+}
+
+
+#basic-modal-content {
+	display: none;
+}
+
+/* Overlay */
+#simplemodal-overlay {
+	background-color: #000;
+}
+
+/* Container */
+#simplemodal-container {
+	height: 430px;
+	width: 680px;
+	padding: 16px;
+	a.modalCloseImg {
+		content: "X";
+	}
+	iframe {
+		height: 338px;
+		width: 584px;
 	}
 }
