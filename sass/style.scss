@@ -738,6 +738,26 @@ body {
 	}
 }
 
+.work-archive-container {
+	.featured-project {
+		@include row();
+		background: $off-white;
+		.featured-content {
+			@include span-columns(3);
+			@include pad( $twentyfive );
+			.dotted-separator {
+				border-bottom: 1px dotted $dark-grey;
+				display: inline-block;
+				margin: $twentyfive 0 $twenty;
+				width: 50%;
+			}
+		}
+		.featured-image {
+			@include span-columns(9);
+		}
+	}
+}
+
 .single-work {
 	.work-study {
 		.leading-container {
