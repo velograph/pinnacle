@@ -368,6 +368,11 @@ add_image_size( 'desktop-squared', 1000, 1000, true);
 add_image_size( 'tablet-squared', 780, 780, true);
 add_image_size( 'mobile-squared', 400, 400, true);
 
+add_image_size( 'retina-work-featured', 2600, 1420, true );
+add_image_size( 'desktop-work-featured', 1180, 787, true );
+add_image_size( 'tablet-work-featured', 860, 573, true );
+add_image_size( 'mobile-work-featured', 400, 350, true );
+
 add_image_size( 'desktop-process-wide', 1420, 695, true);
 add_image_size( 'tablet-process-wide', 960, 470, true);
 add_image_size( 'mobile-process-wide', 500, 245, true);
