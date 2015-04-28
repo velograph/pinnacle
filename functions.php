@@ -211,6 +211,51 @@ function work_custom_post_type() {
 // Hook into the 'init' action
 add_action( 'init', 'work_custom_post_type', 0 );
 
+function video_custom_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Videos', 'Post Type General Name', 'pinnacle' ),
+		'singular_name'       => _x( 'Video', 'Post Type Singular Name', 'pinnacle' ),
+		'menu_name'           => __( 'Videos', 'pinnacle' ),
+		'name_admin_bar'      => __( 'Video', 'pinnacle' ),
+		'parent_item_colon'   => __( 'Parent Video:', 'pinnacle' ),
+		'all_items'           => __( 'All Videos', 'pinnacle' ),
+		'add_new_item'        => __( 'Add New Video Item', 'pinnacle' ),
+		'add_new'             => __( 'Add New Video', 'pinnacle' ),
+		'new_item'            => __( 'New Video', 'pinnacle' ),
+		'edit_item'           => __( 'Edit Video', 'pinnacle' ),
+		'update_item'         => __( 'Update Video', 'pinnacle' ),
+		'view_item'           => __( 'View Video', 'pinnacle' ),
+		'search_items'        => __( 'Search Videos', 'pinnacle' ),
+		'not_found'           => __( 'Not found', 'pinnacle' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'pinnacle' ),
+	);
+	$args = array(
+		'label'               => __( 'video', 'pinnacle' ),
+		'description'         => __( 'Videos', 'pinnacle' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'thumbnail', 'revisions', 'page-attributes', ),
+		'taxonomies'          => array( 'taxonomy' ),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 5,
+		'show_in_admin_bar'   => true,
+		'show_in_nav_menus'   => true,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'video', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'video_custom_post_type', 0 );
+
 function locations_custom_post_type() {
 
 	$labels = array(
