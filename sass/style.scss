@@ -776,6 +776,11 @@ body {
 			@include span-columns(9);
 		}
 	}
+	.square-portal-container {
+		img {
+			float: left;
+		}
+	}
 }
 
 .alm-btn-wrap {
