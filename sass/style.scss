@@ -738,6 +738,26 @@ body {
 	}
 }
 
+.lead-in-container {
+	@include outer-container;
+	.lead-in-title {
+		@include span-columns(6);
+	}
+	.lead-in-content {
+		@include span-columns(6);
+	}
+	@include media( $large-screen ) {
+		@include row();
+		padding: ($fifty * 3) 0;
+		.location-title {
+			@include span-columns(8);
+		}
+		.location-info {
+			@include span-columns(4);
+		}
+	}
+}
+
 .work-archive-container {
 	.featured-project {
 		@include row();
@@ -754,6 +774,24 @@ body {
 		}
 		.featured-image {
 			@include span-columns(9);
+		}
+	}
+}
+
+.alm-btn-wrap {
+	text-align: center;
+	button {
+		background: {
+			color: transparent;
+			image: url(../images/load_more.svg);
+			position: center center;
+			repeat: no-repeat;
+		}
+		color: transparent;
+		height: 70px;
+		margin: $fifty 0;
+		&.done {
+			display: none;
 		}
 	}
 }
