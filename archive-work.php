@@ -51,30 +51,20 @@ get_header(); ?>
 								</div>
 
 								<div class="featured-image">
-									<?php $mobile_featured = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-work-featured'); ?>
-									<?php $tablet_featured = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-work-featured'); ?>
-									<?php $desktop_featured = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-work-featured'); ?>
-									<?php $retina_featured = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'retina-work-featured'); ?>
 
-									<picture class="home-featured-image">
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											data-srcset="<?php echo $mobile_featured[0]; ?>"
-											media="(max-width: 500px)" />
-										<source
-											data-srcset="<?php echo $tablet_featured[0]; ?>"
-											media="(max-width: 860px)" />
-										<source
-											data-srcset="<?php echo $desktop_featured[0]; ?>"
-											media="(max-width: 1180px)" />
-										<source
-											data-srcset="<?php echo $retina_featured[0]; ?>"
-											media="(min-width: 1181px)" />
+									<?php $small_featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile-work-featured' ); ?>
+									<?php $medium_featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet-work-featured' ); ?>
+									<?php $large_featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop-work-featured' ); ?>
+									<?php $retina_featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina-work-featured' ); ?>
+
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source srcset="<?php echo $small_featured[0]; ?>" media="(max-width: 600px)">
+										<source srcset="<?php echo $medium_featured[0]; ?>" media="(min-width: 601px)">
+										<source srcset="<?php echo $large_featured[0]; ?>" media="(min-width: 801px)">
+										<source srcset="<?php echo $retina_featured[0]; ?>" media="(min-width: 1420px)">
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img class="lazyload" srcset="<?php echo $large_featured[0]; ?>">
 									</picture>
 
 								</div>
@@ -86,23 +76,75 @@ get_header(); ?>
 
 					<?php endif; ?>
 
+					<section class="lead-in-container">
+
+						<div class="lead-in-title">
+							<h1><?php the_field('title', 502); ?></h1>
+						</div>
+
+						<div class="lead-in-content">
+							<?php the_field('content', 502) ?>
+						</div>
+
+					</section>
+
 			      <?php endwhile; ?>
+
+			<?php endif;
+			wp_reset_query();  ?>
+
+			<?php
+
+			    $args = array(
+			        'post_type' => 'work'
+			    );
+			    $query = new WP_Query($args);
+
+			    if($query->have_posts()) : ?>
+
+				<div class="work-portals">
+
+			      <?php while($query->have_posts()) : ?>
+
+			        <?php $query->the_post(); ?>
+
+					<div class="square-portal-container">
+
+						<div class="square-portal-overlay"></div>
+
+						<?php $small_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile-squared' ); ?>
+						<?php $medium_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet-squared' ); ?>
+						<?php $large_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop-squared' ); ?>
+
+						<picture>
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="<?php echo $small_squared[0]; ?>" media="(max-width: 600px)">
+							<source srcset="<?php echo $medium_squared[0]; ?>" media="(min-width: 601px)">
+							<source srcset="<?php echo $large_squared[0]; ?>" media="(min-width: 801px)">
+							<!--[if IE 9]></video><![endif]-->
+							<img class="lazyload" srcset="<?php echo $large_squared[0]; ?>">
+						</picture>
+
+						<div class="square-portal">
+							<a href="<?php the_permalink(); ?>">
+								<span class="rollover-top portal-text">Featured:</span>
+								<span class="rollover-middle portal-text"><?php the_title(); ?></span>
+								<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
+							</a>
+						</div>
+					</div>
+
+				<?php endwhile; ?>
+
+				</div>
 
 			<?php endif; ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
-
 		</section>
+
+		<div class="work-portals">
+			<?php echo do_shortcode('[ajax_load_more post_type="work" posts_per_page="6" offset="6" pause="true" scroll="false" button_label="Load More"]'); ?>
+		</div>
 
 	</div><!-- #primary -->
 
