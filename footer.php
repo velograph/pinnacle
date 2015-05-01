@@ -68,7 +68,7 @@
 			<div class="careers">
 				<h4>Careers</h4>
 				<ul>
-					<li><a href="#">Job Openings</a></li>
+					<li><a href="http://pinnacle.hiringthing.com" target="_blank">Job Openings</a></li>
 				</ul>
 			</div>
 
