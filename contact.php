@@ -60,6 +60,8 @@ $(function() {
 
 					<?php endwhile; ?>
 
+					<a href="#contact-form">Contact Form</a>
+
 				</div>
 
 			</div>
@@ -213,6 +215,12 @@ $(function() {
 			<?php endif; ?>
 
 		</article>
+
+		<section id="contact-form" class="contact-form-container">
+			<div class="form">
+				<?php echo do_shortcode('[contact-form-7 id="624" title="Contact Form"]'); ?>
+			</div>
+		</section>
 
 	</div><!-- #primary -->
 

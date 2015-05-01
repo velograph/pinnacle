@@ -864,6 +864,30 @@ body {
 			}
 		}
 	}
+	.contact-form-container {
+		@include outer-container;
+		border-top: $thin-border;
+		.form {
+			@include span-columns(5);
+			margin-top: $hundred;
+			text-transform: uppercase;
+			ul {
+				li {
+					margin-bottom: $twentyfive;
+					input {
+						border-radius: 0;
+					}
+					input[type="submit"] {
+						background: $medium-grey;
+						text-transform: uppercase;
+					}
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+	}
 }
 
 .lead-in-container {
@@ -1037,7 +1061,7 @@ body {
 }
 
 .site-footer {
-	margin: 16px;
+	margin: 0 16px 16px;
 	position: relative;
 	top: 150px;
 	h4 {
@@ -1089,16 +1113,8 @@ body {
 		@include outer-container;
 		border-top: $thin-border;
 		@include pad( $fifty 0 );
-		// margin: 0 32px;
 		@include media( $large-screen ) {
-			// margin: 0;
 		}
-		// &:first-child {
-		// 	padding: $fifty 0;
-		// }
-		// &:last-child {
-		// 	padding: $twentyfive 0 $fifteen;
-		// }
 		.site-info {
 			font-size: 9px;
 			text-align: right;
