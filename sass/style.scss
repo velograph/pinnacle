@@ -512,6 +512,8 @@ body {
 
 .archive,
 .single,
+.page-template-page-alphabetical,
+.page-template-page-executives,
 .page-template-contact,
 .page-template-process {
 	.site-content {
@@ -531,6 +533,7 @@ body {
 				.person {
 					@include span-columns(4);
 					@include omega(3);
+					text-transform: uppercase;
 				}
 			}
 		}
@@ -595,6 +598,7 @@ body {
 	.pagination {
 		@include outer-container;
 		@include pad( $fifty 0 );
+		clear: both;
 		text-align: center;
 		.page-numbers {
 			margin: 0 $fifteen;
@@ -774,6 +778,9 @@ body {
 		}
 		.featured-image {
 			@include span-columns(9);
+			img {
+				float: left;
+			}
 		}
 	}
 	.square-portal-container {
@@ -810,6 +817,9 @@ body {
 					@include span-columns(6);
 				}
 				margin-bottom: $fifty;
+				h1 {
+					margin-bottom: $ten;
+				}
 				h3 {
 					margin-bottom: $twentyfive;
 				}
