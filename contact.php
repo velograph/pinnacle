@@ -27,13 +27,15 @@ $(function() {
 		});
 </script>
 
+	<section class="page-top">
+		<div class="page-top-content">
+			<h1><?php the_field('lead_in_title'); ?></h1>
+		</div>
+	</section>
+
 	<div id="primary" class="archive-page content-area">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
-			<section class="page-title">
-				<h1><?php the_field('lead_in_title'); ?></h1>
-			</section>
 
 		<?php endwhile; // end of the loop. ?>
 
