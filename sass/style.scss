@@ -284,6 +284,7 @@ body {
 	}
 }
 
+/* Overlay */
 .overlay {
 	position: fixed;
 	width: 100%;
@@ -292,27 +293,66 @@ body {
 	left: 0;
 	background: $dark-grey;
 	z-index: 2;
-	.social-links {
+	.mobile-logo {
+		left: $twenty;
+		position: absolute;
+		top: $twenty;
+		z-index: 100;
 		svg {
-			margin: 0 $ten;
-			width: $twentyfive;
+			width: $hundred + $fifty;
+			height: $twentyfive;
+			path {
+				fill: $white;
+			}
 		}
 	}
-}
-
-/* Overlay closing cross */
-.overlay .overlay-close {
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	overflow: hidden;
-	border: none;
-	background: transparent;
-	outline: none;
-	z-index: 100;
-	svg {
-		height: $twentyfive;
-		width: $twentyfive;
+	.overlay-close {
+		background: transparent;
+		border: none;
+		outline: none;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		z-index: 100;
+		svg {
+			height: $twenty;
+			width: $twenty;
+		}
+		.menu-text {
+			font-size: 14px;
+			margin-left: $five;
+			text-transform: uppercase;
+			vertical-align: text-top;
+		}
+	}
+	.mobile-navigation {
+		left: $twenty;
+		position: absolute;
+		top: 50%;
+		@include transform( translateY(-50%) );
+		a {
+			font-weight: 900;
+		}
+		bottom: $twenty;
+		left: $twenty;
+		position: absolute;
+		.social-links {
+			svg {
+				margin-right: $fifteen;
+				width: $twentyfive;
+				path {
+					fill: $white;
+				}
+			}
+		}
+		.mailto-link {
+			color: $white;
+			display: block;
+			font-weight: 900;
+			margin-top: $twenty;
+		}
 	}
 }
 
