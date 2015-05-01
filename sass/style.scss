@@ -544,6 +544,8 @@ body {
 }
 
 .site-content {
+	margin: 16px;
+	position: relative;
 	top: 67px;
 	.page-top {
 		@include outer-container;
@@ -641,8 +643,6 @@ body {
 .page-template-contact,
 .page-template-process {
 	.site-content {
-		margin: 16px;
-		position: relative;
 		.page-title {
 			@include outer-container;
 			padding: 150px 0;
@@ -1037,8 +1037,7 @@ body {
 }
 
 .site-footer {
-	@include outer-container;
-	margin-bottom: 16px;
+	margin: 16px;
 	position: relative;
 	top: 150px;
 	h4 {
@@ -1087,18 +1086,19 @@ body {
 		}
 	}
 	.footer-row {
-		@include row();
+		@include outer-container;
 		border-top: $thin-border;
-		margin: 0 32px;
+		@include pad( $fifty 0 );
+		// margin: 0 32px;
 		@include media( $large-screen ) {
-			margin: 0;
+			// margin: 0;
 		}
-		&:first-child {
-			padding: $fifty 0;
-		}
-		&:last-child {
-			padding: $twentyfive 0 $fifteen;
-		}
+		// &:first-child {
+		// 	padding: $fifty 0;
+		// }
+		// &:last-child {
+		// 	padding: $twentyfive 0 $fifteen;
+		// }
 		.site-info {
 			font-size: 9px;
 			text-align: right;
