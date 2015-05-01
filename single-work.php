@@ -31,30 +31,19 @@ get_header(); ?>
 
 			        <?php if( get_row_layout() == 'section' ) : ?>
 
-						<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-hero'); ?>
-						<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-hero'); ?>
-						<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-hero'); ?>
-						<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-hero'); ?>
+						<?php $mobile_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-work-featured'); ?>
+						<?php $tablet_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-work-featured'); ?>
+						<?php $desktop_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-work-featured'); ?>
+						<?php $retina_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'retina-work-featured'); ?>
 
 						<picture class="work-section-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
-							<source
-								data-srcset="<?php echo $mobile[0]; ?>"
-								media="(max-width: 500px)" />
-							<source
-								data-srcset="<?php echo $tablet[0]; ?>"
-								media="(max-width: 860px)" />
-							<source
-								data-srcset="<?php echo $desktop[0]; ?>"
-								media="(max-width: 1024px)" />
-							<source
-								data-srcset="<?php echo $retina[0]; ?>"
-								media="(min-width: 1400px)" />
+							<source srcset="<?php echo $mobile_work_study[0]; ?>" media="(max-width: 600px)">
+							<source srcset="<?php echo $tablet_work_study[0]; ?>" media="(min-width: 601px)">
+							<source srcset="<?php echo $desktop_work_study[0]; ?>" media="(max-width: 1024px)">
+							<source srcset="<?php echo $retina_work_study[0]; ?>" media="(min-width: 1025px)">
 							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
+							<img srcset="<?php echo $desktop_work_study[0]; ?>">
 						</picture>
 
 						<?php if( get_sub_field( 'title_and_description_toggle' ) ) : ?>
@@ -76,36 +65,39 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<?php
+			<section class="project-details-container">
 
-			$i = 0;
+				<div class="detail-column">
+					<div class="project-detail">
+						<h6>Client</h6>
+						<h5><?php the_field('client'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Project</h6>
+						<h5><?php the_field('project'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Date</h6>
+						<h5><?php the_field('date'); ?></h5>
+					</div>
+				</div>
 
-			if( have_rows('project_details') ): ?>
+				<div class="detail-column">
+					<div class="project-detail">
+						<h6>Industry</h6>
+						<h5><?php the_field('industry'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Credits</h6>
+						<h5><?php the_field('credits'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Share</h6>
+						<h5></h5>
+					</div>
+				</div>
 
-				<section class="project-details-container">
-
-					<?php while( have_rows('project_details') ): the_row(); $i++; ?>
-
-						<?php if( $i == 1 ): ?>
-							<div class="detail-column">
-						<?php endif; ?>
-
-							<div class="project-detail">
-								<h6><?php the_sub_field('title'); ?></h6>
-								<h5><?php the_sub_field('answer'); ?></h5>
-							</div>
-
-						<?php if( $i == 3 ): $i = 0; ?>
-							</div>
-						<?php endif; ?>
-
-				  <?php endwhile; ?>
-
-			</section>
-
-			  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-
-			<?php endif; ?>
+		</section>
 
 		<?php endwhile; // end of the loop. ?>
 
