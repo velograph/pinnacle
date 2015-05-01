@@ -11,20 +11,26 @@ get_header(); ?>
 
 	<div id="primary" class="people-archive content-area">
 
-		<section class="page-title">
-			<h1><?php the_field('page_title', 90); ?></h1>
+		<section class="page-top">
+
+			<div class="page-top-content">
+
+				<h1><?php the_field('page_title', 90); ?></h1>
+
+				<ul class="people-navigation">
+					<li>
+						A-Z
+					</li>
+					<li>
+						<a href="/people-executives">Executive Team</a>
+					</li>
+				</ul>
+
+			</div>
+
 		</section>
 
 		<section class="people-container">
-
-			<ul class="people-navigation">
-				<li>
-					A-Z
-				</li>
-				<li>
-					<a href="/people-executives">Executive Team</a>
-				</li>
-			</ul>
 
 			<?php
 
