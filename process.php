@@ -59,14 +59,6 @@ $(function() {
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<script>
-			// jQuery(function() {
-			// 	jQuery('.section-image-row').matchHeight({
-			// 		target: jQuery('.process-image')
-			// 	});
-			// });
-			</script>
-
 			<?php if( have_rows('process_sections') ) : ?>
 
 			    <?php while ( have_rows('process_sections') ) : ?>
@@ -79,29 +71,29 @@ $(function() {
 
 							<div class="section-image-row">
 
-
 									<?php $mobile_top_left_square = wp_get_attachment_image_src(get_sub_field('top_left_square'), 'mobile-squared'); ?>
 									<?php $tablet_top_left_square = wp_get_attachment_image_src(get_sub_field('top_left_square'), 'tablet-squared'); ?>
 									<?php $desktop_top_left_square = wp_get_attachment_image_src(get_sub_field('top_left_square'), 'desktop-squared'); ?>
 
-									<picture class="square process-image">
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											data-srcset="<?php echo $mobile_top_left_square[0]; ?>"
-											media="(max-width: 500px)" />
-										<source
-											data-srcset="<?php echo $tablet_top_left_square[0]; ?>"
-											media="(max-width: 860px)" />
-										<source
-											data-srcset="<?php echo $desktop_top_left_square[0]; ?>"
-											media="(min-width: 861px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
-									</picture>
-
+									<div class="square">
+										<picture class="process-image">
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												data-srcset="<?php echo $mobile_top_left_square[0]; ?>"
+												media="(max-width: 500px)" />
+											<source
+												data-srcset="<?php echo $tablet_top_left_square[0]; ?>"
+												media="(max-width: 860px)" />
+											<source
+												data-srcset="<?php echo $desktop_top_left_square[0]; ?>"
+												media="(min-width: 861px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img
+												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												class="lazyload"
+												alt="Pinnacle Exhibits" />
+										</picture>
+									</div>
 
 									<?php $mobile_top_right_rectangle = wp_get_attachment_image_src(get_sub_field('top_right_rectangle'), 'mobile-process-wide'); ?>
 									<?php $tablet_top_right_rectangle = wp_get_attachment_image_src(get_sub_field('top_right_rectangle'), 'tablet-process-wide'); ?>
@@ -156,30 +148,32 @@ $(function() {
 
 								</div>
 
-								<div class="square bottom-right-square process-image-container">
+								<div class="square">
+									<div class="bottom-right-square process-image-container process-image">
 
-									<?php $mobile_bottom_right_square = wp_get_attachment_image_src(get_sub_field('bottom_right_square'), 'mobile-squared'); ?>
-									<?php $tablet_bottom_right_square = wp_get_attachment_image_src(get_sub_field('bottom_right_square'), 'tablet-squared'); ?>
-									<?php $desktop_bottom_right_square = wp_get_attachment_image_src(get_sub_field('bottom_right_square'), 'desktop-squared'); ?>
+										<?php $mobile_bottom_right_square = wp_get_attachment_image_src(get_sub_field('bottom_right_square'), 'mobile-squared'); ?>
+										<?php $tablet_bottom_right_square = wp_get_attachment_image_src(get_sub_field('bottom_right_square'), 'tablet-squared'); ?>
+										<?php $desktop_bottom_right_square = wp_get_attachment_image_src(get_sub_field('bottom_right_square'), 'desktop-squared'); ?>
 
-									<picture class="process-image">
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											data-srcset="<?php echo $mobile_bottom_right_square[0]; ?>"
-											media="(max-width: 500px)" />
-										<source
-											data-srcset="<?php echo $tablet_bottom_right_square[0]; ?>"
-											media="(max-width: 860px)" />
-										<source
-											data-srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
-											media="(min-width: 861px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
-									</picture>
+										<picture class="process-image">
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												data-srcset="<?php echo $mobile_bottom_right_square[0]; ?>"
+												media="(max-width: 500px)" />
+											<source
+												data-srcset="<?php echo $tablet_bottom_right_square[0]; ?>"
+												media="(max-width: 860px)" />
+											<source
+												data-srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
+												media="(min-width: 861px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img
+												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												class="lazyload"
+												alt="Pinnacle Exhibits" />
+										</picture>
 
+									</div>
 								</div>
 
 							</div>

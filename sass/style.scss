@@ -512,6 +512,24 @@ body {
 			position: relative;
 			@include transform( translateY(-50%) );
 			top: 50%;
+			.sub-nav-menu {
+				margin-top: $twentyfive;
+				li {
+					display: inline-block;
+					margin-left: $ten;
+					text-transform: capitalize;
+					a {
+						color: $dark-grey;
+					}
+				}
+				li.subnav-bullet {
+					font-size: 10px;
+					vertical-align: middle;
+					&:last-child {
+						display: none;
+					}
+				}
+			}
 		}
 	}
 	.three-up-container {
@@ -922,10 +940,20 @@ body {
 .process-page {
 	.section-image-row {
 		@include row();
-		position: relative;
 		margin-bottom: 2.35765%;
+		overflow: hidden;
 		.square {
 			@include span-columns(4);
+			position: relative;
+			.process-image {
+				display: inline-block;
+				height: 100%;
+				img {
+					min-width: 101.85%;
+					position: absolute;
+					top: 0;
+				}
+			}
 		}
 		.rectangle {
 			@include span-columns(8);
