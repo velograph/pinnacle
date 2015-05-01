@@ -9,6 +9,13 @@
 
 get_header(); ?>
 
+<script>
+jQuery(document).ready(function(){
+    /* default settings */
+    jQuery('.venobox').venobox();
+});
+</script>
+
 	<section class="page-top">
 		<div class="page-top-content">
 			<h1>Featured Videos</h1>
@@ -31,7 +38,7 @@ get_header(); ?>
 
 					<div class="square-portal-overlay"></div>
 
-					<a href="">
+					<a class="venobox" data-type="vimeo" href="<?php the_field('video'); ?>">
 						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
 						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
 						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
