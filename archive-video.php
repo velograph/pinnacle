@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
 
 	<section class="page-top">
 		<div class="page-top-content">
-			<h1>Featured Videos</h1>
+			<h1>Featured videos.</h1>
 		</div>
 	</section>
 

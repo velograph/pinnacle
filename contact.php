@@ -56,11 +56,9 @@ $(function() {
 
 						<?php $query->the_post(); ?>
 
-						<a href="#<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>"><?php the_field('short_title') ?></a>
+						<a href="#<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>"><?php the_field('city_only') ?></a>
 
 					<?php endwhile; ?>
-
-					<a href="#contact-form">Contact Form</a>
 
 				</div>
 
@@ -216,7 +214,7 @@ $(function() {
 
 		</article>
 
-		<section id="contact-form" class="contact-form-container">
+		<section class="contact-form-container">
 			<div class="form">
 				<?php echo do_shortcode('[contact-form-7 id="624" title="Contact Form"]'); ?>
 			</div>

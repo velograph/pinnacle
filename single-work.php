@@ -93,7 +93,7 @@ get_header(); ?>
 					</div>
 					<div class="project-detail">
 						<h6>Share</h6>
-						<h5></h5>
+						<?php echo sharing_display(); ?>
 					</div>
 				</div>
 
