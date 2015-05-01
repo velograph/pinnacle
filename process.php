@@ -12,6 +12,49 @@
 
 get_header(); ?>
 
+<script>
+$(function() {
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						if (target.length) {
+								$('html,body').animate({ scrollTop: target.offset().top -150 }, 1500);
+				return false;
+				}
+			}
+			});
+		});
+</script>
+
+	<section class="page-top">
+		<div class="page-top-content">
+			<h1><?php the_field('lead_in_title'); ?></h1>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php if( have_rows('process_sections') ) : ?>
+
+					<ul class="sub-nav-menu">
+
+				    <?php while ( have_rows('process_sections') ) : ?>
+
+				        <?php the_row(); ?>
+
+						<li>
+							<a href="#<?php the_sub_field('section_hook'); ?>"><?php the_sub_field('section_hook'); ?>&nbsp;</a>
+						</li>
+						<li class="subnav-bullet"><span>&bull;</span></li>
+
+					<?php endwhile; ?>
+
+					</ul>
+
+				<?php endif; ?>
+
+			<?php endwhile; ?>
+		</div>
+	</section>
+
 	<div id="primary" class="process-page content-area">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -23,10 +66,6 @@ get_header(); ?>
 			// 	});
 			// });
 			</script>
-
-			<section class="page-title">
-				<h1><?php the_field('lead_in_title'); ?></h1>
-			</section>
 
 			<?php if( have_rows('process_sections') ) : ?>
 
