@@ -11,8 +11,10 @@ get_header(); ?>
 
 	<div id="primary" class="people-archive content-area">
 
-		<section class="page-title">
-			<h1><?php the_field('lead_in_title', 502); ?></h1>
+		<section class="page-top">
+			<div class="page-top-content">
+				<h1><?php the_field('lead_in_title', 502); ?></h1>
+			</div>
 		</section>
 
 		<section class="work-archive-container">
