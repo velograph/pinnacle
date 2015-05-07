@@ -1075,6 +1075,24 @@ body {
 	}
 }
 
+.social-feeds {
+	@include row();
+	svg {
+		display: inline-block;
+		height: $twentyfive;
+		width: $twentyfive;
+		path {
+			fill: $dark-grey;
+		}
+	}
+	.two-feeds {
+		@include span-columns(8);
+	}
+	.one-feed {
+		@include span-columns(4);
+	}
+}
+
 .site-footer {
 	margin: 0 16px 16px;
 	position: relative;
@@ -1141,7 +1159,6 @@ body {
 		}
 	}
 }
-
 
 #basic-modal-content {
 	display: none;
