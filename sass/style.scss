@@ -21,6 +21,7 @@
 @import "veno";
 
 body {
+	background: $white;
 	color: $dark-grey;
 	margin: 0;
 	@include media( $large-screen ) {
