@@ -744,11 +744,11 @@ body {
 .page-template-contact {
 	.location-sub-nav {
 		background: $white;
-		font-weight: 900;
 		padding: $twentyfive 0;
 		text-transform: uppercase;
 		a {
 			color: $dark-grey;
+			font-weight: 900;
 			margin-right: $fifty;
 			&:last-child {
 				margin: 0;
