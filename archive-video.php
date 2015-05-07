@@ -36,8 +36,6 @@ jQuery(document).ready(function(){
 
 				<div class="square-portal-container">
 
-					<div class="square-portal-overlay"></div>
-
 					<a class="venobox" data-type="vimeo" href="<?php the_field('video'); ?>">
 						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
 						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
