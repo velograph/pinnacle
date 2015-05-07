@@ -1079,15 +1079,20 @@ body {
 	top: 150px;
 	h4 {
 		font-weight: 900;
+		margin-bottom: $five;
 		text-transform: none;
 	}
 	ul {
-		a {
-			color: $dark-grey;
-			font: {
-				size: 10px;
+		li {
+			margin-bottom: $five;
+			text-transform: uppercase;
+			a {
+				color: $dark-grey;
+				font: {
+					size: 10px;
+				}
+				line-height: 30px;
 			}
-			line-height: 30px;
 		}
 	}
 	.footer-locations,
