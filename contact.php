@@ -94,26 +94,17 @@ $(function() {
 
 								<div class="mobile-image">
 
-									<?php $mobile_squared = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-squared'); ?>
-									<?php $tablet_squared = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-squared'); ?>
-									<?php $desktop_squared = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-squared'); ?>
+									<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-squared'); ?>
+									<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-squared'); ?>
+									<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-squared'); ?>
 
-									<picture class="home-featured-image">
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											data-srcset="<?php echo $mobile_squared[0]; ?>"
-											media="(max-width: 500px)" />
-										<source
-											data-srcset="<?php echo $tablet_squared[0]; ?>"
-											media="(max-width: 860px)" />
-										<source
-											data-srcset="<?php echo $desktop_squared[0]; ?>"
-											media="(min-width: 861px)" />
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+										<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+										<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop[0]; ?>">
 									</picture>
 
 									<?php if( get_sub_field('link_to_map') ) : ?>
@@ -150,33 +141,24 @@ $(function() {
 
 							<div class="desktop-image">
 
-								<?php $mobile_squared = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-squared'); ?>
-								<?php $tablet_squared = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-squared'); ?>
-								<?php $desktop_squared = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-squared'); ?>
+								<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-squared'); ?>
+								<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-squared'); ?>
+								<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-squared'); ?>
 
 								<picture>
-									<!--[if IE 9]><video style="display: none"><![endif]-->
-									<source
-										data-srcset="<?php echo $mobile_squared[0]; ?>"
-										media="(max-width: 500px)" />
-									<source
-										data-srcset="<?php echo $tablet_squared[0]; ?>"
-										media="(max-width: 860px)" />
-									<source
-										data-srcset="<?php echo $desktop_squared[0]; ?>"
-										media="(min-width: 861px)" />
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+									<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+									<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
 									<!--[if IE 9]></video><![endif]-->
-									<img
-										src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										class="lazyload"
-										alt="Pinnacle Exhibits" />
+									<img srcset="<?php echo $desktop[0]; ?>">
 								</picture>
 
 								<?php if( get_sub_field('link_to_map') ) : ?>
 
 									<div class="square-portal-overlay"></div>
 									<div class="square-portal">
-										<a href="">
+										<a target="_blank" href="<?php the_field('location_map'); ?>">
 											<span class="rollover-top portal-text">View Map:</span>
 											<span class="rollover-middle portal-text"><?php the_field('city_only'); ?></span>
 											<span class="rollover-bottom portal-text"><?php the_field('location_title') ?></span>
@@ -208,17 +190,17 @@ $(function() {
 
 					</section>
 
+				</article>
+
 				<?php endwhile; ?>
 
 			<?php endif; ?>
 
-		</article>
-
-		<section class="contact-form-container">
+		<!-- <section class="contact-form-container">
 			<div class="form">
 				<?php echo do_shortcode('[contact-form-7 id="624" title="Contact Form"]'); ?>
 			</div>
-		</section>
+		</section> -->
 
 	</div><!-- #primary -->
 
