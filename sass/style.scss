@@ -605,6 +605,7 @@ body {
 				// Video icon
 				.video-play-icon {
 					left: 50%;
+					opacity: .7;
 					position: absolute;
 					@include transform(translate(-50%,-50%));
 					top: 50%;
