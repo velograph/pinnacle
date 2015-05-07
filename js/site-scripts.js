@@ -6,10 +6,9 @@ if (jQuery(window).width() > 860) {
 		$(".site-header").sticky({
 			topSpacing: 16
 		});
-	});
-
-	$(".location-sub-nav").sticky({
-		topSpacing: 80
+		$(".location-sub-nav").sticky({
+			topSpacing: 80
+		});
 	});
 
 }
