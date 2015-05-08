@@ -66,7 +66,7 @@ get_header(); ?>
 										<source srcset="<?php echo $large_featured[0]; ?>" media="(min-width: 801px)">
 										<source srcset="<?php echo $retina_featured[0]; ?>" media="(min-width: 1420px)">
 										<!--[if IE 9]></video><![endif]-->
-										<img class="lazyload" srcset="<?php echo $large_featured[0]; ?>">
+										<img srcset="<?php echo $large_featured[0]; ?>">
 									</picture>
 
 								</div>
@@ -124,7 +124,7 @@ get_header(); ?>
 							<source srcset="<?php echo $medium_squared[0]; ?>" media="(min-width: 601px)">
 							<source srcset="<?php echo $large_squared[0]; ?>" media="(min-width: 801px)">
 							<!--[if IE 9]></video><![endif]-->
-							<img class="lazyload" srcset="<?php echo $large_squared[0]; ?>">
+							<img srcset="<?php echo $large_squared[0]; ?>">
 						</picture>
 
 						<div class="square-portal">

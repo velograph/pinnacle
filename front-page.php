@@ -39,25 +39,31 @@ get_header(); ?>
 						<?php $hero_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-home-featured'); ?>
 						<?php $hero_retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-home-featured'); ?>
 
+						<picture>
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+							<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+							<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
+							<!--[if IE 9]></video><![endif]-->
+							<img srcset="<?php echo $desktop[0]; ?>">
+						</picture>
+
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								data-srcset="<?php echo $hero_mobile[0]; ?>"
+								srcset="<?php echo $hero_mobile[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
-								data-srcset="<?php echo $hero_tablet[0]; ?>"
+								srcset="<?php echo $hero_tablet[0]; ?>"
 								media="(max-width: 860px)" />
 							<source
-								data-srcset="<?php echo $hero_desktop[0]; ?>"
+								srcset="<?php echo $hero_desktop[0]; ?>"
 								media="(max-width: 1180px)" />
 							<source
-								data-srcset="<?php echo $hero_retina[0]; ?>"
+								srcset="<?php echo $hero_retina[0]; ?>"
 								media="(min-width: 1181px)" />
 							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
+							<img srcset="<?php echo $desktop[0]; ?>">
 						</picture>
 
 					<?php endif; ?>
@@ -95,19 +101,16 @@ get_header(); ?>
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								data-srcset="<?php echo $mobile_squared[0]; ?>"
+								srcset="<?php echo $mobile_squared[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
-								data-srcset="<?php echo $tablet_squared[0]; ?>"
+								srcset="<?php echo $tablet_squared[0]; ?>"
 								media="(max-width: 860px)" />
 							<source
-								data-srcset="<?php echo $desktop_squared[0]; ?>"
+								srcset="<?php echo $desktop_squared[0]; ?>"
 								media="(min-width: 861px)" />
 							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
+							<img srcset="<?php echo $desktop_squared[0]; ?>">
 						</picture>
 
 						<div class="square-portal">

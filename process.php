@@ -57,19 +57,16 @@ $(function() {
 										<picture class="process-image">
 											<!--[if IE 9]><video style="display: none"><![endif]-->
 											<source
-												data-srcset="<?php echo $mobile_top_left_square[0]; ?>"
+												srcset="<?php echo $mobile_top_left_square[0]; ?>"
 												media="(max-width: 500px)" />
 											<source
-												data-srcset="<?php echo $tablet_top_left_square[0]; ?>"
+												srcset="<?php echo $tablet_top_left_square[0]; ?>"
 												media="(max-width: 860px)" />
 											<source
-												data-srcset="<?php echo $desktop_top_left_square[0]; ?>"
+												srcset="<?php echo $desktop_top_left_square[0]; ?>"
 												media="(min-width: 861px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img
-												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												class="lazyload"
-												alt="Pinnacle Exhibits" />
+											<img srcset="<?php echo $desktop_top_left_square[0]; ?>">
 										</picture>
 									</div>
 
@@ -80,19 +77,17 @@ $(function() {
 									<picture class="rectangle process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_top_right_rectangle[0]; ?>"
+											srcset="<?php echo $mobile_top_right_rectangle[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_top_right_rectangle[0]; ?>"
+											srcset="<?php echo $tablet_top_right_rectangle[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_top_right_rectangle[0]; ?>"
+											srcset="<?php echo $desktop_top_right_rectangle[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_top_right_rectangle[0]; ?>">
+
 									</picture>
 
 
@@ -109,19 +104,16 @@ $(function() {
 									<picture class="process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_bottom_left_rectangle[0]; ?>"
+											srcset="<?php echo $mobile_bottom_left_rectangle[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_bottom_left_rectangle[0]; ?>"
+											srcset="<?php echo $tablet_bottom_left_rectangle[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_bottom_left_rectangle[0]; ?>"
+											srcset="<?php echo $desktop_bottom_left_rectangle[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_bottom_left_rectangle[0]; ?>">
 									</picture>
 
 								</div>
@@ -136,19 +128,16 @@ $(function() {
 										<picture class="process-image">
 											<!--[if IE 9]><video style="display: none"><![endif]-->
 											<source
-												data-srcset="<?php echo $mobile_bottom_right_square[0]; ?>"
+												srcset="<?php echo $mobile_bottom_right_square[0]; ?>"
 												media="(max-width: 500px)" />
 											<source
-												data-srcset="<?php echo $tablet_bottom_right_square[0]; ?>"
+												srcset="<?php echo $tablet_bottom_right_square[0]; ?>"
 												media="(max-width: 860px)" />
 											<source
-												data-srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
+												srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
 												media="(min-width: 861px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img
-												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												class="lazyload"
-												alt="Pinnacle Exhibits" />
+											<img srcset="<?php echo $desktop_bottom_right_square[0]; ?>">
 										</picture>
 
 									</div>
@@ -184,19 +173,16 @@ $(function() {
 									<picture class="process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_top_left_rectangle[0]; ?>"
+											srcset="<?php echo $mobile_top_left_rectangle[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_top_left_rectangle[0]; ?>"
+											srcset="<?php echo $tablet_top_left_rectangle[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_top_left_rectangle[0]; ?>"
+											srcset="<?php echo $desktop_top_left_rectangle[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_top_left_rectangle[0]; ?>">
 									</picture>
 
 								</div>
@@ -210,19 +196,16 @@ $(function() {
 									<picture class="process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_top_right_square[0]; ?>"
+											srcset="<?php echo $mobile_top_right_square[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_top_right_square[0]; ?>"
+											srcset="<?php echo $tablet_top_right_square[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_top_right_square[0]; ?>"
+											srcset="<?php echo $desktop_top_right_square[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_top_right_square[0]; ?>">
 									</picture>
 
 								</div>
@@ -240,19 +223,16 @@ $(function() {
 									<picture class="process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_bottom_left_square[0]; ?>"
+											srcset="<?php echo $mobile_bottom_left_square[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_bottom_left_square[0]; ?>"
+											srcset="<?php echo $tablet_bottom_left_square[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_bottom_left_square[0]; ?>"
+											srcset="<?php echo $desktop_bottom_left_square[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_bottom_left_square[0]; ?>">
 									</picture>
 
 								</div>
@@ -266,19 +246,16 @@ $(function() {
 									<picture class="process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_bottom_right_rectangle[0]; ?>"
+											srcset="<?php echo $mobile_bottom_right_rectangle[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_bottom_right_rectangle[0]; ?>"
+											srcset="<?php echo $tablet_bottom_right_rectangle[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_bottom_right_rectangle[0]; ?>"
+											srcset="<?php echo $desktop_bottom_right_rectangle[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_bottom_right_rectangle[0]; ?>">
 									</picture>
 
 								</div>
@@ -313,19 +290,16 @@ $(function() {
 									<picture class="process-image">
 										<!--[if IE 9]><video style="display: none"><![endif]-->
 										<source
-											data-srcset="<?php echo $mobile_large_square[0]; ?>"
+											srcset="<?php echo $mobile_large_square[0]; ?>"
 											media="(max-width: 500px)" />
 										<source
-											data-srcset="<?php echo $tablet_large_square[0]; ?>"
+											srcset="<?php echo $tablet_large_square[0]; ?>"
 											media="(max-width: 860px)" />
 										<source
-											data-srcset="<?php echo $desktop_large_square[0]; ?>"
+											srcset="<?php echo $desktop_large_square[0]; ?>"
 											media="(min-width: 861px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											class="lazyload"
-											alt="Pinnacle Exhibits" />
+										<img srcset="<?php echo $desktop_large_square[0]; ?>">
 									</picture>
 
 								</div>
@@ -341,19 +315,16 @@ $(function() {
 										<picture class="process-image">
 											<!--[if IE 9]><video style="display: none"><![endif]-->
 											<source
-												data-srcset="<?php echo $mobile_top_right_square[0]; ?>"
+												srcset="<?php echo $mobile_top_right_square[0]; ?>"
 												media="(max-width: 500px)" />
 											<source
-												data-srcset="<?php echo $tablet_top_right_square[0]; ?>"
+												srcset="<?php echo $tablet_top_right_square[0]; ?>"
 												media="(max-width: 860px)" />
 											<source
-												data-srcset="<?php echo $desktop_top_right_square[0]; ?>"
+												srcset="<?php echo $desktop_top_right_square[0]; ?>"
 												media="(min-width: 861px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img
-												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												class="lazyload"
-												alt="Pinnacle Exhibits" />
+											<img srcset="<?php echo $desktop_top_right_square[0]; ?>">
 										</picture>
 
 									<!-- </div>
@@ -367,19 +338,16 @@ $(function() {
 										<picture class="process-image">
 											<!--[if IE 9]><video style="display: none"><![endif]-->
 											<source
-												data-srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
+												srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
 												media="(max-width: 500px)" />
 											<source
-												data-srcset="<?php echo $tablet_bottom_right_square[0]; ?>"
+												srcset="<?php echo $tablet_bottom_right_square[0]; ?>"
 												media="(max-width: 860px)" />
 											<source
-												data-srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
+												srcset="<?php echo $desktop_bottom_right_square[0]; ?>"
 												media="(min-width: 861px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img
-												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												class="lazyload"
-												alt="Pinnacle Exhibits" />
+											<img srcset="<?php echo $desktop_bottom_right_square[0]; ?>">
 										</picture>
 
 									<!-- </div> -->
