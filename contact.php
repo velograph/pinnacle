@@ -196,11 +196,11 @@ $(function() {
 
 			<?php endif; ?>
 
-		<!-- <section class="contact-form-container">
+		<section class="contact-form-container">
 			<div class="form">
 				<?php echo do_shortcode('[contact-form-7 id="624" title="Contact Form"]'); ?>
 			</div>
-		</section> -->
+		</section>
 
 	</div><!-- #primary -->
 
