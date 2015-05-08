@@ -54,7 +54,24 @@ get_header(); ?>
 
 					<article class="person">
 
-						<?php the_post_thumbnail(); ?>
+						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
+						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
+						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
+
+						<picture class="home-featured-image">
+							<!--[if IE 9]><video style="display: none"><![endif]-->
+							<source
+								srcset="<?php echo $mobile_squared[0]; ?>"
+								media="(max-width: 500px)" />
+							<source
+								srcset="<?php echo $tablet_squared[0]; ?>"
+								media="(max-width: 860px)" />
+							<source
+								srcset="<?php echo $desktop_squared[0]; ?>"
+								media="(min-width: 861px)" />
+							<!--[if IE 9]></video><![endif]-->
+							<img srcset="<?php echo $desktop_squared[0]; ?>">
+						</picture>
 
 						<div class="square-portal-overlay"></div>
 
