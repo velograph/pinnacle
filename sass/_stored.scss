@@ -1,0 +1,224 @@
+.page,
+.single {
+	.sticky-wrapper {
+		position: absolute;
+		z-index: 1;
+		.site-header {
+			transition: all .75s ease-in-out;
+			.inner-header {
+				.site-branding {
+					float: left;
+					margin-left: 16px;
+					@include media( $xlarge-screen ) {
+						margin-left: 0;
+					}
+					svg {
+						width: 200px;
+					}
+				}
+				.main-navigation {
+					display: none;
+					margin-right: 32px;
+					@include media( $large-screen ) {
+						display: block;
+					}
+					@include media( $xlarge-screen ) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.home {
+	.sticky-wrapper {
+		.site-header {
+			.inner-header {
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.sticky-wrapper.is-sticky {
+		.site-header {
+			.inner-header {
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $dark-grey;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sticky-wrapper {
+	.site-header {
+		z-index: 9;
+		.inner-header {
+			padding: 15px;
+			.site-branding {
+				svg {
+					width: 200px;
+					path {
+						fill: $white;
+					}
+				}
+			}
+			.main-navigation {
+				display: none;
+			}
+			#trigger-overlay {
+				position: fixed;
+				right: 32px;
+				top: 32px;
+				svg {
+					path {
+						fill: $white;
+					}
+				}
+			}
+		}
+	}
+}
+.sticky-wrapper.is-sticky {
+	.site-header {
+		background: $white;
+		.inner-header {
+			.site-branding {
+				svg {
+					width: 200px;
+					path {
+						fill: $dark-grey;
+					}
+				}
+			}
+			#trigger-overlay {
+				svg {
+					path {
+						fill: #7E7D7E;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media( $large-screen ) {
+	.sticky-wrapper {
+		bottom: 16px;
+		left: 16px;
+		position: absolute;
+		right: 16px;
+		top: 16px;
+		.site-header {
+			background: transparent;
+			.inner-header {
+				.site-branding {
+					svg {
+						width: 200px;
+						path {
+							fill: $white;
+						}
+					}
+				}
+				.main-navigation {
+					display: block;
+					ul {
+						li {
+							a {
+								color: $white;
+								font-weight: 900;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.sticky-wrapper {
+		position: absolute;
+		z-index: 9;
+		.site-header {
+			transition: all .75s ease-in-out;
+			.inner-header {
+				@include outer-container;
+				.site-branding {
+					@include pad(15px 15px 15px 0);
+					float: left;
+					svg {
+						width: 200px;
+						path {
+							fill: $dark-grey;
+						}
+					}
+				}
+				.main-navigation {
+					// @include pad(15px 0 15px 15px);
+					display: block;
+					float: right;
+					margin-top: 15px;
+					ul {
+						li {
+							display: inline-block;
+							margin-left: 50px;
+							&:first-child {
+								margin: 0;
+							}
+							a {
+								color: $dark-grey;
+								text-transform: uppercase;
+								&:hover {
+									color: #999;
+								}
+							}
+						}
+					}
+				}
+				.hamburger {
+					display: none;
+				}
+			}
+		}
+	}
+	.sticky-wrapper.is-sticky {
+		.site-header {
+			background: $white;
+			z-index: 1;
+			.inner-header {
+				.site-branding {
+					svg {
+						width: 200px;
+						path {
+							fill: $dark-grey;
+						}
+					}
+				}
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $dark-grey;
+								&:hover {
+									color: #999;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
