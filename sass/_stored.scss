@@ -1,38 +1,36 @@
-.page,
-.single {
-	.sticky-wrapper {
-		position: absolute;
-		z-index: 1;
-		.site-header {
-			transition: all .75s ease-in-out;
-			.inner-header {
-				.site-branding {
-					float: left;
-					margin-left: 16px;
-					@include media( $xlarge-screen ) {
-						margin-left: 0;
-					}
-					svg {
-						width: 200px;
-					}
+.header-sticky {
+	position: absolute;
+	z-index: 1;
+	.site-header {
+		transition: all .75s ease-in-out;
+		.inner-header {
+			.site-branding {
+				float: left;
+				margin-left: 16px;
+				@include media( $xlarge-screen ) {
+					margin-left: 0;
 				}
-				.main-navigation {
-					display: none;
-					margin-right: 32px;
-					@include media( $large-screen ) {
-						display: block;
-					}
-					@include media( $xlarge-screen ) {
-						margin-right: 0;
-					}
+				svg {
+					width: 200px;
+				}
+			}
+			.main-navigation {
+				display: none;
+				margin-right: 32px;
+				@include media( $large-screen ) {
+					display: block;
+				}
+				@include media( $xlarge-screen ) {
+					margin-right: 0;
 				}
 			}
 		}
 	}
 }
 
+// The header links in the home page get special treatment
 .home {
-	.sticky-wrapper {
+	.header-sticky {
 		.site-header {
 			.inner-header {
 				.site-branding {
@@ -56,7 +54,7 @@
 			}
 		}
 	}
-	.sticky-wrapper.is-sticky {
+	.header-sticky.is-sticky {
 		.site-header {
 			.inner-header {
 				.site-branding {
@@ -82,7 +80,7 @@
 	}
 }
 
-.sticky-wrapper {
+.header-sticky {
 	.site-header {
 		z-index: 9;
 		.inner-header {
@@ -110,7 +108,7 @@
 		}
 	}
 }
-.sticky-wrapper.is-sticky {
+.header-sticky.is-sticky {
 	.site-header {
 		background: $white;
 		.inner-header {
@@ -134,7 +132,7 @@
 }
 
 @include media( $large-screen ) {
-	.sticky-wrapper {
+	.header-sticky {
 		bottom: 16px;
 		left: 16px;
 		position: absolute;
@@ -165,7 +163,7 @@
 			}
 		}
 	}
-	.sticky-wrapper {
+	.header-sticky {
 		position: absolute;
 		z-index: 9;
 		.site-header {
@@ -209,7 +207,7 @@
 			}
 		}
 	}
-	.sticky-wrapper.is-sticky {
+	.header-sticky.is-sticky {
 		.site-header {
 			background: $white;
 			z-index: 1;

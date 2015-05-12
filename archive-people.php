@@ -17,6 +17,14 @@ get_header(); ?>
 
 				<h1><?php the_field('page_title', 90); ?></h1>
 
+			</div>
+
+		</section>
+
+		<div class="page-sub-nav">
+
+			<div class="subnav">
+
 				<ul class="people-navigation">
 					<li>
 						A-Z
@@ -28,7 +36,7 @@ get_header(); ?>
 
 			</div>
 
-		</section>
+		</div>
 
 		<section class="people-container">
 

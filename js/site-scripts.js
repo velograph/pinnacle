@@ -4,9 +4,10 @@ if (jQuery(window).width() > 860) {
 
 	$(document).ready(function(){
 		$(".site-header").sticky({
-			topSpacing: 16
+			topSpacing: 16,
+			wrapperClassName: 'header-sticky'
 		});
-		$(".location-sub-nav").sticky({
+		$(".page-sub-nav").sticky({
 			topSpacing: 80
 		});
 	});

@@ -82,55 +82,52 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
+
 		<?php
 
-			$args = array(
-			'post_type' => 'work',
-			'posts_per_page' => 3
-			);
-			$query = new WP_Query($args);
+		$posts = get_field('featured_project');
 
-			if($query->have_posts()) : ?>
+		if( $posts ): ?>
 
 			<section class="work-portals">
 
-				<?php while($query->have_posts()) : ?>
-
-					<?php $query->the_post(); ?>
+				<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+					<?php setup_postdata($post); ?>
 
 					<div class="square-portal-container">
 
-					<div class="square-portal-overlay"></div>
+						<a href="<?php the_permalink(); ?>">
+							<div class="square-portal-overlay"></div>
 
-						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
-						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
-						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
+							<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
+							<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
+							<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
 
-						<picture class="home-featured-image">
-							<!--[if IE 9]><video style="display: none"><![endif]-->
-							<source
-								srcset="<?php echo $mobile_squared[0]; ?>"
-								media="(max-width: 500px)" />
-							<source
-								srcset="<?php echo $tablet_squared[0]; ?>"
-								media="(max-width: 860px)" />
-							<source
-								srcset="<?php echo $desktop_squared[0]; ?>"
-								media="(min-width: 861px)" />
-							<!--[if IE 9]></video><![endif]-->
-							<img srcset="<?php echo $desktop_squared[0]; ?>">
-						</picture>
+							<picture class="home-featured-image">
+								<!--[if IE 9]><video style="display: none"><![endif]-->
+								<source
+									srcset="<?php echo $mobile_squared[0]; ?>"
+									media="(max-width: 500px)" />
+								<source
+									srcset="<?php echo $tablet_squared[0]; ?>"
+									media="(max-width: 860px)" />
+								<source
+									srcset="<?php echo $desktop_squared[0]; ?>"
+									media="(min-width: 861px)" />
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop_squared[0]; ?>">
+							</picture>
 
-						<div class="square-portal">
-							<a href="<?php the_permalink(); ?>">
-								<span class="rollover-top portal-text">Featured:</span>
-								<span class="rollover-middle portal-text"><?php the_title(); ?></span>
-								<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
-							</a>
-						</div>
+							<div class="square-portal">
+									<span class="rollover-top portal-text">Featured:</span>
+									<span class="rollover-middle portal-text"><?php the_title(); ?></span>
+									<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
+							</div>
+						</a>
 					</div>
 
-				<?php endwhile; ?>
+				<?php endforeach; ?>
+				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 
 			</section>
 

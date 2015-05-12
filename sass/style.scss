@@ -361,7 +361,8 @@ body {
 	position: relative;
 	.page-top {
 		@include outer-container;
-		height: 400px;
+		height: 500px;
+		padding-top: $hundred;
 		.page-top-content {
 			position: relative;
 			@include transform( translateY(-50%) );
@@ -483,16 +484,6 @@ body {
 	}
 }
 
-.page-template-contact,
-.single-work {
-	.sticky-wrapper {
-		position: relative;
-		top: -25px;
-		width: 100%;
-		z-index: 1;
-	}
-}
-
 .people-archive {
 	.people-container {
 		.people-row {
@@ -550,23 +541,29 @@ body {
 	}
 }
 
-.page-template-contact {
-	.location-sub-nav {
-		background: $white;
-		padding: $twentyfive 0;
-		text-transform: uppercase;
-		a {
-			color: $dark-grey;
-			font-weight: 900;
-			margin-right: $fifty;
-			&:last-child {
-				margin: 0;
-			}
-		}
-		.subnav {
-			@include outer-container;
+.page-sub-nav {
+	background: $white;
+	padding: $twentyfive 0;
+	text-transform: uppercase;
+	z-index: 2;
+	li {
+		display: inline-block;
+		margin-right: $fifty;
+	}
+	a {
+		color: $dark-grey;
+		font-weight: 900;
+		margin-right: $fifty;
+		&:last-child {
+			margin: 0;
 		}
 	}
+	.subnav {
+		@include outer-container;
+	}
+}
+
+.page-template-contact {
 	.mobile-image-container {
 		.mobile-image {
 			@include span-columns(6);
@@ -736,6 +733,11 @@ body {
 		.featured-content {
 			@include span-columns(3);
 			@include pad( $twentyfive );
+			h4 {
+				a {
+					color: $dark-grey;
+				}
+			}
 			.dotted-separator {
 				border-bottom: 1px dotted $dark-grey;
 				display: inline-block;
@@ -777,13 +779,8 @@ body {
 
 .single-work {
 	.work-study {
-		.leading-container {
-			@include outer-container;
-			.entry-content {
-				@include media( $large-screen ) {
-					@include span-columns(6);
-				}
-				margin-bottom: $fifty;
+		.page-top {
+			.page-top-content {
 				h1 {
 					margin-bottom: $ten;
 				}

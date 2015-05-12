@@ -27,17 +27,13 @@ $(function() {
 		});
 </script>
 
-	<section class="page-top">
-		<div class="page-top-content">
-			<h1><?php the_field('lead_in_title'); ?></h1>
-		</div>
-	</section>
-
 	<div id="primary" class="archive-page content-area">
 
-		<?php while ( have_posts() ) : the_post(); ?>
-
-		<?php endwhile; // end of the loop. ?>
+		<section class="page-top">
+			<div class="page-top-content">
+				<h1><?php the_field('lead_in_title'); ?></h1>
+			</div>
+		</section>
 
 		<?php
 
@@ -48,7 +44,7 @@ $(function() {
 
 			if($query->have_posts()) : ?>
 
-			<div class="location-sub-nav">
+			<div class="page-sub-nav">
 
 				<div class="subnav">
 

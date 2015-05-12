@@ -11,21 +11,34 @@ get_header(); ?>
 
 	<div id="primary" class="people-archive content-area">
 
-		<section class="page-title">
-			<h1><?php the_field('page_title', 90); ?></h1>
+		<section class="page-top">
+
+			<div class="page-top-content">
+
+				<h1><?php the_field('page_title', 90); ?></h1>
+
+			</div>
+
 		</section>
 
+		<div class="page-sub-nav">
+
+			<div class="subnav">
+
+				<ul class="people-navigation">
+					<li>
+						<a href="/people">A-Z</a>
+					</li>
+					<li>
+						Executive Team
+					</li>
+				</ul>
+
+			</div>
+
+		</div>
+
 		<section class="people-container">
-
-			<ul class="people-navigation">
-				<li>
-					<a href="/people">A-Z</a>
-				</li>
-				<li>
-					Executive Team
-				</li>
-			</ul>
-
 
 			<?php
 				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;

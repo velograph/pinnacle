@@ -11,17 +11,15 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="leading-container">
-
-				<div class="entry-content">
+			<section class="page-top">
+				<div class="page-top-content">
 					<h1><?php the_title(); ?></h1>
 
 					<h3><?php the_field('subtitle'); ?></h3>
 
 					<?php the_content(); ?>
 				</div>
-
-			</div>
+			</section>
 
 			<?php if( have_rows('work_study_section') ) : ?>
 
