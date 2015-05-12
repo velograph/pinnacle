@@ -35,6 +35,15 @@
 	.sticky-wrapper {
 		.site-header {
 			.inner-header {
+				.site-branding {
+					a {
+						svg {
+							path {
+								fill: $white;
+							}
+						}
+					}
+				}
 				.main-navigation {
 					ul {
 						li {
@@ -50,6 +59,15 @@
 	.sticky-wrapper.is-sticky {
 		.site-header {
 			.inner-header {
+				.site-branding {
+					a {
+						svg {
+							path {
+								fill: $dark-grey;
+							}
+						}
+					}
+				}
 				.main-navigation {
 					ul {
 						li {
@@ -68,7 +86,6 @@
 	.site-header {
 		z-index: 9;
 		.inner-header {
-			padding: 15px;
 			.site-branding {
 				svg {
 					width: 200px;
@@ -166,7 +183,6 @@
 					}
 				}
 				.main-navigation {
-					// @include pad(15px 0 15px 15px);
 					display: block;
 					float: right;
 					margin-top: 15px;
