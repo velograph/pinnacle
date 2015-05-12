@@ -59,7 +59,7 @@ $(window).scroll(function(){
    if($(window).scrollTop()<100) {
 		$('.home-description').fadeIn();
    } else if($(window).scrollTop()>1) {
-		$('.home-description').fadeOut('slow');
+		$('.home-description').fadeOut('fast');
    }
 });
 
