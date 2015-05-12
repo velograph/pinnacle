@@ -17,7 +17,15 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php if( have_rows('home_page_sections') ) : ?>
+				<?php
+					$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original-upload' );
+				?>
+				<div class="featured-home-image" style="background-image: url(<?php echo $src[0]; ?> ); background-size: cover;">
+
+				</div>
+
+
+				<?php if( have_rows('home_page_sections') ) : ?>
 
 				<?php while ( have_rows('home_page_sections') ) : ?>
 

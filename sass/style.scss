@@ -267,8 +267,8 @@ body {
 		background-attachment: fixed;
 		background-size: cover;
 		background-repeat: no-repeat;
+		color: transparent;
 	}
-	position: absolute;
 	.home-description {
 		@include outer-container;
 		color: $white;
@@ -359,7 +359,6 @@ body {
 .site-content {
 	margin: 16px;
 	position: relative;
-	top: 67px;
 	.page-top {
 		@include outer-container;
 		height: 400px;
@@ -907,12 +906,11 @@ body {
 	top: 150px;
 	h4 {
 		font-weight: 900;
-		margin-bottom: $five;
+		margin-bottom: $ten;
 		text-transform: none;
 	}
 	ul {
 		li {
-			margin-bottom: $five;
 			text-transform: uppercase;
 			a {
 				color: $dark-grey;
@@ -988,5 +986,14 @@ body {
 	iframe {
 		height: 338px;
 		width: 584px;
+	}
+}
+
+
+.page-template-process {
+	li.process {
+		a {
+			color: $cyan !important;
+		}
 	}
 }

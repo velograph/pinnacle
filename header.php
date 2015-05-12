@@ -26,17 +26,6 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Pinnacle Exhibits' ); ?></a>
 
-<?php if( is_front_page() ) : ?>
-
-
-	<?php
-		$target_post_id = '12'; // Front Page
-		$src = wp_get_attachment_image_src( get_post_thumbnail_id($target_post_id), 'original-upload' );
-	?>
-	<div class="featured-home-image" style="background-image: url(<?php echo $src[0]; ?> ); background-size: cover;"></div>
-
-	<?php endif; ?>
-
 	<!-- Overlay Menu -->
 	<div class="overlay overlay-pinnacle">
 
@@ -187,12 +176,6 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
 
-			<?php if( is_front_page() ) : ?>
-
-				<h1 class="home-description"><?php the_field('home_page_description'); ?></h1>
-
-			<?php endif; ?>
-
 			<button id="trigger-overlay" type="button">
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -207,6 +190,10 @@
 				</g>
 				</svg>
 			</button>
+
+			<?php if( is_front_page() ) : ?>
+				<h1 class="home-description"><?php the_field('home_page_description'); ?></h1>
+			<?php endif; ?>
 
 		</div>
 
