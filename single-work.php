@@ -81,9 +81,16 @@ get_header(); ?>
 				</div>
 
 				<div class="detail-column">
-					<div class="project-detail">
+					<div class="project-detail industry-list">
 						<h6>Industry</h6>
-						<?php the_terms( $post->ID, 'work-categories' ); ?>
+						<!-- Strip link wrappers -->
+						<?php
+							$terms_as_text = get_the_term_list( $post->ID, 'work-categories', '', ', ', '' ) ;
+							echo strip_tags($terms_as_text);
+						?>
+						<!-- Use this when we turn the taxonomies into links
+							<?php the_terms( $post->ID, 'work-categories' ); ?>
+						-->
 					</div>
 					<div class="project-detail">
 						<h6>Credits</h6>
