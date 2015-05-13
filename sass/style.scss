@@ -716,6 +716,7 @@ body {
 	}
 	.lead-in-content {
 		@include span-columns(6);
+		margin: $fifteen 0 0;
 	}
 	@include media( $large-screen ) {
 		@include row();
@@ -847,7 +848,6 @@ body {
 .process-page {
 	.section-image-row {
 		@include row();
-		margin-bottom: 2.35765%;
 		overflow: hidden;
 		.square {
 			@include span-columns(4);
@@ -886,19 +886,21 @@ body {
 	}
 	.section-content {
 		@include outer-container;
-		@include pad( ($fifty * 2) 0 );
+		@include pad( ($fifty * 3) 0 );
 		.entry-title {
 			@include span-columns(5);
 		}
 		.entry-content {
 			@include span-columns(7);
+			p {
+				margin: $fifteen 0 0;
+			}
 		}
 	}
 }
 
 .video-container {
 	iframe {
-		// height: 100%;
 		width: 100%;
 	}
 }
