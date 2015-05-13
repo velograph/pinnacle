@@ -54,19 +54,19 @@ get_header(); ?>
 
 								<div class="featured-image">
 
-									<?php $mobile = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'mobile-process-wide'); ?>
-									<?php $tablet = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'tablet-process-wide'); ?>
-									<?php $desktop = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'desktop-process-wide'); ?>
-									<?php $retina = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'retina-process-wide'); ?>
+									<?php $mobile_key_image = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'mobile-process-wide'); ?>
+									<?php $tablet_key_image = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'tablet-process-wide'); ?>
+									<?php $desktop_key_image = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'desktop-process-wide'); ?>
+									<?php $retina_key_image = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'retina-process-wide'); ?>
 
 									<picture>
 										<!--[if IE 9]><video style="display: none;"><![endif]-->
-										<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
-										<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
-										<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
-										<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
+										<source srcset="<?php echo $mobile_key_image[0]; ?>" media="(max-width: 400px)">
+										<source srcset="<?php echo $tablet_key_image[0]; ?>" media="(max-width: 801px)">
+										<source srcset="<?php echo $desktop_key_image[0]; ?>" media="(max-width: 1024px)">
+										<source srcset="<?php echo $retina_key_image[0]; ?>" media="(min-device-pixel-ratio: 2)">
 										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $desktop[0]; ?>">
+										<img srcset="<?php echo $desktop_key_image[0]; ?>">
 									</picture>
 
 								</div>
