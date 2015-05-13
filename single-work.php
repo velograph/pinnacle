@@ -102,6 +102,31 @@ get_header(); ?>
 					</div>
 				</div>
 
+				<?php if( get_field('awards') ) : ?>
+					<div class="detail-column">
+
+						<div class="project-detail">
+							<h6>Awards</h6>
+							<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+							<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+							<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+							<?php $retina_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+
+							<picture>
+								<!--[if IE 9]><video style="display: none;"><![endif]-->
+								<source srcset="<?php echo $mobile_award[0]; ?>" media="(max-width: 400px)">
+								<source srcset="<?php echo $tablet_award[0]; ?>" media="(max-width: 801px)">
+								<source srcset="<?php echo $desktop_award[0]; ?>" media="(max-width: 1024px)">
+								<source srcset="<?php echo $retina_award[0]; ?>" media="(min-device-pixel-ratio: 2)">
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop_award[0]; ?>">
+							</picture>
+							<h5><?php the_field('award_title'); ?></h5>
+						</div>
+
+					</div>
+				<?php endif; ?>
+
 		</section>
 
 		<?php endwhile; // end of the loop. ?>
