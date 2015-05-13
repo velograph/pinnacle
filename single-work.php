@@ -29,19 +29,19 @@ get_header(); ?>
 
 			        <?php if( get_row_layout() == 'section' ) : ?>
 
-						<?php $mobile_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-work-featured'); ?>
-						<?php $tablet_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-work-featured'); ?>
-						<?php $desktop_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-work-featured'); ?>
-						<?php $retina_work_study = wp_get_attachment_image_src(get_sub_field('image'), 'retina-work-featured'); ?>
+						<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-work-featured'); ?>
+						<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-work-featured'); ?>
+						<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-work-featured'); ?>
+						<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-work-featured'); ?>
 
-						<picture class="work-section-image">
-							<!--[if IE 9]><video style="display: none"><![endif]-->
-							<source srcset="<?php echo $mobile_work_study[0]; ?>" media="(max-width: 600px)">
-							<source srcset="<?php echo $tablet_work_study[0]; ?>" media="(min-width: 601px)">
-							<source srcset="<?php echo $desktop_work_study[0]; ?>" media="(max-width: 1024px)">
-							<source srcset="<?php echo $retina_work_study[0]; ?>" media="(min-width: 1025px)">
+						<picture>
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+							<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+							<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
+							<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
 							<!--[if IE 9]></video><![endif]-->
-							<img srcset="<?php echo $desktop_work_study[0]; ?>">
+							<img srcset="<?php echo $desktop[0]; ?>">
 						</picture>
 
 						<?php if( get_sub_field( 'title_and_description_toggle' ) ) : ?>
