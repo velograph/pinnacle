@@ -692,6 +692,9 @@ body {
 					input[type="submit"] {
 						background: $medium-grey;
 						text-transform: uppercase;
+						&:hover {
+							background: $cyan;
+						}
 					}
 					br {
 						display: none;
