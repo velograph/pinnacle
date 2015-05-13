@@ -23,6 +23,35 @@
 				@include media( $xlarge-screen ) {
 					margin-right: 0;
 				}
+				@include media( $large-screen ) {
+					.current-menu-item {
+						a {
+							color: $cyan !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media( $large-screen ) {
+	.single-work {
+		.main-navigation {
+			li.work-link {
+				a {
+					color: $cyan !important;
+				}
+			}
+		}
+	}
+
+	.page-template-page-executives {
+		.main-navigation {
+			li.people-link {
+				a {
+					color: $cyan !important;
+				}
 			}
 		}
 	}
