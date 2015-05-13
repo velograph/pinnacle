@@ -824,6 +824,10 @@ body {
 				}
 				.project-detail {
 					margin-bottom: 25px;
+					a {
+						color: $dark-grey;
+						font-weight: 700;
+					}
 				}
 			}
 		}

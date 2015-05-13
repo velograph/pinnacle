@@ -83,7 +83,7 @@ get_header(); ?>
 				<div class="detail-column">
 					<div class="project-detail">
 						<h6>Industry</h6>
-						<h5><?php the_field('industry'); ?></h5>
+						<?php the_terms( $post->ID, 'work-categories' ); ?>
 					</div>
 					<div class="project-detail">
 						<h6>Credits</h6>
