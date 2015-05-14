@@ -1,3 +1,52 @@
+.site-header {
+	display: none;
+	@include media( $large-screen ) {
+		display: block;
+	}
+}
+
+.mobile-sticky {
+	background: transparent;
+	left: 16px;
+	padding: $fifteen;
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	z-index: 9;
+}
+
+.mobile-sticky.is-sticky {
+	.mobile-header {
+		background: $white;
+	}
+}
+
+.mobile-header {
+	@include media( $large-screen ) {
+		display: none;
+	}
+	transition: all .75s ease-in-out;
+	.site-branding {
+		float: left;
+	}
+	#trigger-overlay {
+		background: transparent;
+		float: right;
+		padding: 0;
+		z-index: 1;
+		svg {
+			width: $thirty;
+		}
+	}
+}
+
+.main-navigation {
+	display: none;
+	@include media( $large-screen ) {
+		display: block;
+	}
+}
+
 .header-sticky {
 	position: absolute;
 	z-index: 1;
@@ -124,16 +173,6 @@
 			.main-navigation {
 				display: none;
 			}
-			#trigger-overlay {
-				position: fixed;
-				right: 32px;
-				top: 32px;
-				svg {
-					path {
-						fill: $white;
-					}
-				}
-			}
 		}
 	}
 }
@@ -146,13 +185,6 @@
 					width: 200px;
 					path {
 						fill: $dark-grey;
-					}
-				}
-			}
-			#trigger-overlay {
-				svg {
-					path {
-						fill: #7E7D7E;
 					}
 				}
 			}

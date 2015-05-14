@@ -17,8 +17,9 @@ if (jQuery(window).width() > 860) {
 else if (jQuery(window).width() < 860) {
 
 	$(document).ready(function(){
-		$(".site-header").sticky({
-			topSpacing: 15
+		$(".mobile-header").sticky({
+			topSpacing: 15,
+			wrapperClassName: 'mobile-sticky'
 		});
 	});
 

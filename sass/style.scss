@@ -72,27 +72,6 @@ body {
 	}
 }
 
-.home {
-	#trigger-overlay {
-		top: 15px;
-	}
-}
-/* Overlay style */
-#trigger-overlay {
-	background: transparent;
-	float: right;
-	padding: 0;
-	position: absolute;
-	right: 16px;
-	top: -5px;
-	z-index: 1;
-	svg {
-		width: $thirty;
-	}
-	@include media( $large-screen ) {
-		display: none;
-	}
-}
 
 /* Overlay */
 .overlay {
@@ -215,6 +194,7 @@ body {
 	visibility: hidden;
 	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
 	transition: opacity 0.5s, visibility 0s 0.5s;
+	z-index: 10;
 }
 
 .overlay-pinnacle.open {
@@ -284,7 +264,9 @@ body {
 		@include outer-container;
 		@include pad(150px 0);
 		.content-title {
-			@include span-columns(5);
+			@include media( $large-screen ) {
+				@include span-columns(5);
+			}
 			h2 {
 				font-size: 36px;
 				font-weight: 900;
@@ -292,7 +274,9 @@ body {
 			}
 		}
 		.entry-content {
-			@include span-columns(7);
+			@include media( $large-screen ) {
+				@include span-columns(7);
+			}
 			p {
 				color: #999;
 				font-size: 20px;
@@ -302,45 +286,49 @@ body {
 }
 
 .work-portals {
-	@include row();
-	.square-portal-container {
-		@include media( $medium-screen ) {
-			@include span-columns(4);
-		}
-		position: relative;
-		text-align: center;
-		img {
-			float: left;
-		}
-		.square-portal-overlay {
-			background: $cyan;
-			height: 100%;
-			opacity: .8;
-			position: absolute;
-			top: 0;
-			transition: opacity .2s ease-in-out;
-			width: 100%;
-		}
-		.square-portal {
-			color: $white;
-			left: 50%;
-			opacity: 1;
-			position: absolute;
-			text-transform: uppercase;
-			top: 50%;
-			transition: opacity .2s ease-in-out;
-			@include transform(translate(-50%,-50%));
-			width: 100%;
-			a {
-				color: $white;
+	display: none;
+	@include media( $large-screen ) {
+		@include row();
+		.square-portal-container {
+			@include media( $medium-screen ) {
+				@include span-columns(4);
+				@include omega(3);
 			}
-		}
-		&:hover {
+			position: relative;
+			text-align: center;
+			img {
+				float: left;
+			}
 			.square-portal-overlay {
+				background: $cyan;
+				height: 100%;
 				opacity: .8;
+				position: absolute;
+				top: 0;
+				transition: opacity .2s ease-in-out;
+				width: 100%;
 			}
 			.square-portal {
+				color: $white;
+				left: 50%;
 				opacity: 1;
+				position: absolute;
+				text-transform: uppercase;
+				top: 50%;
+				transition: opacity .2s ease-in-out;
+				@include transform(translate(-50%,-50%));
+				width: 100%;
+				a {
+					color: $white;
+				}
+			}
+			&:hover {
+				.square-portal-overlay {
+					opacity: .8;
+				}
+				.square-portal {
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -879,8 +867,6 @@ body {
 			@include span-columns(4);
 			@include omega;
 			.process-image:last-of-type {
-				bottom: 0;
-				position: absolute;
 			}
 		}
 	}
