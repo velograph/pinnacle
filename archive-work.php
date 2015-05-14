@@ -95,58 +95,76 @@ get_header(); ?>
 			<?php endif;
 			wp_reset_query();  ?>
 
-			<?php
+			<div class="three-up-container">
 
-			    $args = array(
-			        'post_type' => 'work'
-			    );
-			    $query = new WP_Query($args);
+				<?php
 
-			    if($query->have_posts()) : ?>
+				    $args = array(
+				        'post_type' => 'work',
+						'posts_per_page' => 6,
+				    );
+				    $query = new WP_Query($args);
 
-				<div class="work-portals">
+				    if($query->have_posts()) : ?>
 
-			      <?php while($query->have_posts()) : ?>
+					<div class="work-portals">
 
-			        <?php $query->the_post(); ?>
+				      <?php while($query->have_posts()) : ?>
 
-					<div class="square-portal-container">
+				        <?php $query->the_post(); ?>
 
-						<div class="square-portal-overlay"></div>
+						<?php if ($i == 0 || $i % 3 == 0) { ?>
+							<div class="three-up-row">
+						<?php }; ?>
 
-						<?php $small_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile-squared' ); ?>
-						<?php $medium_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet-squared' ); ?>
-						<?php $large_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop-squared' ); ?>
+							<div class="square-portal-container">
 
-						<picture>
-							<!--[if IE 9]><video style="display: none;"><![endif]-->
-							<source srcset="<?php echo $small_squared[0]; ?>" media="(max-width: 600px)">
-							<source srcset="<?php echo $medium_squared[0]; ?>" media="(min-width: 601px)">
-							<source srcset="<?php echo $large_squared[0]; ?>" media="(min-width: 801px)">
-							<!--[if IE 9]></video><![endif]-->
-							<img srcset="<?php echo $large_squared[0]; ?>">
-						</picture>
+								<a href="<?php the_permalink(); ?>">
+									<div class="square-portal-overlay"></div>
 
-						<div class="square-portal">
-							<a href="<?php the_permalink(); ?>">
-								<span class="rollover-top portal-text">Featured:</span>
-								<span class="rollover-middle portal-text"><?php the_title(); ?></span>
-								<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
-							</a>
-						</div>
+									<?php $small_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile-squared' ); ?>
+									<?php $medium_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet-squared' ); ?>
+									<?php $large_squared = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop-squared' ); ?>
+
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source srcset="<?php echo $small_squared[0]; ?>" media="(max-width: 600px)">
+										<source srcset="<?php echo $medium_squared[0]; ?>" media="(min-width: 601px)">
+										<source srcset="<?php echo $large_squared[0]; ?>" media="(min-width: 801px)">
+										<!--[if IE 9]></video><![endif]-->
+										<img srcset="<?php echo $large_squared[0]; ?>">
+									</picture>
+
+									<div class="square-portal">
+										<span class="rollover-top portal-text">Featured:</span>
+										<span class="rollover-middle portal-text"><?php the_title(); ?></span>
+										<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
+									</div>
+								</a>
+
+							</div>
+
+							<?php
+						      $i++;
+						      if ($i % 3 == 0){echo "</div>";}
+
+							wp_reset_query();
+
+							?>
+
+					<?php endwhile; ?>
+
 					</div>
 
-				<?php endwhile; ?>
+				<?php endif; ?>
 
+				<div class="work-portals">
+					<?php echo do_shortcode('[ajax_load_more post_type="work" posts_per_page="6" offset="6" pause="true" scroll="false" button_label="Load More"]'); ?>
 				</div>
 
-			<?php endif; ?>
+			</div>
 
 		</section>
-
-		<div class="work-portals">
-			<?php echo do_shortcode('[ajax_load_more post_type="work" posts_per_page="6" offset="6" pause="true" scroll="false" button_label="Load More"]'); ?>
-		</div>
 
 	</div><!-- #primary -->
 
