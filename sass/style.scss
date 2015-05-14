@@ -286,7 +286,37 @@ body {
 }
 
 .work-portals {
-	display: none;
+	.square-portal-container {
+		@include row();
+		margin-bottom: $twentyfive;
+		position: relative;
+		.square-portal-overlay {
+			display: none;
+		}
+		.square-portal {
+			background: $cyan-opacity;
+			bottom: 0;
+			color: $white;
+			padding: $ten;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			.rollover-top {
+				display: none;
+			}
+			.rollover-middle {
+				display: inline-block;
+				font-weight: 700;
+				text-transform: uppercase;
+				&:after {
+					content: "\0000a0/";
+				}
+			}
+			.rollover-bottom {
+				display: inline-block;
+			}
+		}
+	}
 	@include media( $large-screen ) {
 		@include row();
 		.square-portal-container {
@@ -294,6 +324,7 @@ body {
 				@include span-columns(4);
 				@include omega(3);
 			}
+			margin: 0;
 			position: relative;
 			text-align: center;
 			img {
@@ -301,6 +332,7 @@ body {
 			}
 			.square-portal-overlay {
 				background: $cyan;
+				display: block;
 				height: 100%;
 				opacity: .8;
 				position: absolute;
@@ -309,15 +341,32 @@ body {
 				width: 100%;
 			}
 			.square-portal {
+				background: transparent;
+				bottom: inherit;
 				color: $white;
 				left: 50%;
 				opacity: 1;
+				padding: 0;
 				position: absolute;
 				text-transform: uppercase;
 				top: 50%;
 				transition: opacity .2s ease-in-out;
 				@include transform(translate(-50%,-50%));
 				width: 100%;
+				.rollover-top {
+					display: block;
+				}
+				.rollover-middle {
+					display: block;
+					font-weight: 700;
+					text-transform: uppercase;
+					&:after {
+						content: "";
+					}
+				}
+				.rollover-bottom {
+					display: block;
+				}
 				a {
 					color: $white;
 				}
@@ -375,62 +424,62 @@ body {
 			}
 		}
 	}
-	.three-up-container {
-		.three-up-row {
-			@include row();
-			@include media( $large-screen ) {
+	@include media( $large-screen ) {
+		.three-up-container {
+			.three-up-row {
+				@include row();
 				margin-bottom: 2.35765%;
-			}
-			.square-portal-container {
-				@include media( $medium-screen ) {
-					@include span-columns(4);
-				}
-				position: relative;
-				text-align: center;
-				img {
-					float: left;
-				}
-				.square-portal-overlay {
-					background: $cyan;
-					height: 100%;
-					opacity: 0;
-					position: absolute;
-					top: 0;
-					transition: opacity .2s ease-in-out;
-					width: 100%;
-					z-index: 1;
-				}
-				// Video icon
-				.video-play-icon {
-					left: 50%;
-					opacity: .7;
-					position: absolute;
-					@include transform(translate(-50%,-50%));
-					top: 50%;
-					width: 150px;
-					z-index: 0;
-				}
-				.square-portal {
-					color: $white;
-					left: 50%;
-					opacity: 0;
-					position: absolute;
-					text-transform: uppercase;
-					top: 50%;
-					transition: opacity .2s ease-in-out;
-					@include transform(translate(-50%,-50%));
-					width: 100%;
-					z-index: 2;
-					a {
-						color: $white;
+				.square-portal-container {
+					@include media( $medium-screen ) {
+						@include span-columns(4);
 					}
-				}
-				&:hover {
+					position: relative;
+					text-align: center;
+					img {
+						float: left;
+					}
 					.square-portal-overlay {
-						opacity: .8;
+						background: $cyan;
+						height: 100%;
+						opacity: 0;
+						position: absolute;
+						top: 0;
+						transition: opacity .2s ease-in-out;
+						width: 100%;
+						z-index: 1;
+					}
+					// Video icon
+					.video-play-icon {
+						left: 50%;
+						opacity: .7;
+						position: absolute;
+						@include transform(translate(-50%,-50%));
+						top: 50%;
+						width: 150px;
+						z-index: 0;
 					}
 					.square-portal {
-						opacity: 1;
+						color: $white;
+						left: 50%;
+						opacity: 0;
+						position: absolute;
+						text-transform: uppercase;
+						top: 50%;
+						transition: opacity .2s ease-in-out;
+						@include transform(translate(-50%,-50%));
+						width: 100%;
+						z-index: 2;
+						a {
+							color: $white;
+						}
+					}
+					&:hover {
+						.square-portal-overlay {
+							opacity: .8;
+						}
+						.square-portal {
+							opacity: 1;
+						}
 					}
 				}
 			}
@@ -698,13 +747,21 @@ body {
 }
 
 .lead-in-container {
+	padding: $hundred $twentyfive;
+	@include media( $large-screen ) {
+		padding: 0;
+	}
 	@include outer-container;
 	.lead-in-title {
-		@include span-columns(6);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
 	}
 	.lead-in-content {
-		@include span-columns(6);
-		margin: $fifteen 0 0;
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			margin: $fifteen 0 0;
+		}
 	}
 	@include media( $large-screen ) {
 		@include row();
@@ -725,11 +782,14 @@ body {
 		.featured-content {
 			@include pad( $twentyfive );
 			background: $off-white;
-			height: 100%;
-			left: -300px;
-			position: absolute;
-			transition: all .2s ease-in-out;
-			width: 300px;
+			float: left;
+			@include media( $large-screen ) {
+				height: 100%;
+				left: -300px;
+				position: absolute;
+				transition: all .2s ease-in-out;
+				width: 300px;
+			}
 			h4 {
 				a {
 					color: $dark-grey;
@@ -747,9 +807,11 @@ body {
 				float: left;
 			}
 		}
-		&:hover {
-			.featured-content {
-				left: 0;
+		@include media( $large-screen ) {
+			&:hover {
+				.featured-content {
+					left: 0;
+				}
 			}
 		}
 	}
