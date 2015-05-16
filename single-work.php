@@ -11,17 +11,15 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="leading-container">
-
-				<div class="entry-content">
+			<section class="page-top">
+				<div class="page-top-content">
 					<h1><?php the_title(); ?></h1>
 
 					<h3><?php the_field('subtitle'); ?></h3>
 
 					<?php the_content(); ?>
 				</div>
-
-			</div>
+			</section>
 
 			<?php if( have_rows('work_study_section') ) : ?>
 
@@ -31,30 +29,19 @@ get_header(); ?>
 
 			        <?php if( get_row_layout() == 'section' ) : ?>
 
-						<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-hero'); ?>
-						<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-hero'); ?>
-						<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-hero'); ?>
-						<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-hero'); ?>
+						<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-work-featured'); ?>
+						<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-work-featured'); ?>
+						<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-work-featured'); ?>
+						<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-work-featured'); ?>
 
-						<picture class="work-section-image">
-							<!--[if IE 9]><video style="display: none"><![endif]-->
-							<source
-								data-srcset="<?php echo $mobile[0]; ?>"
-								media="(max-width: 500px)" />
-							<source
-								data-srcset="<?php echo $tablet[0]; ?>"
-								media="(max-width: 860px)" />
-							<source
-								data-srcset="<?php echo $desktop[0]; ?>"
-								media="(max-width: 1024px)" />
-							<source
-								data-srcset="<?php echo $retina[0]; ?>"
-								media="(min-width: 1400px)" />
+						<picture>
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+							<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+							<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
+							<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
 							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
+							<img srcset="<?php echo $desktop[0]; ?>">
 						</picture>
 
 						<?php if( get_sub_field( 'title_and_description_toggle' ) ) : ?>
@@ -76,36 +63,71 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<?php
+			<section class="project-details-container">
 
-			$i = 0;
+				<div class="detail-column">
+					<div class="project-detail">
+						<h6>Client:</h6>
+						<h5><?php the_field('client'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Project:</h6>
+						<h5><?php the_field('project'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Date:</h6>
+						<h5><?php the_field('date'); ?></h5>
+					</div>
+				</div>
 
-			if( have_rows('project_details') ): ?>
+				<div class="detail-column">
+					<div class="project-detail industry-list">
+						<h6>Industry:</h6>
+						<!-- Strip link wrappers -->
+						<?php
+							$terms_as_text = get_the_term_list( $post->ID, 'work-categories', '', ', ', '' ) ;
+							echo strip_tags($terms_as_text);
+						?>
+						<!-- Use this when we turn the taxonomies into links
+							<?php the_terms( $post->ID, 'work-categories' ); ?>
+						-->
+					</div>
+					<div class="project-detail">
+						<h6>Credits:</h6>
+						<h5><?php the_field('credits'); ?></h5>
+					</div>
+					<div class="project-detail">
+						<h6>Share:</h6>
+						<?php echo sharing_display(); ?>
+					</div>
+				</div>
 
-				<section class="project-details-container">
+				<?php if( get_field('awards') ) : ?>
+					<div class="detail-column">
 
-					<?php while( have_rows('project_details') ): the_row(); $i++; ?>
+						<div class="project-detail">
+							<h6>Awards</h6>
+							<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+							<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+							<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+							<?php $retina_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
 
-						<?php if( $i == 1 ): ?>
-							<div class="detail-column">
-						<?php endif; ?>
+							<picture>
+								<!--[if IE 9]><video style="display: none;"><![endif]-->
+								<source srcset="<?php echo $mobile_award[0]; ?>" media="(max-width: 400px)">
+								<source srcset="<?php echo $tablet_award[0]; ?>" media="(max-width: 801px)">
+								<source srcset="<?php echo $desktop_award[0]; ?>" media="(max-width: 1024px)">
+								<source srcset="<?php echo $retina_award[0]; ?>" media="(min-device-pixel-ratio: 2)">
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop_award[0]; ?>">
+							</picture>
+							<h5><?php the_field('award_title'); ?></h5>
+						</div>
 
-							<div class="project-detail">
-								<h6><?php the_sub_field('title'); ?></h6>
-								<h5><?php the_sub_field('answer'); ?></h5>
-							</div>
+					</div>
+				<?php endif; ?>
 
-						<?php if( $i == 3 ): $i = 0; ?>
-							</div>
-						<?php endif; ?>
-
-				  <?php endwhile; ?>
-
-			</section>
-
-			  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-
-			<?php endif; ?>
+		</section>
 
 		<?php endwhile; // end of the loop. ?>
 

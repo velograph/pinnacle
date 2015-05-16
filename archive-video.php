@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
 
 	<section class="page-top">
 		<div class="page-top-content">
-			<h1>Featured Videos</h1>
+			<h1>Featured videos.</h1>
 		</div>
 	</section>
 
@@ -36,8 +36,6 @@ jQuery(document).ready(function(){
 
 				<div class="square-portal-container">
 
-					<div class="square-portal-overlay"></div>
-
 					<a class="venobox" data-type="vimeo" href="<?php the_field('video'); ?>">
 						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
 						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
@@ -46,19 +44,17 @@ jQuery(document).ready(function(){
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								data-srcset="<?php echo $mobile_squared[0]; ?>"
+								srcset="<?php echo $mobile_squared[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
-								data-srcset="<?php echo $tablet_squared[0]; ?>"
+								srcset="<?php echo $tablet_squared[0]; ?>"
 								media="(max-width: 860px)" />
 							<source
-								data-srcset="<?php echo $desktop_squared[0]; ?>"
+								srcset="<?php echo $desktop_squared[0]; ?>"
 								media="(min-width: 861px)" />
 							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
+                            <img srcset="<?php echo $desktop_squared[0]; ?>">
+
 						</picture>
 
 						<div class="square-portal-overlay"></div>

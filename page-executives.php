@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * Template Name: Executives
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
@@ -27,10 +27,10 @@ get_header(); ?>
 
 				<ul class="people-navigation">
 					<li>
-						A-Z
+						<a href="/people">A-Z</a>
 					</li>
 					<li>
-						<a href="/people-executives">Executive Team</a>
+						Executive Team
 					</li>
 				</ul>
 
@@ -41,22 +41,29 @@ get_header(); ?>
 		<section class="people-container">
 
 			<?php
+				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-				global $query_string;
-				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		    	$args = array(
+				$args = array(
 					'post_type' => 'people',
-					'orderby' => 'title',
+					'posts_per_page' => '-1',
 					'order' => 'ASC',
-					'paged' => $paged,
-				);
+					'orderby' => 'title'
+			    );
 			    $query = new WP_Query($args);
 
 			    if($query->have_posts()) : ?>
 
+				<?php $i = 0;?>
+
 				  <?php while($query->have_posts()) : ?>
 
 			        <?php $query->the_post(); ?>
+
+					<?php if ( get_field('executive') ) : ?>
+
+					<?php if ($i == 0 || $i % 3 == 0) { ?>
+			            <div class="people-row">
+			          <?php }; ?>
 
 					<article class="person">
 
@@ -64,7 +71,7 @@ get_header(); ?>
 						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
 						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
 
-						<picture class="image">
+						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
 								srcset="<?php echo $mobile_squared[0]; ?>"
@@ -93,26 +100,16 @@ get_header(); ?>
 					</article>
 
 					<?php
+				      $i++;
+				      if ($i % 3 == 0){echo "</div>";}
+
 					wp_reset_query();
 
 					?>
 
+					<?php endif; ?>
+
 				<?php endwhile; ?>
-
-				<div class="pagination">
-					<?php
-						$big = 999999999; // need an unlikely integer
-
-						echo paginate_links( array(
-							'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-							'format' => '?paged=%#%',
-							'prev_next' => 0,
-							'show_all'=> 1,
-							'current' => max( 1, get_query_var('paged') ),
-							'total' => $wp_query->max_num_pages
-						) );
-					?>
-				</div>
 
 			<?php endif; ?>
 

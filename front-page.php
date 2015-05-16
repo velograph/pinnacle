@@ -17,7 +17,15 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php if( have_rows('home_page_sections') ) : ?>
+				<?php
+					$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original-upload' );
+				?>
+				<div class="featured-home-image" style="background-image: url(<?php echo $src[0]; ?> ); background-size: cover;">
+
+				</div>
+
+
+				<?php if( have_rows('home_page_sections') ) : ?>
 
 				<?php while ( have_rows('home_page_sections') ) : ?>
 
@@ -39,25 +47,31 @@ get_header(); ?>
 						<?php $hero_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-home-featured'); ?>
 						<?php $hero_retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-home-featured'); ?>
 
+						<picture>
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+							<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+							<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
+							<!--[if IE 9]></video><![endif]-->
+							<img srcset="<?php echo $desktop[0]; ?>">
+						</picture>
+
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								data-srcset="<?php echo $hero_mobile[0]; ?>"
+								srcset="<?php echo $hero_mobile[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
-								data-srcset="<?php echo $hero_tablet[0]; ?>"
+								srcset="<?php echo $hero_tablet[0]; ?>"
 								media="(max-width: 860px)" />
 							<source
-								data-srcset="<?php echo $hero_desktop[0]; ?>"
+								srcset="<?php echo $hero_desktop[0]; ?>"
 								media="(max-width: 1180px)" />
 							<source
-								data-srcset="<?php echo $hero_retina[0]; ?>"
+								srcset="<?php echo $hero_retina[0]; ?>"
 								media="(min-width: 1181px)" />
 							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
+							<img srcset="<?php echo $desktop[0]; ?>">
 						</picture>
 
 					<?php endif; ?>
@@ -68,58 +82,52 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
+
 		<?php
 
-			$args = array(
-			'post_type' => 'work',
-			'posts_per_page' => 3
-			);
-			$query = new WP_Query($args);
+		$posts = get_field('featured_project');
 
-			if($query->have_posts()) : ?>
+		if( $posts ): ?>
 
 			<section class="work-portals">
 
-				<?php while($query->have_posts()) : ?>
-
-					<?php $query->the_post(); ?>
+				<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+					<?php setup_postdata($post); ?>
 
 					<div class="square-portal-container">
 
-					<div class="square-portal-overlay"></div>
+						<a href="<?php the_permalink(); ?>">
+							<div class="square-portal-overlay"></div>
 
-						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
-						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
-						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
+							<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
+							<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
+							<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
 
-						<picture class="home-featured-image">
-							<!--[if IE 9]><video style="display: none"><![endif]-->
-							<source
-								data-srcset="<?php echo $mobile_squared[0]; ?>"
-								media="(max-width: 500px)" />
-							<source
-								data-srcset="<?php echo $tablet_squared[0]; ?>"
-								media="(max-width: 860px)" />
-							<source
-								data-srcset="<?php echo $desktop_squared[0]; ?>"
-								media="(min-width: 861px)" />
-							<!--[if IE 9]></video><![endif]-->
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								class="lazyload"
-								alt="Pinnacle Exhibits" />
-						</picture>
+							<picture class="home-featured-image">
+								<!--[if IE 9]><video style="display: none"><![endif]-->
+								<source
+									srcset="<?php echo $mobile_squared[0]; ?>"
+									media="(max-width: 500px)" />
+								<source
+									srcset="<?php echo $tablet_squared[0]; ?>"
+									media="(max-width: 860px)" />
+								<source
+									srcset="<?php echo $desktop_squared[0]; ?>"
+									media="(min-width: 861px)" />
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop_squared[0]; ?>">
+							</picture>
 
-						<div class="square-portal">
-							<a href="<?php the_permalink(); ?>">
-								<span class="rollover-top portal-text">Featured:</span>
-								<span class="rollover-middle portal-text"><?php the_title(); ?></span>
-								<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
-							</a>
-						</div>
+							<div class="square-portal">
+									<span class="rollover-top portal-text">Featured:</span>
+									<span class="rollover-middle portal-text"><?php the_title(); ?></span>
+									<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
+							</div>
+						</a>
 					</div>
 
-				<?php endwhile; ?>
+				<?php endforeach; ?>
+				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 
 			</section>
 

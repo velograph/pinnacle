@@ -51,6 +51,7 @@ function pinnacle_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'pinnacle' ),
+		'client-tools' => __( 'Client Tools', 'pinnacle' ),
 	) );
 
 	/*
@@ -211,6 +212,44 @@ function work_custom_post_type() {
 // Hook into the 'init' action
 add_action( 'init', 'work_custom_post_type', 0 );
 
+// Register Custom Taxonomy
+function register_work_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Work Categories', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Work Category', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Work Categories', 'text_domain' ),
+		'all_items'                  => __( 'All Work Categories', 'text_domain' ),
+		'parent_item'                => __( 'Parent Work Category', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Work Category:', 'text_domain' ),
+		'new_item_name'              => __( 'New Work Category', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Work Category', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Work Category', 'text_domain' ),
+		'update_item'                => __( 'Update Work Category', 'text_domain' ),
+		'view_item'                  => __( 'View Work Category', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate roles with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove work categories', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Work Categories', 'text_domain' ),
+		'search_items'               => __( 'Search Work Categories', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'work-categories', array( 'work' ), $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'register_work_taxonomy', 0 );
+
 function video_custom_post_type() {
 
 	$labels = array(
@@ -311,7 +350,7 @@ function pinnacle_scripts() {
 
 	wp_enqueue_script( 'pinnacle-modernizr', get_template_directory_uri() . '/js/modernizr.js', false, filemtime( get_stylesheet_directory().'/js/modernizr.js' ), true );
 
-	wp_enqueue_script( 'pinnacle-lazySizes', get_template_directory_uri() . '/js/lazysizes.min.js', false, filemtime( get_stylesheet_directory().'/js/lazysizes.min.js' ), true );
+	wp_enqueue_script( 'pinnacle-pictureFill', get_template_directory_uri() . '/js/pictureFill.js', false, filemtime( get_stylesheet_directory().'/js/pictureFill.js' ), true );
 
 	wp_enqueue_script( 'pinnacle-matchHeight', get_template_directory_uri() . '/js/jquery.matchHeight.min.js', false, filemtime( get_stylesheet_directory().'/js/jquery.matchHeight.min.js' ), true );
 
@@ -347,6 +386,15 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Allow SVG uploads
+ */
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+/**
  * TypeKit Fonts
  */
 function theme_typekit() {
@@ -369,13 +417,14 @@ add_image_size( 'tablet-squared', 780, 780, true);
 add_image_size( 'mobile-squared', 400, 400, true);
 
 add_image_size( 'retina-work-featured', 2600, 1420, true );
-add_image_size( 'desktop-work-featured', 1180, 787, true );
+add_image_size( 'desktop-work-featured', 1420, 947, true );
 add_image_size( 'tablet-work-featured', 860, 573, true );
 add_image_size( 'mobile-work-featured', 400, 350, true );
 
-add_image_size( 'desktop-process-wide', 1420, 695, true);
-add_image_size( 'tablet-process-wide', 960, 470, true);
-add_image_size( 'mobile-process-wide', 500, 245, true);
+add_image_size( 'retina-process-wide', 2600, 845, true);
+add_image_size( 'desktop-process-wide', 1420, 462, true);
+add_image_size( 'tablet-process-wide', 960, 312, true);
+add_image_size( 'mobile-process-wide', 500, 163, true);
 
 add_image_size( 'retina-hero', 2600, 1733, false);
 add_image_size( 'desktop-hero', 1180, 787, false);
