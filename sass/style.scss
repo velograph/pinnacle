@@ -185,7 +185,7 @@ body {
 
 .overlay ul li a:hover,
 .overlay ul li a:focus {
-	color: #e3fcb1;
+	color: $cyan;
 }
 
 /* Effects */
@@ -844,7 +844,13 @@ body {
 	.work-study {
 		.page-top {
 			.page-top-content {
-				@include span-columns(7);
+				float: left;
+				padding: $hundred $twentyfive $fifty;
+				@include media( $large-screen ) {
+					@include span-columns(7);
+					float: none;
+					padding: 0;
+				}
 				h1 {
 					margin-bottom: $ten;
 				}
@@ -862,13 +868,16 @@ body {
 				@include pad(150px 0);
 			}
 			.work-study-content {
+				padding: $hundred $twentyfive;
 				@include media( $large-screen ) {
 					@include span-columns(6);
+					padding: 0;
 				}
 			}
 		}
 		.project-details-container {
 			@include outer-container;
+			padding: $hundred $twentyfive 0;
 			@include media( $large-screen ) {
 				@include pad(100px 0);
 			}
