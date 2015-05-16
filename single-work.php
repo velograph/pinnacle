@@ -67,22 +67,22 @@ get_header(); ?>
 
 				<div class="detail-column">
 					<div class="project-detail">
-						<h6>Client</h6>
+						<h6>Client:</h6>
 						<h5><?php the_field('client'); ?></h5>
 					</div>
 					<div class="project-detail">
-						<h6>Project</h6>
+						<h6>Project:</h6>
 						<h5><?php the_field('project'); ?></h5>
 					</div>
 					<div class="project-detail">
-						<h6>Date</h6>
+						<h6>Date:</h6>
 						<h5><?php the_field('date'); ?></h5>
 					</div>
 				</div>
 
 				<div class="detail-column">
 					<div class="project-detail industry-list">
-						<h6>Industry</h6>
+						<h6>Industry:</h6>
 						<!-- Strip link wrappers -->
 						<?php
 							$terms_as_text = get_the_term_list( $post->ID, 'work-categories', '', ', ', '' ) ;
@@ -93,11 +93,11 @@ get_header(); ?>
 						-->
 					</div>
 					<div class="project-detail">
-						<h6>Credits</h6>
+						<h6>Credits:</h6>
 						<h5><?php the_field('credits'); ?></h5>
 					</div>
 					<div class="project-detail">
-						<h6>Share</h6>
+						<h6>Share:</h6>
 						<?php echo sharing_display(); ?>
 					</div>
 				</div>
