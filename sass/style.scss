@@ -526,14 +526,15 @@ body {
 		}
 		.person {
 			@include span-columns(6);
-			@include omega(2);
+			@include omega(2n);
 		}
 		.people-container {
 			@include outer-container(100%);
 			@include media( $large-screen ) {
 				.person {
 					@include span-columns(4);
-					@include omega(3);
+					@include omega(3n);
+					clear: none;
 					text-transform: uppercase;
 				}
 			}
@@ -549,38 +550,60 @@ body {
 
 .people-archive {
 	.people-container {
-		.people-row {
-			@include row();
+		.person {
+			margin-bottom: 2.35765%;
+			position: relative;
+			img {
+				float: left;
+			}
+			.square-portal-overlay {
+				background: $cyan;
+				display: none;
+				height: 100%;
+				opacity: .8;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+			.person-details {
+				bottom: 0;
+				color: $white;
+				display: none;
+				padding: $fifteen;
+				position: absolute;
+				text-transform: uppercase;
+			}
+			&:active,
+			&:hover {
+				.square-portal-overlay,
+				.person-details {
+					display: block;
+				}
+				.person-details {
+					font-size: 10px;
+					h2 {
+						font-size: 16px;
+					}
+				}
+			}
 		}
 	}
 	@include media( $large-screen ) {
 		.people-container {
 			.person {
-				margin-bottom: 2.35765%;
-				position: relative;
-				img {
-					float: left;
-				}
 				.square-portal-overlay {
-					background: $cyan;
-					display: none;
-					height: 100%;
 					opacity: .8;
-					position: absolute;
-					top: 0;
-					width: 100%;
-				}
-				.person-details {
-					bottom: 0;
-					color: $white;
-					display: none;
-					padding: $fifteen;
-					position: absolute;
 				}
 				&:hover {
 					.square-portal-overlay,
 					.person-details {
 						display: block;
+					}
+					.person-details {
+						font-size: $base-font-size;
+						h2 {
+							font-size: $h2-font-size;
+						}
 					}
 				}
 			}

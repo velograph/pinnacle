@@ -54,15 +54,9 @@ get_header(); ?>
 
 			    if($query->have_posts()) : ?>
 
-				<?php $i = 0;?>
-
 				  <?php while($query->have_posts()) : ?>
 
 			        <?php $query->the_post(); ?>
-
-					<?php if ($i == 0 || $i % 3 == 0) { ?>
-			            <div class="people-row">
-			          <?php }; ?>
 
 					<article class="person">
 
@@ -70,7 +64,7 @@ get_header(); ?>
 						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
 						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
 
-						<picture class="home-featured-image">
+						<picture class="image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
 								srcset="<?php echo $mobile_squared[0]; ?>"
@@ -99,9 +93,6 @@ get_header(); ?>
 					</article>
 
 					<?php
-				      $i++;
-				      if ($i % 3 == 0){echo "</div>";}
-
 					wp_reset_query();
 
 					?>
