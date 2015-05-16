@@ -399,7 +399,10 @@ body {
 	.page-top {
 		@include outer-container;
 		height: 500px;
-		padding-top: $hundred;
+		padding: $hundred $twentyfive 0;
+		@include media( $large-screen ) {
+			padding: $hundred 0 0 0;
+		}
 		.page-top-content {
 			position: relative;
 			@include transform( translateY(-50%) );
@@ -426,7 +429,7 @@ body {
 	}
 	.page-content {
 		@include outer-container;
-		@include pad( $hundred $fifty );
+		@include pad( $hundred $twentyfive );
 		.entry-title {
 			h1 {
 				margin-bottom: $twentyfive;
