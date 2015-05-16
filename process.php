@@ -29,7 +29,7 @@ $(function() {
 
 	<section class="page-top">
 		<div class="page-top-content">
-			<h1><?php the_field('lead_in_title'); ?></h1>
+			<h1><?php the_field('page_lead_in'); ?></h1>
 		</div>
 	</section>
 
