@@ -16,7 +16,22 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'page' ); ?>
+			<div class="page-top">
+				<form action="https://www.exhibitforce.com/CLIENTS/default.asp" method="post" name="mainform">
+					<ul>
+						<li>
+							<h5>Login:</h5>
+							<input name="login" type="text" id="login" size="10">
+						</li>
+						<li>
+							<h5>Password:</h5>
+							<input name="pwd" type="password" id="pwd" size="10">
+							<input type="hidden" name="badredir" value="http://PUT YOUR URL HERE">
+							<input type="submit" name="Submit" value="Login">
+						</li>
+					</ul>
+				</form>
+			</div>
 
 		<?php endwhile; // end of the loop. ?>
 
