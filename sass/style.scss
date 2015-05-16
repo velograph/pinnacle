@@ -429,7 +429,7 @@ body {
 	}
 	.page-content {
 		@include outer-container;
-		@include pad( $hundred $twentyfive );
+		@include pad( $hundred 0 );
 		.entry-title {
 			h1 {
 				margin-bottom: $twentyfive;
@@ -638,8 +638,15 @@ body {
 	}
 	a {
 		color: $dark-grey;
-		font-weight: 900;
-		margin-right: $fifty;
+		font: {
+			size: 12px;
+			weight: 700;
+		}
+		@include media( $large-screen ) {
+			font-size: $base-font-size;
+			margin-right: $fifty;
+		}
+		margin-right: $fifteen;
 		&:last-child {
 			margin: 0;
 		}
@@ -655,24 +662,27 @@ body {
 			@include span-columns(6);
 			position: relative;
 			text-align: center;
-			.square-portal-overlay {
-				background: $cyan;
-				height: 100%;
-				opacity: .8;
-				position: absolute;
-				top: 0;
-				width: 100%;
+			img {
+				float: left;
 			}
 			.square-portal {
+				background: $cyan-opacity;
+				bottom: 0;
 				left: 50%;
 				opacity: 1;
+				padding: $five;
 				position: absolute;
 				text-transform: uppercase;
-				top: 50%;
-				@include transform(translate(-50%,-50%));
+				@include transform(translateX(-50%));
 				width: 100%;
 				a {
 					color: $white;
+					.location-title {
+						font-size: 10px;
+					}
+					.location-city {
+						font-weight: 900;
+					}
 				}
 			}
 		}
@@ -685,7 +695,7 @@ body {
 			display: none;
 		}
 		.desktop-image-container {
-			display: block;
+			display: inline-block;
 			.desktop-image {
 				@include span-columns(4);
 				@include omega(3);
@@ -742,23 +752,29 @@ body {
 			}
 		}
 	}
-	.location-meta {
+	.page-content {
 		@include outer-container;
 		clear: both;
-		.location-title {
-			@include span-columns(6);
-		}
-		.location-info {
-			@include span-columns(6);
-		}
+		font-size: 12px;
 		@include media( $large-screen ) {
-			@include row();
-			padding: ($fifty * 3) 0;
-			.location-title {
+			font-size: $base-font-size;
+		}
+		.entry-title {
+			margin-right: 50%;
+			@include media( $large-screen ) {
 				@include span-columns(8);
 			}
-			.location-info {
+		}
+		.entry-content {
+			margin-right: 50%;
+			@include media( $large-screen ) {
 				@include span-columns(4);
+			}
+		}
+		@include media( $large-screen ) {
+			.entry-title {
+			}
+			.entry-content {
 			}
 		}
 	}

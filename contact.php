@@ -105,12 +105,10 @@ $(function() {
 
 									<?php if( get_sub_field('link_to_map') ) : ?>
 
-										<div class="square-portal-overlay"></div>
 										<div class="square-portal">
-											<a href="">
-												<span class="rollover-top portal-text">View Map:</span>
-												<span class="rollover-middle portal-text"><?php the_field('city_only'); ?></span>
-												<span class="rollover-bottom portal-text"><?php the_field('location_title') ?></span>
+											<a target="_blank" href="<?php the_field('location_map'); ?>">
+												<span class="location-title portal-text">View our <?php the_field('location_title') ?>:</span>
+												<span class="location-city portal-text"><?php the_field('city_only'); ?></span>
 											</a>
 										</div>
 
@@ -171,13 +169,13 @@ $(function() {
 
 					<?php endif; ?>
 
-					<section class="location-meta">
+					<section class="page-content">
 
-						<div class="location-title">
+						<div class="entry-title">
 							<h1><?php the_title(); ?></h1>
 						</div>
 
-						<ul class="location-info">
+						<ul class="entry-content">
 							<li><?php the_field('location_title') ?></li>
 							<li><?php the_field('location_address') ?></li>
 							<li><a href="tel:<?php the_field('phone_number') ?>"><?php the_field('phone_number') ?></a></li>
