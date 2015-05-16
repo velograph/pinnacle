@@ -424,6 +424,30 @@ body {
 			}
 		}
 	}
+	.page-content {
+		@include outer-container;
+		@include pad( $hundred $fifty );
+		.entry-title {
+			h1 {
+				margin-bottom: $twentyfive;
+			}
+		}
+		@include media( $large-screen ) {
+			@include pad( ($fifty * 3) 0 );
+			.entry-title {
+				@include span-columns(5);
+				h1 {
+					margin: 0;
+				}
+			}
+			.entry-content {
+				@include span-columns(7);
+				p {
+					margin: $fifteen 0 0;
+				}
+			}
+		}
+	}
 	@include media( $large-screen ) {
 		.three-up-container {
 			.three-up-row {
