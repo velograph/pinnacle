@@ -986,20 +986,20 @@ body {
 			}
 		}
 		.back-to-top {
-			@include span-columns(3);
+			@include span-columns(4);
 			text-align: center;
 			svg {
 				border-right: $dark-thin-border;
-				height: $fifty;
+				height: $seventyfive;
 				padding-right: $ten;
-				width: $fifty;
+				width: $seventyfive;
 			}
 		}
 		.social-links {
-			@include span-columns(9);
+			@include span-columns(8);
 			position: absolute;
 			right: 0;
-			text-align: justify;
+			text-align: right;
 			top: 50%;
 			@include transform( translateY(-50%));
 			a {
