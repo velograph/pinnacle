@@ -49,20 +49,13 @@
 
 			<div class="client-tools">
 				<h4>Client Tools</h4>
-				<?php if( have_rows('client_tools', 130) ) : ?>
 
-				    <ul>
-						<?php while ( have_rows('client_tools', 130) ) : ?>
-
-					        <?php the_row(); ?>
-
-							<li><a href="<?php the_sub_field('link_address'); ?>" target="_blank"><?php the_sub_field('link_title'); ?></a></li>
-
-					    <?php endwhile; ?>
-					</ul>
-
-				<?php endif; ?>
-
+				<?php wp_nav_menu(
+					array(
+							'theme_location' => 'client-tools',
+						)
+					);
+				?>
 			</div>
 
 			<div class="careers">
