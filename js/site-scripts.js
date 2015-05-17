@@ -65,7 +65,13 @@ $(window).scroll(function(){
 
 
 taglineHeight = $(window).innerHeight();
-$('.home-description').css('top', taglineHeight / 1.8);
+if (jQuery(window).width() > 860) {
+	$('.home-description').css('top', taglineHeight / 1.8);
+}
+
+if (jQuery(window).width() < 860) {
+	$('.home-description').css('top', taglineHeight / 2);
+}
 
 /*
  * VenoBox - jQuery Plugin
