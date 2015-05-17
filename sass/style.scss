@@ -869,6 +869,9 @@ body {
 				padding: $fifteen;
 				position: absolute;
 				text-transform: uppercase;
+				h2 {
+					margin: 0;
+				}
 			}
 			&:active,
 			&:hover {
@@ -926,19 +929,22 @@ body {
 
 .page-sub-nav {
 	background: $white;
-	padding: $twentyfive 0;
+	padding: 0 0 $twentyfive;
+	@include media( $large-screen ) {
+		padding: $twentyfive 0;
+	}
 	text-transform: uppercase;
 	z-index: 2;
 	li {
 		display: inline-block;
-		margin-right: $fifty;
-	}
-	a {
-		color: $dark-grey;
 		font: {
 			size: 12px;
 			weight: 700;
 		}
+		margin-right: $fifty;
+	}
+	a {
+		color: $dark-grey;
 		@include media( $large-screen ) {
 			font-size: $base-font-size;
 			margin-right: $fifty;
@@ -1315,8 +1321,8 @@ body {
 				.twitter-title {
 					background-color: $light-grey;
 					border-top: $thin-border;
-					border-top-left-radius: 3px;
-			      	border-top-right-radius: 3px;
+					border-top-left-radius: 0;
+			      	border-top-right-radius: 0;
 					color: $white;
 					@include media( $large-screen ) {
 						display: inline-block;

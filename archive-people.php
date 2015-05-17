@@ -30,7 +30,7 @@ get_header(); ?>
 						A-Z
 					</li>
 					<li>
-						<a href="/people-executives">Executive Team</a>
+						<a href="/people-executives/">Executive Team</a>
 					</li>
 				</ul>
 
