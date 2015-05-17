@@ -34,28 +34,34 @@ get_header(); ?>
 						<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-work-featured'); ?>
 						<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-work-featured'); ?>
 
-						<picture>
-							<!--[if IE 9]><video style="display: none;"><![endif]-->
-							<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
-							<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
-							<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
-							<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
-							<!--[if IE 9]></video><![endif]-->
-							<img srcset="<?php echo $desktop[0]; ?>">
-						</picture>
+						<div class="work-section">
 
-						<?php if( get_sub_field( 'title_and_description_toggle' ) ) : ?>
+							<picture>
+								<!--[if IE 9]><video style="display: none;"><![endif]-->
+								<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+								<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+								<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
+								<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop[0]; ?>">
+							</picture>
 
-							<div class="work-study-container">
+							<?php if( get_sub_field( 'title_and_description_toggle' ) ) : ?>
 
-								<div class="work-study-content">
-									<h4><?php the_sub_field('title'); ?></h4>
-									<p><?php the_sub_field('description'); ?></p>
+								<div class="page-content">
+
+									<div class="entry-title">
+										<h4><?php the_sub_field('title'); ?></h4>
+											<div class="entry-content">
+											<p><?php the_sub_field('description'); ?></p>
+										</div>
+									</div>
+
 								</div>
 
-							</div>
+							<?php endif; ?>
 
-						<?php endif; ?>
+						</div>
 
 			        <?php endif; ?>
 
@@ -90,10 +96,10 @@ get_header(); ?>
 					<div class="project-detail industry-list">
 						<h6>Industry:</h6>
 						<!-- Strip link wrappers -->
-						<?php
+						<h5><?php
 							$terms_as_text = get_the_term_list( $post->ID, 'work-categories', '', ', ', '' ) ;
 							echo strip_tags($terms_as_text);
-						?>
+						?></h5>
 						<!-- Use this when we turn the taxonomies into links
 							<?php the_terms( $post->ID, 'work-categories' ); ?>
 						-->

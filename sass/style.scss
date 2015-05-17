@@ -1206,13 +1206,19 @@ body {
 .single-work {
 	.work-study {
 		.page-top {
+			height: inherit;
+			padding: $hundred $twenty $fifty;
+			@include media( $large-screen ) {
+				height: 500px;
+				padding: $hundred 0 0 0;
+			}
 			.page-top-content {
-				float: left;
-				padding: $hundred $twentyfive $fifty;
+				top: inherit;
+				-webkit-transform: none;
 				@include media( $large-screen ) {
 					@include span-columns(7);
-					float: none;
-					padding: 0;
+					@include transform( translateY(-50%));
+					top: 50%;
 				}
 				h1 {
 					margin-bottom: $ten;
@@ -1225,16 +1231,18 @@ body {
 				}
 			}
 		}
-		.work-study-container {
-			@include outer-container;
-			@include media( $large-screen ) {
-				@include pad(150px 0);
-			}
-			.work-study-content {
-				padding: $hundred $twentyfive;
+		.work-section {
+			.work-study-container {
+				@include outer-container;
 				@include media( $large-screen ) {
-					@include span-columns(6);
-					padding: 0;
+					@include pad(150px 0);
+				}
+				.work-study-content {
+					padding: $hundred $twentyfive;
+					@include media( $large-screen ) {
+						@include span-columns(6);
+						padding: 0;
+					}
 				}
 			}
 		}
@@ -1252,6 +1260,16 @@ body {
 					margin-bottom: 25px;
 					img {
 						width: $hundred + $fifty;
+					}
+					.sd-content {
+						ul {
+							li {
+								display: block;
+								@include media( $large-screen ) {
+									display: inline-block;
+								}
+							}
+						}
 					}
 				}
 				.industry-list {
