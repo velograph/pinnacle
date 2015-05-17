@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
 		</div>
 	</section>
 
-	<div id="primary" class="three-up-container">
+	<div id="primary" class="work-portals">
 
 		<?php if ( have_posts() ) : ?>
 

@@ -293,6 +293,16 @@ body {
 		.square-portal-overlay {
 			display: none;
 		}
+		// Video icon
+		.video-play-icon {
+			left: 50%;
+			opacity: .7;
+			position: absolute;
+			@include transform(translate(-50%,-50%));
+			top: 50%;
+			width: 150px;
+			z-index: 0;
+		}
 		.square-portal {
 			background: $cyan-opacity;
 			bottom: 0;
@@ -320,11 +330,9 @@ body {
 	@include media( $large-screen ) {
 		@include row();
 		.square-portal-container {
-			@include media( $medium-screen ) {
-				@include span-columns(4);
-				@include omega(3);
-			}
-			margin: 0;
+			@include span-columns(4);
+			@include omega(3);
+			margin-bottom: 2.35765%;
 			position: relative;
 			text-align: center;
 			img {
@@ -474,16 +482,6 @@ body {
 						transition: opacity .2s ease-in-out;
 						width: 100%;
 						z-index: 1;
-					}
-					// Video icon
-					.video-play-icon {
-						left: 50%;
-						opacity: .7;
-						position: absolute;
-						@include transform(translate(-50%,-50%));
-						top: 50%;
-						width: 150px;
-						z-index: 0;
 					}
 					.square-portal {
 						color: $white;
@@ -966,12 +964,6 @@ body {
 				}
 			}
 		}
-	}
-}
-
-.video-container {
-	iframe {
-		width: 100%;
 	}
 }
 
