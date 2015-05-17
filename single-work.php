@@ -67,16 +67,22 @@ get_header(); ?>
 
 				<div class="detail-column">
 					<div class="project-detail">
-						<h6>Client:</h6>
-						<h5><?php the_field('client'); ?></h5>
+						<?php if( get_field('client') ) : ?>
+							<h6>Client:</h6>
+							<h5><?php the_field('client'); ?></h5>
+						<?php endif; ?>
 					</div>
 					<div class="project-detail">
-						<h6>Project:</h6>
-						<h5><?php the_field('project'); ?></h5>
+						<?php if( get_field('project') ) : ?>
+							<h6>Project:</h6>
+							<h5><?php the_field('project'); ?></h5>
+						<?php endif; ?>
 					</div>
 					<div class="project-detail">
-						<h6>Date:</h6>
-						<h5><?php the_field('date'); ?></h5>
+						<?php if( get_field('date') ) : ?>
+							<h6>Date:</h6>
+							<h5><?php the_field('date'); ?></h5>
+						<?php endif; ?>
 					</div>
 				</div>
 
@@ -93,8 +99,10 @@ get_header(); ?>
 						-->
 					</div>
 					<div class="project-detail">
-						<h6>Credits:</h6>
-						<h5><?php the_field('credits'); ?></h5>
+						<?php if( get_field('credits') ) : ?>
+							<h6>Credits:</h6>
+							<h5><?php the_field('credits'); ?></h5>
+						<?php endif; ?>
 					</div>
 					<div class="project-detail">
 						<h6>Share:</h6>
