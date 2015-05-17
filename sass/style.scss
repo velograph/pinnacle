@@ -401,11 +401,11 @@ body {
 	}
 }
 
-// Loads more work examples and reveals lightning bolt 
+// Loads more work examples and reveals lightning bolt
 .ajax-load-more-wrap {
 	.alm-reveal {
 		&:before {
-			content: url(../images/lightning_bolt.svg);
+			content: url(../images/three_dots.svg);
 			display: block;
 			margin: 0 auto 2.35765%;
 			text-align: center;
