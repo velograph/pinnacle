@@ -15,14 +15,14 @@
             jQuery(".back-to-top svg").click(function (){
                 //jQuery(this).animate(function(){
                     jQuery('html, body').animate({
-                        scrollTop: jQuery("body").offset().top
+                        scrollTop: 0,
                     }, 1500);
                 //});
             });
         });
 	</script>
 
-	<footer class="mobile-footer">
+	<footer class="mobile-footer" style="display:none;">
 
 		<div class="mobile-footer-row">
 
