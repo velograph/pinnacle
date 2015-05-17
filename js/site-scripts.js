@@ -29,7 +29,7 @@
 $(document).ready(function() {
   function setHeight() {
     windowHeight = $(window).innerHeight();
-    $('.featured-home-image').css('min-height', windowHeight);
+    $('.featured-home-image').css('height', windowHeight);
   };
   setHeight();
 
