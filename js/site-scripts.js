@@ -5,27 +5,29 @@
 
 		if (jQuery(window).width() > 860) {
 			$(".site-footer").fadeIn('slow');
+
+			$(".page-sub-nav").sticky({
+				topSpacing: 80
+			});
 		}
 
 		if (jQuery(window).width() < 860) {
 			$(".mobile-footer").fadeIn('slow');
+
+			$(".page-sub-nav").sticky({
+				topSpacing: 50
+			});
 		}
 
 		$(".site-header").sticky({
 			topSpacing: 10,
 			wrapperClassName: 'header-sticky'
 		});
-		$(".page-sub-nav").sticky({
-			topSpacing: 80
-		});
 
 
 		$(".mobile-header").sticky({
 			topSpacing: 15,
 			wrapperClassName: 'mobile-sticky'
-		});
-		$(".page-sub-nav").sticky({
-			topSpacing: 50
 		});
 	});
 
