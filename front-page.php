@@ -20,10 +20,13 @@ get_header(); ?>
 				<?php
 					$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original-upload' );
 				?>
-				<div class="featured-home-image" style="background-image: url(<?php echo $src[0]; ?> ); background-size: cover;">
-
+				<div class="featured-home-image" style="background-image: url(<?php echo $src[0]; ?> );">
+					&nbsp;
 				</div>
 
+				<div class="home-description-container">
+					<h1 class="home-description"><?php the_field('home_page_description'); ?></h1>
+				</div>
 
 				<?php if( have_rows('home_page_sections') ) : ?>
 
