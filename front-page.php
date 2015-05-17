@@ -36,8 +36,8 @@ get_header(); ?>
 
 					<?php if( get_row_layout() == 'home_page_content' ) : ?>
 
-						<article class="home-page-content">
-							<div class="content-title">
+						<article class="page-content">
+							<div class="entry-title">
 								<h2><?php the_sub_field('title'); ?></h2>
 							</div>
 							<div class="entry-content">
