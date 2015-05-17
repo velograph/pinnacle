@@ -77,13 +77,13 @@ get_header(); ?>
 
 				<?php endif; ?>
 
-				<section class="lead-in-container">
+				<section class="page-content">
 
-					<div class="lead-in-title">
+					<div class="entry-title">
 						<h1><?php the_field('title', 502); ?></h1>
 					</div>
 
-					<div class="lead-in-content">
+					<div class="entry-content">
 						<?php the_field('content', 502) ?>
 					</div>
 
