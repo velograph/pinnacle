@@ -1197,39 +1197,42 @@ body {
 			fill: $dark-grey;
 		}
 	}
-	.two-feeds {
-		@include media( $large-screen ) {
-			@include span-columns(8);
+	.feeds-container {
+		@include outer-container;
+		.two-feeds {
+			@include media( $large-screen ) {
+				@include span-columns(8);
+			}
 		}
-	}
-	.one-feed {
-		@include media( $large-screen ) {
-			@include span-columns(4);
-		}
-		.twitter-title-container {
-			border-bottom: $thin-border;
-			display: block;
-			.twitter-title {
-				background-color: $light-grey;
-				border-top: $thin-border;
-				border-top-left-radius: 3px;
-		      	border-top-right-radius: 3px;
-				color: $white;
-				@include media( $large-screen ) {
-					display: inline-block;
-				}
-				padding: (25px/2) ($gutter/2);
-				text-decoration: none;
-				svg {
-					vertical-align: bottom;
-					path {
-						fill: $white;
+		.one-feed {
+			@include media( $large-screen ) {
+				@include span-columns(4);
+			}
+			.twitter-title-container {
+				border-bottom: $thin-border;
+				display: block;
+				.twitter-title {
+					background-color: $light-grey;
+					border-top: $thin-border;
+					border-top-left-radius: 3px;
+			      	border-top-right-radius: 3px;
+					color: $white;
+					@include media( $large-screen ) {
+						display: inline-block;
+					}
+					padding: (25px/2) ($gutter/2);
+					text-decoration: none;
+					svg {
+						vertical-align: bottom;
+						path {
+							fill: $white;
+						}
 					}
 				}
 			}
-		}
-		.twitter-content {
-			padding: $twentyfive ($gutter/2);
+			.twitter-content {
+				padding: $twentyfive ($gutter/2);
+			}
 		}
 	}
 }
