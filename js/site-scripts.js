@@ -1,7 +1,15 @@
 
 	$(document).ready(function(){
 		$(".site-header").fadeIn('fast');
-		$(".site-content, .site-footer").fadeIn('slow');
+		$(".site-content").fadeIn('slow');
+
+		if (jQuery(window).width() > 860) {
+			$(".site-footer").fadeIn('slow');
+		}
+
+		if (jQuery(window).width() < 860) {
+			$(".mobile-footer").fadeIn('slow');
+		}
 
 		$(".site-header").sticky({
 			topSpacing: 10,
@@ -10,11 +18,8 @@
 		$(".page-sub-nav").sticky({
 			topSpacing: 80
 		});
-	});
 
 
-
-	$(document).ready(function(){
 		$(".mobile-header").sticky({
 			topSpacing: 15,
 			wrapperClassName: 'mobile-sticky'
