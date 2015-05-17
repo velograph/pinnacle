@@ -401,6 +401,19 @@ body {
 	}
 }
 
+// Loads more work examples and reveals lightning bolt 
+.ajax-load-more-wrap {
+	.alm-reveal {
+		&:before {
+			content: url(../images/lightning_bolt.svg);
+			display: block;
+			margin: 0 auto 2.35765%;
+			text-align: center;
+			width: $twentyfive;
+		}
+	}
+}
+
 .site-content {
 	margin: 16px;
 	position: relative;
@@ -463,7 +476,6 @@ body {
 		.three-up-container {
 			.three-up-row {
 				@include row();
-				margin-bottom: 2.35765%;
 				.square-portal-container {
 					@include media( $medium-screen ) {
 						@include span-columns(4);
