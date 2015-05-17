@@ -84,17 +84,22 @@ get_header(); ?>
 			</div>
 
 			<aside class="one-feed">
-				<span class="twitter-title">
-					Industry&nbsp;
-					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						 viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve">
-					<path fill="#00A9C5" d="M15.8,1.7c-0.6,0.3-1.2,0.4-1.8,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2,0.8c-0.6-0.6-1.4-1-2.3-1
-						c-1.8,0-3.2,1.4-3.2,3.2c0,0.3,0,0.5,0.1,0.7C5.2,4,2.9,2.7,1.3,0.8C1,1.2,0.9,1.8,0.9,2.4c0,1.1,0.6,2.1,1.4,2.7
-						c-0.5,0-1-0.2-1.4-0.4c0,0,0,0,0,0c0,1.5,1.1,2.8,2.6,3.1C3.1,7.9,2.9,7.9,2.6,7.9c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.2,3,2.2
-						c-1.1,0.9-2.5,1.4-4,1.4c-0.3,0-0.5,0-0.8,0c1.4,0.9,3.1,1.4,4.9,1.4c5.9,0,9.1-4.9,9.1-9.1c0-0.1,0-0.3,0-0.4
-						C14.8,2.9,15.3,2.3,15.8,1.7z"/>
-					</svg>
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+				<div class="twitter-title-container">
+					<div class="twitter-title">
+						Industry&nbsp;
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve">
+						<path fill="#00A9C5" d="M15.8,1.7c-0.6,0.3-1.2,0.4-1.8,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2,0.8c-0.6-0.6-1.4-1-2.3-1
+							c-1.8,0-3.2,1.4-3.2,3.2c0,0.3,0,0.5,0.1,0.7C5.2,4,2.9,2.7,1.3,0.8C1,1.2,0.9,1.8,0.9,2.4c0,1.1,0.6,2.1,1.4,2.7
+							c-0.5,0-1-0.2-1.4-0.4c0,0,0,0,0,0c0,1.5,1.1,2.8,2.6,3.1C3.1,7.9,2.9,7.9,2.6,7.9c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.2,3,2.2
+							c-1.1,0.9-2.5,1.4-4,1.4c-0.3,0-0.5,0-0.8,0c1.4,0.9,3.1,1.4,4.9,1.4c5.9,0,9.1-4.9,9.1-9.1c0-0.1,0-0.3,0-0.4
+							C14.8,2.9,15.3,2.3,15.8,1.7z"/>
+						</svg>
+					</div>
+				</div>
+				<div class="twitter-content">
+					<?php dynamic_sidebar( 'sidebar-1' ); ?>
+				</div>
 			</aside>
 
 		<?php endwhile; // end of the loop. ?>

@@ -1,15 +1,15 @@
 .accordion-tabs {
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $base-spacing: 1.5em !default;
+  $base-border-color: $light-grey;
+  $base-border-radius: 3px;
+  $base-background-color: $white !default;
+  $base-spacing: 25px;
   $action-color: $cyan;
   $base-link-color: $cyan;
   $dark-gray: #7d7f82;
   $light-gray: #d7d6d6;
   $medium-screen: em(640) !default;
   $tab-border: 1px solid $base-border-color;
-  $tab-content-background: $white;
+  $tab-content-background: $light-grey;
   $tab-active-background: $tab-content-background;
   $tab-inactive-color: $base-background-color;
   $tab-inactive-hover-color: darken($light-gray, 5);
@@ -52,7 +52,7 @@
   .tab-link {
     background-color: $tab-inactive-color;
     border-top: $tab-border;
-    color: $dark-gray;
+    color: $light-gray;
     display: block;
     padding: $base-spacing/2 $gutter/2;
     text-decoration: none;
@@ -65,8 +65,9 @@
     }
 
     svg {
+        vertical-align: bottom;
         path {
-            fill: $dark-grey;
+            fill: $light-grey;
         }
     }
 
@@ -87,27 +88,40 @@
 
     &.is-active {
       background-color: $tab-active-background;
-
+      color: $white;
+      svg {
+          path {
+              fill: $white;
+          }
+      }
       @include media($tab-mode) {
         background-color: $tab-active-background;
         border: $tab-border;
         border-bottom-color: $tab-active-background;
         margin-bottom: -1px;
+
+      }
+      &:hover {
+          svg {
+              path {
+                  fill: white;
+              }
+          }
       }
     }
   }
 
   .tab-content {
-    background: $tab-content-background;
+    background: $white;
     display: none;
-    padding: $base-spacing $gutter;
+    padding: $twentyfive 0;
     width: 100%;
+    a {
+        color: $cyan;
+    }
 
     @include media($tab-mode) {
-      border-bottom-left-radius: $base-border-radius;
-      border-bottom-right-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      border: $tab-border;
+      border-top: $tab-border;
       float: left;
     }
   }
