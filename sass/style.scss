@@ -86,6 +86,25 @@ body {
 		svg {
 			width: 150px;
 			path {
+				fill: $dark-grey;
+			}
+		}
+	}
+	#trigger-overlay {
+		svg {
+			width: $twentyfive;
+			path {
+				fill: $dark-grey;
+			}
+		}
+	}
+}
+
+.home {
+	.site-branding {
+		svg {
+			width: 150px;
+			path {
 				fill: $white;
 			}
 		}
