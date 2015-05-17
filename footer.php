@@ -165,7 +165,7 @@
 
 	</footer>
 
-	<footer class="site-footer" role="contentinfo">
+	<footer class="site-footer" role="contentinfo" style="display:none;">
 
 		<div class="footer-row">
 

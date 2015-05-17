@@ -184,7 +184,7 @@
 
 	</section>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner" style="display:none;">
 
 		<div class="inner-header">
 
@@ -229,4 +229,4 @@
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content" style="display:none;">
