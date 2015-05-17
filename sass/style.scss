@@ -37,26 +37,26 @@ body {
 	}
 
 	.top-body-border {
-		height: 16px;
+		height: 2.35765%;
 		width: 100%;
 		top: 0;
 	}
 
 	.right-body-border {
 		height: 100%;
-		width: 16px;
+		width: 2.35765%;
 		right: 0;
 	}
 
 	.bottom-body-border {
 		bottom: 0;
-		height: 16px;
+		height: 2.35765%;
 		width: 100%;
 	}
 
 	.left-body-border {
 		height: 100%;
-		width: 16px;
+		width: 2.35765%;
 		left: 0;
 	}
 	.skip-link {
@@ -898,6 +898,7 @@ body {
 }
 
 .alm-btn-wrap {
+	clear: both;
 	text-align: center;
 	button {
 		background: {
@@ -911,6 +912,9 @@ body {
 		margin: $fifty 0;
 		&.done {
 			display: none;
+		}
+		&:focus {
+			outline: none;
 		}
 	}
 }
