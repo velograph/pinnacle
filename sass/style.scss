@@ -18,7 +18,6 @@
 @import "base/base";
 
 @import "variables";
-@import "stored";
 @import "tabs_accordion";
 @import "veno";
 
@@ -72,6 +71,200 @@ body {
 	}
 }
 
+.mobile-sticky {
+	background: transparent;
+	left: 16px;
+	padding: $fifteen;
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	z-index: 9;
+	@include media( $large-screen ) {
+		display: none;
+	}
+}
+
+.mobile-sticky.is-sticky {
+	.mobile-header {
+		background: $white;
+		@include media( $large-screen ) {
+			display: none;
+		}
+	}
+}
+
+.mobile-header {
+	@include media( $large-screen ) {
+		display: none;
+	}
+	transition: all .75s ease-in-out;
+	.site-branding {
+		float: left;
+	}
+	#trigger-overlay {
+		background: transparent;
+		float: right;
+		padding: 0;
+		z-index: 1;
+		svg {
+			width: $thirty;
+		}
+	}
+}
+
+@include media( $large-screen ) {
+	.single-work {
+		.main-navigation {
+			li.work-link {
+				a {
+					color: $cyan !important;
+				}
+			}
+		}
+	}
+
+	.page-template-page-executives {
+		.main-navigation {
+			li.people-link {
+				a {
+					color: $cyan !important;
+				}
+			}
+		}
+	}
+}
+
+// The header links in the home page get special treatment
+.home {
+	.header-sticky {
+		.site-header {
+			.inner-header {
+				.site-branding {
+					a {
+						svg {
+							path {
+								fill: $white;
+							}
+						}
+					}
+				}
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.header-sticky.is-sticky {
+		.site-header {
+			.inner-header {
+				.site-branding {
+					a {
+						svg {
+							path {
+								fill: $dark-grey;
+							}
+						}
+					}
+				}
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $dark-grey;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+@include media( $large-screen ) {
+	.header-sticky {
+		bottom: 16px;
+		left: 16px;
+		position: absolute;
+		right: 16px;
+		top: 16px;
+		z-index: 9;
+		.site-header {
+			background: transparent;
+			transition: all .75s ease-in-out;
+			.inner-header {
+				@include outer-container;
+				.site-branding {
+					@include pad(15px 15px 15px 0);
+					float: left;
+					svg {
+						width: 200px;
+						path {
+							fill: $dark-grey;
+						}
+					}
+				}
+				.main-navigation {
+					display: block;
+					float: right;
+					margin-top: 15px;
+					ul {
+						li {
+							display: inline-block;
+							margin-left: 50px;
+							&:first-child {
+								margin: 0;
+							}
+							a {
+								color: $dark-grey;
+								font-weight: 700;
+								text-transform: uppercase;
+							}
+						}
+					}
+				}
+				.hamburger {
+					display: none;
+				}
+			}
+		}
+	}
+	.header-sticky.is-sticky {
+		.site-header {
+			background: $white;
+			z-index: 1;
+			.inner-header {
+				.site-branding {
+					svg {
+						width: 200px;
+						path {
+							fill: $dark-grey;
+						}
+					}
+				}
+				.main-navigation {
+					ul {
+						li {
+							a {
+								color: $dark-grey;
+								&:hover {
+									color: #999;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 /* Overlay */
 .overlay {
@@ -147,6 +340,7 @@ body {
 
 /* Menu style */
 .overlay nav {
+	display: none;
 	text-align: center;
 	position: relative;
 	top: 50%;
@@ -195,6 +389,11 @@ body {
 	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
 	transition: opacity 0.5s, visibility 0s 0.5s;
 	z-index: 10;
+	@include media( $large-screen ) {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 
 .overlay-pinnacle.open {
@@ -202,6 +401,11 @@ body {
 	visibility: visible;
 	-webkit-transition: opacity 0.5s;
 	transition: opacity 0.5s;
+	@include media( $large-screen ) {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 
 .overlay-pinnacle nav {
@@ -1117,7 +1321,6 @@ body {
 	}
 	margin: 0 16px 16px;
 	position: relative;
-	top: 150px;
 	h4 {
 		font-weight: 900;
 		margin-bottom: $ten;
