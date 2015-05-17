@@ -221,10 +221,6 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
 
-			<?php if( is_front_page() ) : ?>
-				<h1 class="home-description"><?php the_field('home_page_description'); ?></h1>
-			<?php endif; ?>
-
 		</div>
 
 	</header><!-- #masthead -->
