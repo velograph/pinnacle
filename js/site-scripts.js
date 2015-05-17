@@ -1,7 +1,10 @@
 
 	$(document).ready(function(){
+		$(".site-header").fadeIn('fast');
+		$(".site-content, .site-footer").fadeIn('slow');
+
 		$(".site-header").sticky({
-			topSpacing: 16,
+			topSpacing: 10,
 			wrapperClassName: 'header-sticky'
 		});
 		$(".page-sub-nav").sticky({
