@@ -503,6 +503,7 @@ body {
 
 .site-content {
 	background: $white;
+	padding-bottom: $fifty;
 }
 
 .home {
@@ -683,7 +684,8 @@ body {
 		&:before {
 			content: url(../images/three_dots.svg);
 			display: block;
-			margin: 0 auto 2.35765%;
+			height: 35px;
+			margin: 0 auto $twentyfive;
 			text-align: center;
 			width: $twentyfive;
 		}
@@ -729,7 +731,10 @@ body {
 	}
 	.page-content {
 		@include outer-container;
-		@include pad( $hundred 0 );
+		@include pad( $hundred 16px );
+		@include media( $large-screen ) {
+			@include pad( $hundred 0 );
+		}
 		.entry-title {
 			h1 {
 				margin-bottom: $twentyfive;
