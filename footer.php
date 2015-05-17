@@ -13,11 +13,9 @@
 	<script>
 	jQuery(document).ready(function (){
             jQuery(".back-to-top svg").click(function (){
-                //jQuery(this).animate(function(){
-                    jQuery('html, body').animate({
-                        scrollTop: 0,
-                    }, 1500);
-                //});
+                jQuery('html, body').animate({
+                    scrollTop: 0,
+                }, 1500);
             });
         });
 	</script>
