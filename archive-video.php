@@ -26,13 +26,7 @@ jQuery(document).ready(function(){
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php $i = 0;?>
-
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php if ($i == 0 || $i % 3 == 0) { ?>
-					<div class="three-up-row">
-				<?php }; ?>
 
 				<div class="square-portal-container">
 
@@ -77,13 +71,7 @@ jQuery(document).ready(function(){
 
 				</div>
 
-				<?php
-				$i++;
-				if ($i % 3 == 0){echo "</div>";}
-
-				wp_reset_query();
-
-				?>
+				<?php wp_reset_query(); ?>
 
 			<?php endwhile; ?>
 
