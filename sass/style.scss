@@ -577,7 +577,10 @@ body {
 			position: absolute;
 			@include transform(translate(-50%,-50%));
 			top: 50%;
-			width: 150px;
+			width: $hundred;
+			@include media( $large-screen ) {
+				width: $hundred + $fifty;
+			}
 			z-index: 0;
 		}
 		.square-portal {
