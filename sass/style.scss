@@ -72,6 +72,9 @@ body {
 }
 
 .mobile-sticky {
+	@include media( $large-screen ) {
+		display: none;
+	}
 	background: transparent;
 	left: 16px;
 	padding: $fifteen;
@@ -79,16 +82,46 @@ body {
 	right: 16px;
 	top: 16px;
 	z-index: 9;
-	@include media( $large-screen ) {
-		display: none;
+	.site-branding {
+		svg {
+			width: 150px;
+			path {
+				fill: $white;
+			}
+		}
+	}
+	#trigger-overlay {
+		svg {
+			width: $twentyfive;
+			path {
+				fill: $white;
+			}
+		}
 	}
 }
 
 .mobile-sticky.is-sticky {
 	.mobile-header {
 		background: $white;
-		@include media( $large-screen ) {
-			display: none;
+		left: 16px;
+		padding: 8px 16px;
+		right: 16px;
+		width: inherit !important;
+		.site-branding {
+			svg {
+				width: 150px;
+				path {
+					fill: $dark-grey;
+				}
+			}
+		}
+		#trigger-overlay {
+			svg {
+				width: $twentyfive;
+				path {
+					fill: $dark-grey;
+				}
+			}
 		}
 	}
 }
@@ -97,7 +130,7 @@ body {
 	@include media( $large-screen ) {
 		display: none;
 	}
-	transition: all .75s ease-in-out;
+	transition: background .75s ease-in-out;
 	.site-branding {
 		float: left;
 	}
@@ -131,6 +164,13 @@ body {
 				}
 			}
 		}
+	}
+}
+
+.header-sticky {
+	display: none;
+	@include media( $large-screen ) {
+		display: block;
 	}
 }
 
@@ -448,20 +488,30 @@ body {
 
 .home {
 	.featured-home-image {
-		background-attachment: fixed;
+		@include media( $large-screen ) {
+			background-attachment: fixed;
+		}
 		background-size: cover;
 		background-repeat: no-repeat;
 		color: transparent;
 	}
-	.home-description {
-		@include outer-container;
-		color: $white;
-		font: {
-			// size: 60px;
-		}
-		position: absolute;
+	.home-description-container {
+		margin-left: 16px;
 		@include media( $large-screen ) {
-			width: 750px;
+			@include outer-container;
+		}
+		.home-description {
+			color: $white;
+			font: {
+				size: 32px;
+			}
+			position: absolute;
+			@include media( $large-screen ) {
+				font: {
+					size: 60px;
+				}
+				width: 750px;
+			}
 		}
 	}
 	.home-page-content {
@@ -496,6 +546,9 @@ body {
 		position: relative;
 		.square-portal-overlay {
 			display: none;
+		}
+		img {
+			float: left;
 		}
 		// Video icon
 		.video-play-icon {
@@ -620,6 +673,9 @@ body {
 
 .site-content {
 	margin: 16px;
+	@include media( $large-screen ) {
+		margin: 16px;
+	}
 	position: relative;
 	.page-top {
 		@include outer-container;
