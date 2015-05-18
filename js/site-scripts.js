@@ -4,11 +4,18 @@
 		$(".site-content").fadeIn('slow');
 
 		if (jQuery(window).width() > 860) {
-			$(".site-footer").fadeIn('slow');
 
 			$(".page-sub-nav").sticky({
 				topSpacing: 80
 			});
+		}
+
+		if (jQuery(window).width() > 1025) {
+			$(".site-footer").fadeIn('slow');
+		}
+
+		if (jQuery(window).width() < 1025) {
+			$(".mobile-footer").fadeIn('slow');
 		}
 
 		if (jQuery(window).width() < 860) {

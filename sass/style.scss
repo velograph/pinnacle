@@ -593,7 +593,10 @@ body {
 			}
 			.rollover-middle {
 				display: inline-block;
-				font-weight: 700;
+				font: {
+					size: 24px;
+					weight: 900;
+				}
 				text-transform: uppercase;
 				&:after {
 					content: "\0000a0/";
@@ -604,14 +607,18 @@ body {
 			}
 		}
 	}
-	@include media( $large-screen ) {
-		@include row();
+	@include media( $medium-screen ) {
 		.square-portal-container {
 			@include span-columns(4);
 			@include omega(3);
 			margin-bottom: 2.35765%;
 			position: relative;
 			text-align: center;
+		}
+	}
+	@include media( $xlarge-screen ) {
+		@include row();
+		.square-portal-container {
 			img {
 				float: left;
 			}
@@ -643,7 +650,7 @@ body {
 				}
 				.rollover-middle {
 					display: block;
-					font-weight: 700;
+					font-weight: 900;
 					text-transform: uppercase;
 					&:after {
 						content: "";
@@ -682,6 +689,7 @@ body {
 .ajax-load-more-wrap {
 	.alm-reveal {
 		&:before {
+			clear: both;
 			content: url(../images/three_dots.svg);
 			display: block;
 			height: 35px;
@@ -756,7 +764,7 @@ body {
 			}
 		}
 	}
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		.three-up-container {
 			.three-up-row {
 				@include row();
@@ -924,10 +932,23 @@ body {
 	}
 }
 
+.page-template-contact {
+	.page-sub-nav {
+		display: none;
+		@include media( $xlarge-screen ) {
+			display: block;
+		}
+	}
+	.page-content {
+		a {
+			color: $dark-grey;
+		}
+	}
+}
+
 .page-sub-nav {
 	background: $white;
-	display: none;
-	padding: 0 0 $twentyfive;
+	padding: 0 0 $twentyfive 32px;
 	@include media( $large-screen ) {
 		display: block;
 		padding: $twentyfive 0;
@@ -1152,7 +1173,8 @@ body {
 		position: relative;
 		.featured-content {
 			@include pad( $twentyfive );
-			background: $off-white;
+			background: $off-white-opacity;
+			color: $dark-grey;
 			float: left;
 			@include media( $large-screen ) {
 				height: 100%;
@@ -1260,8 +1282,8 @@ body {
 		}
 		.project-details-container {
 			@include outer-container;
-			padding: $hundred $twentyfive 0;
-			@include media( $large-screen ) {
+			padding: $hundred 16px $fifty;
+			@include media( $xlarge-screen ) {
 				@include pad(100px 0);
 			}
 			.detail-column {
@@ -1271,6 +1293,7 @@ body {
 				.project-detail {
 					margin-bottom: 25px;
 					img {
+						margin: $five 0;
 						width: $hundred + $fifty;
 					}
 					.sd-content {
@@ -1349,7 +1372,8 @@ body {
 
 
 .mobile-footer {
-	@include media( $large-screen ) {
+	clear: both;
+	@include media( $xlarge-screen ) {
 		display: none;
 	}
 	margin: 16px;
@@ -1367,6 +1391,8 @@ body {
 			text-transform: none;
 		}
 		ul {
+			display: inline-block;
+			text-align: left;
 			li {
 				text-transform: uppercase;
 				a {
@@ -1429,7 +1455,7 @@ body {
 
 .site-footer {
 	display: none;
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		display: block;
 	}
 	margin: 0 16px 16px;

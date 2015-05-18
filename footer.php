@@ -137,9 +137,10 @@
 		<div class="mobile-footer-row">
 
 			<div class="client-tools">
-				<h4>Client Tools</h4>
-
 				<ul>
+					<li>
+						<h4>Client Tools</h4>
+					</li>
 					<li>
 						<a href="/resources-inventory/">Resources & Inventory</a>
 					</li>
@@ -147,8 +148,10 @@
 			</div>
 
 			<div class="careers">
-				<h4>Careers</h4>
 				<ul>
+					<li>
+						<h4>Careers</h4>
+					</li>
 					<li><a href="http://pinnacle.hiringthing.com" target="_blank">Job Openings</a></li>
 				</ul>
 			</div>
