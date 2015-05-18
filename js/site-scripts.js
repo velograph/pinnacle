@@ -20,7 +20,7 @@
 		}
 
 		$(".site-header").sticky({
-			topSpacing: 10,
+			topSpacing: 16,
 			wrapperClassName: 'header-sticky'
 		});
 
