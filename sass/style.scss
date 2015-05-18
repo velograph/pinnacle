@@ -72,7 +72,7 @@ body {
 }
 
 .mobile-sticky {
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		display: none;
 	}
 	background: transparent;
@@ -146,7 +146,7 @@ body {
 }
 
 .mobile-header {
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		display: none;
 	}
 	transition: background .75s ease-in-out;
@@ -188,7 +188,7 @@ body {
 
 .header-sticky {
 	display: none;
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		display: block;
 	}
 }
@@ -247,7 +247,7 @@ body {
 
 
 
-@include media( $large-screen ) {
+@include media( $xlarge-screen ) {
 	.header-sticky {
 		bottom: 16px;
 		left: 16px;
@@ -448,7 +448,7 @@ body {
 	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
 	transition: opacity 0.5s, visibility 0s 0.5s;
 	z-index: 10;
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		display: none;
 		opacity: 0;
 		visibility: hidden;
@@ -460,7 +460,7 @@ body {
 	visibility: visible;
 	-webkit-transition: opacity 0.5s;
 	transition: opacity 0.5s;
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		display: none;
 		opacity: 0;
 		visibility: hidden;
@@ -508,16 +508,13 @@ body {
 
 .home {
 	.featured-home-image {
-		@include media( $large-screen ) {
-			background-attachment: fixed;
-		}
 		background-size: cover;
 		background-repeat: no-repeat;
 		color: transparent;
 	}
 	.home-description-container {
 		margin-left: 16px;
-		@include media( $large-screen ) {
+		@include media( $xlarge-screen ) {
 			@include outer-container;
 		}
 		.home-description {
@@ -538,7 +535,7 @@ body {
 		@include outer-container;
 		@include pad(150px 0);
 		.content-title {
-			@include media( $large-screen ) {
+			@include media( $xlarge-screen ) {
 				@include span-columns(5);
 			}
 			h2 {
@@ -548,7 +545,7 @@ body {
 			}
 		}
 		.entry-content {
-			@include media( $large-screen ) {
+			@include media( $xlarge-screen ) {
 				@include span-columns(7);
 			}
 			p {
@@ -697,7 +694,7 @@ body {
 
 .site-content {
 	margin: 16px;
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		margin: 16px;
 	}
 	position: relative;
@@ -705,7 +702,7 @@ body {
 		@include outer-container;
 		height: 500px;
 		padding: $hundred $twentyfive 0;
-		@include media( $large-screen ) {
+		@include media( $xlarge-screen ) {
 			padding: $hundred 0 0 0;
 		}
 		.page-top-content {
@@ -735,7 +732,7 @@ body {
 	.page-content {
 		@include outer-container;
 		@include pad( $hundred 16px );
-		@include media( $large-screen ) {
+		@include media( $xlarge-screen ) {
 			@include pad( $hundred 0 );
 		}
 		.entry-title {
@@ -743,7 +740,7 @@ body {
 				margin-bottom: $twentyfive;
 			}
 		}
-		@include media( $large-screen ) {
+		@include media( $xlarge-screen ) {
 			@include pad( ($fifty * 3) 0 );
 			.entry-title {
 				@include span-columns(5);
@@ -929,8 +926,10 @@ body {
 
 .page-sub-nav {
 	background: $white;
+	display: none;
 	padding: 0 0 $twentyfive;
 	@include media( $large-screen ) {
+		display: block;
 		padding: $twentyfive 0;
 	}
 	text-transform: uppercase;
@@ -939,14 +938,16 @@ body {
 		display: inline-block;
 		font: {
 			size: 12px;
-			weight: 700;
 		}
 		margin-right: $fifty;
 	}
 	a {
 		color: $dark-grey;
 		@include media( $large-screen ) {
-			font-size: $base-font-size;
+			font: {
+				size: $base-font-size;
+				weight: 700;
+			}
 			margin-right: $fifty;
 		}
 		margin-right: $fifteen;
@@ -1085,7 +1086,9 @@ body {
 		@include outer-container;
 		border-top: $thin-border;
 		.form {
-			@include span-columns(5);
+			@include media( $large-screen ) {
+				@include span-columns(5);
+			}
 			margin-top: $hundred;
 			text-transform: uppercase;
 			ul {
