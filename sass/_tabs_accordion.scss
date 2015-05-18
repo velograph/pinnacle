@@ -114,7 +114,10 @@
   .tab-content {
     background: $white;
     display: none;
-    padding: $twentyfive 0;
+    padding: $twentyfive;
+    @include media( $large-screen ) {
+        padding: $twentyfive 0;
+    }
     width: 100%;
     a {
         color: $cyan;
