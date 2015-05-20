@@ -10,20 +10,20 @@
 			});
 		}
 
-		if (jQuery(window).width() > 1025) {
-			$(".site-footer").fadeIn('slow');
-		}
-
-		if (jQuery(window).width() < 1025) {
-			$(".mobile-footer").fadeIn('slow');
-		}
-
 		if (jQuery(window).width() < 860) {
 			$(".mobile-footer").fadeIn('slow');
 
 			$(".page-sub-nav").sticky({
 				topSpacing: 50
 			});
+		}
+
+		if (jQuery(window).width() > 1025) {
+			$(".site-footer").fadeIn('slow');
+		}
+
+		if (jQuery(window).width() < 1025) {
+			$(".mobile-footer").fadeIn('slow');
 		}
 
 		$(".site-header").sticky({
