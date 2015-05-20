@@ -14,6 +14,9 @@ get_header(); ?>
 		<section class="page-top">
 			<div class="page-top-content">
 				<h1><?php the_field('page_lead_in', 502); ?></h1>
+				<div class="page-top-work-content">
+					<?php the_field('content', 502) ?>
+				</div>
 			</div>
 		</section>
 

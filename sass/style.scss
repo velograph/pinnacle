@@ -1175,6 +1175,13 @@ body {
 }
 
 .work-archive-container {
+	.page-top {
+		.page-top-work-content {
+			@include media( $xlarge-screen ) {
+				display: none;
+			}
+		}
+	}
 	.featured-project {
 		display: none;
 		@include media( $xlarge-screen ) {
@@ -1216,6 +1223,12 @@ body {
 					left: 0;
 				}
 			}
+		}
+	}
+	.page-content {
+		display: none;
+		@include media( $xlarge-screen ) {
+			display: block;
 		}
 	}
 	.square-portal-container {
