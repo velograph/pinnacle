@@ -1176,8 +1176,11 @@ body {
 
 .work-archive-container {
 	.featured-project {
-		@include row();
-		position: relative;
+		display: none;
+		@include media( $xlarge-screen ) {
+			@include row();
+			position: relative;
+		}
 		.featured-content {
 			@include pad( $twentyfive );
 			background: $off-white-opacity;
