@@ -715,7 +715,7 @@ body {
 	.page-top {
 		@include outer-container;
 		height: 400px;
-		padding: $fifty $twentyfive 0;
+		padding: $fifty 16px 0;
 		@include media( $xlarge-screen ) {
 			height: 500px;
 			padding: $hundred 0 0 0;
