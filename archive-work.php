@@ -138,7 +138,7 @@ get_header(); ?>
 								</picture>
 
 								<div class="square-portal">
-									<span class="rollover-top portal-text">Featured:</span>
+									<span class="rollover-top portal-text">View:</span>
 									<span class="rollover-middle portal-text"><?php the_title(); ?></span>
 									<span class="rollover-bottom portal-text"><?php the_field('subtitle'); ?></span>
 								</div>
