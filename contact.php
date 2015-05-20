@@ -172,11 +172,10 @@ $(function() {
 					<section class="page-content">
 
 						<div class="entry-title">
-							<h1><?php the_title(); ?></h1>
+							<h2><?php the_title(); ?></h2>
 						</div>
 
 						<ul class="entry-content">
-							<li><?php the_field('location_title') ?></li>
 							<li><?php the_field('location_address') ?></li>
 							<li><a href="tel:<?php the_field('phone_number') ?>"><?php the_field('phone_number') ?></a></li>
 							<li><a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a></li>

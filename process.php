@@ -65,12 +65,12 @@ get_header(); ?>
 								srcset="<?php echo $retina_process_image[0]; ?>"
 								media="(min-device-pixel-ratio: 2)">
 							<!--[if IE 9]></video><![endif]-->
-							<img srcset="<?php echo $desktop_process_image[0]; ?>">
+							<img srcset="<?php echo $retina_process_image[0]; ?>">
 						</picture>
 
 						<div class="page-content">
 							<div class="entry-title">
-								<h1><?php the_sub_field('section_title'); ?></h1>
+								<h2><?php the_sub_field('section_title'); ?></h2>
 							</div>
 							<div class="entry-content">
 								<?php the_sub_field('section_content'); ?>

@@ -120,7 +120,7 @@ get_header(); ?>
 					<div class="detail-column">
 
 						<div class="project-detail">
-							<h6>Awards</h6>
+							<h6>Award:</h6>
 							<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
 							<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
 							<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>

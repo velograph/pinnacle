@@ -65,6 +65,7 @@ body {
 	img {
 		height: auto;
 		max-width: 100%;
+		width: 100%;
 	}
 	p {
 		text-transform: none;
@@ -708,9 +709,10 @@ body {
 	position: relative;
 	.page-top {
 		@include outer-container;
-		height: 500px;
-		padding: $hundred $twentyfive 0;
+		height: 400px;
+		padding: $fifty $twentyfive 0;
 		@include media( $xlarge-screen ) {
+			height: 500px;
 			padding: $hundred 0 0 0;
 		}
 		.page-top-content {
@@ -1085,7 +1087,7 @@ body {
 			font-size: $base-font-size;
 		}
 		.entry-title {
-			margin-right: 50%;
+			margin-right: 25%;
 			@include media( $large-screen ) {
 				@include span-columns(8);
 			}
@@ -1353,8 +1355,12 @@ body {
 					@include media( $large-screen ) {
 						display: inline-block;
 					}
+					font-weight: 700;
 					padding: (25px/2) ($gutter/2);
-					text-decoration: none;
+					text: {
+						decoration: none;
+						transform: uppercase;
+					}
 					svg {
 						vertical-align: bottom;
 						path {
