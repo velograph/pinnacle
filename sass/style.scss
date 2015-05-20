@@ -976,8 +976,8 @@ body {
 
 .page-sub-nav {
 	background: $white;
-	padding: 0 0 $twentyfive 32px;
-	@include media( $large-screen ) {
+	display: none;
+	@include media( $xlarge-screen ) {
 		display: block;
 		padding: $twentyfive 0;
 	}
