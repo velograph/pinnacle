@@ -653,7 +653,7 @@ body {
 				opacity: .8;
 				position: absolute;
 				top: 0;
-				transition: opacity .2s ease-in-out;
+				transition: opacity .75s ease-in-out;
 				width: 100%;
 			}
 			.square-portal {
@@ -666,7 +666,7 @@ body {
 				position: absolute;
 				text-transform: uppercase;
 				top: 50%;
-				transition: opacity .2s ease-in-out;
+				transition: opacity .75s ease-in-out;
 				@include transform(translate(-50%,-50%));
 				width: 100%;
 				.rollover-top {
@@ -724,6 +724,18 @@ body {
 	}
 }
 
+.resources-inventory {
+	.form-container {
+		@include row();
+		.exhibit-force-form {
+			@include media( $xlarge-screen ) {
+				@include span-columns(4);
+				@include shift(4);
+			}
+		}
+	}
+}
+
 .site-content {
 	margin: 16px;
 	@include media( $xlarge-screen ) {
@@ -776,13 +788,13 @@ body {
 		@include media( $xlarge-screen ) {
 			@include pad( ($fifty * 3) 0 );
 			.entry-title {
-				@include span-columns(5);
+				@include span-columns(7);
 				h1 {
 					margin: 0;
 				}
 			}
 			.entry-content {
-				@include span-columns(7);
+				// @include span-columns(7);
 				p {
 					margin: $fifteen 0 0;
 				}
@@ -808,7 +820,7 @@ body {
 						opacity: 0;
 						position: absolute;
 						top: 0;
-						transition: opacity .2s ease-in-out;
+						transition: opacity .75s ease-in-out;
 						width: 100%;
 						z-index: 1;
 					}
@@ -819,7 +831,7 @@ body {
 						position: absolute;
 						text-transform: uppercase;
 						top: 50%;
-						transition: opacity .2s ease-in-out;
+						transition: opacity .75s ease-in-out;
 						@include transform(translate(-50%,-50%));
 						width: 100%;
 						z-index: 2;
@@ -1061,7 +1073,7 @@ body {
 					opacity: .8;
 					position: absolute;
 					top: 0;
-					transition: opacity .2s ease-in-out;
+					transition: opacity .75s ease-in-out;
 					width: 100%;
 				}
 				.square-portal {
@@ -1071,7 +1083,7 @@ body {
 					position: absolute;
 					text-transform: uppercase;
 					top: 50%;
-					transition: opacity .2s ease-in-out;
+					transition: opacity .75s ease-in-out;
 					@include transform(translate(-50%,-50%));
 					width: 100%;
 					a {
@@ -1215,7 +1227,7 @@ body {
 				height: 100%;
 				left: -300px;
 				position: absolute;
-				transition: all .2s ease-in-out;
+				transition: all .75s ease-in-out;
 				width: 300px;
 			}
 			h4 {

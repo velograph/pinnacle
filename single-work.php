@@ -94,7 +94,7 @@ get_header(); ?>
 
 				<div class="detail-column">
 					<div class="project-detail industry-list">
-						<h6>Industry:</h6>
+						<h6>Tags:</h6>
 						<!-- Strip link wrappers -->
 						<h5><?php
 							$terms_as_text = get_the_term_list( $post->ID, 'work-categories', '', ', ', '' ) ;
@@ -121,20 +121,24 @@ get_header(); ?>
 
 						<div class="project-detail">
 							<h6>Award:</h6>
-							<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
-							<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
-							<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
-							<?php $retina_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
 
-							<picture>
-								<!--[if IE 9]><video style="display: none;"><![endif]-->
-								<source srcset="<?php echo $mobile_award[0]; ?>" media="(max-width: 400px)">
-								<source srcset="<?php echo $tablet_award[0]; ?>" media="(max-width: 801px)">
-								<source srcset="<?php echo $desktop_award[0]; ?>" media="(max-width: 1024px)">
-								<source srcset="<?php echo $retina_award[0]; ?>" media="(min-device-pixel-ratio: 2)">
-								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $desktop_award[0]; ?>">
-							</picture>
+							<?php if( get_field('award_logo') ) : ?>
+								<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+								<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+								<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+								<?php $retina_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+
+								<picture>
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="<?php echo $mobile_award[0]; ?>" media="(max-width: 400px)">
+									<source srcset="<?php echo $tablet_award[0]; ?>" media="(max-width: 801px)">
+									<source srcset="<?php echo $desktop_award[0]; ?>" media="(max-width: 1024px)">
+									<source srcset="<?php echo $retina_award[0]; ?>" media="(min-device-pixel-ratio: 2)">
+									<!--[if IE 9]></video><![endif]-->
+									<img srcset="<?php echo $desktop_award[0]; ?>">
+								</picture>
+							<?php endif; ?>
+
 							<h5><?php the_field('award_title'); ?></h5>
 						</div>
 

@@ -12,12 +12,22 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="resources-inventory content-area">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="page-top">
-				<form action="https://www.exhibitforce.com/CLIENTS/default.asp" method="post" name="mainform">
+			<section class="page-top">
+
+				<div class="page-top-content">
+
+					<h1><?php the_field('page_lead_in'); ?></h1>
+
+				</div>
+
+			</section>
+
+			<div class="form-container">
+				<form class="exhibit-force-form" action="https://www.exhibitforce.com/CLIENTS/default.asp" method="post" name="mainform">
 					<ul>
 						<li>
 							<h5>Login:</h5>
