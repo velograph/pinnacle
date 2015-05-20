@@ -876,6 +876,9 @@ body {
 }
 
 .people-archive {
+	.page-sub-nav {
+		color: $cyan;
+	}
 	.people-container {
 		.person {
 			margin-bottom: 2.35765%;
@@ -983,17 +986,14 @@ body {
 	li {
 		display: inline-block;
 		font: {
-			size: 12px;
+			size: $base-font-size;
+			weight: 700;
 		}
 		margin-right: $fifty;
 	}
 	a {
 		color: $dark-grey;
 		@include media( $large-screen ) {
-			font: {
-				size: $base-font-size;
-				weight: 700;
-			}
 			margin-right: $fifty;
 		}
 		margin-right: $fifteen;
