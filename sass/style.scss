@@ -777,16 +777,12 @@ body {
 	.page-content {
 		@include outer-container;
 		@include pad( $hundred 16px );
-		@include media( $xlarge-screen ) {
-			@include pad( $hundred 0 );
-		}
 		.entry-title {
 			h1 {
 				margin-bottom: $twentyfive;
 			}
 		}
 		@include media( $xlarge-screen ) {
-			@include pad( ($fifty * 3) 0 );
 			.entry-title {
 				@include span-columns(7);
 				h1 {
