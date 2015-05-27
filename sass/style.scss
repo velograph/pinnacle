@@ -697,9 +697,11 @@ body {
 			&:hover {
 				.square-portal-overlay {
 					opacity: .8;
+					z-index: 1;
 				}
 				.square-portal {
 					opacity: 1;
+					z-index: 2;
 				}
 			}
 		}
