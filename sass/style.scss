@@ -246,7 +246,13 @@ body {
 	}
 }
 
-
+.header-sticky {
+	.site-header {
+		.inner-header {
+			@include pad(0 16px);
+		}
+	}
+}
 
 @include media( $xlarge-screen ) {
 	.header-sticky {
@@ -514,6 +520,7 @@ body {
 	}
 	.home-description-container {
 		margin-left: 16px;
+		padding-left: 16px;
 		@include media( $xlarge-screen ) {
 			@include outer-container;
 		}
@@ -1511,6 +1518,7 @@ body {
 		display: block;
 	}
 	margin: 0 16px 16px;
+	@include pad(0 16px);
 	position: relative;
 	h4 {
 		font-weight: 900;
