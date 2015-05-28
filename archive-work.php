@@ -52,15 +52,17 @@ get_header(); ?>
 								<?php $desktop_key_image = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'desktop-process-wide'); ?>
 								<?php $retina_key_image = wp_get_attachment_image_src(get_field('featured_project_key_image'), 'retina-process-wide'); ?>
 
-								<picture>
-									<!--[if IE 9]><video style="display: none;"><![endif]-->
-									<source srcset="<?php echo $mobile_key_image[0]; ?>" media="(max-width: 400px)">
-									<source srcset="<?php echo $tablet_key_image[0]; ?>" media="(max-width: 801px)">
-									<source srcset="<?php echo $desktop_key_image[0]; ?>" media="(max-width: 1024px)">
-									<source srcset="<?php echo $retina_key_image[0]; ?>" media="(min-device-pixel-ratio: 2)">
-									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $desktop_key_image[0]; ?>">
-								</picture>
+								<a href="<?php the_permalink(); ?>">
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source srcset="<?php echo $mobile_key_image[0]; ?>" media="(max-width: 400px)">
+										<source srcset="<?php echo $tablet_key_image[0]; ?>" media="(max-width: 801px)">
+										<source srcset="<?php echo $desktop_key_image[0]; ?>" media="(max-width: 1024px)">
+										<source srcset="<?php echo $retina_key_image[0]; ?>" media="(min-device-pixel-ratio: 2)">
+										<!--[if IE 9]></video><![endif]-->
+										<img srcset="<?php echo $desktop_key_image[0]; ?>">
+									</picture>
+								</a>
 
 							</div>
 

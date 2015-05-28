@@ -85,7 +85,7 @@ body {
 	z-index: 9;
 	.site-branding {
 		svg {
-			width: 150px;
+			width: 155px;
 			path {
 				fill: $dark-grey;
 			}
@@ -321,7 +321,7 @@ body {
 							a {
 								color: $dark-grey;
 								&:hover {
-									color: #999;
+									color: $white;
 								}
 							}
 						}
@@ -507,9 +507,57 @@ body {
 	}
 }
 
+.page-template-process-php {
+	.process-link {
+		a {
+			color: $cyan !important;
+		}
+	}
+}
+
+.post-type-archive-video {
+	.video-link {
+		a {
+			color: $cyan !important;
+		}
+	}
+}
+
+.post-type-archive-people {
+	.people-link {
+		a {
+			color: $cyan !important;
+		}
+	}
+}
+
+.page-template-contact {
+	.contact-link {
+		a {
+			color: $cyan !important;
+		}
+	}
+}
+
+.page-template-social {
+	.social-link {
+		a {
+			color: $cyan !important;
+		}
+	}
+}
+
+.post-type-archive-work,
+.single-work {
+	.work-link {
+		a {
+			color: $cyan !important;
+		}
+	}
+}
+
 .site-content {
 	background: $white;
-	// padding-bottom: $fifty;
 }
 
 .home {
@@ -757,10 +805,10 @@ body {
 	.page-top {
 		@include outer-container;
 		height: 400px;
-		padding: $fifty 16px 0;
+		padding: $fifty $ten 0;
 		@include media( $xlarge-screen ) {
 			height: 500px;
-			padding: $hundred 0 0 0;
+			padding: $hundred 0 0 16px;
 		}
 		.page-top-content {
 			position: relative;
@@ -788,10 +836,10 @@ body {
 	}
 	.page-content {
 		@include outer-container;
-		@include pad( $hundred 16px );
+		@include pad( $hundred 32px );
 		@include media( $xlarge-screen ) {
 			margin: 0 16px;
-			@include pad(100px 16px);
+			@include pad(100px 32px);
 		}
 		.entry-title {
 			h1 {
@@ -801,13 +849,14 @@ body {
 		@include media( $xlarge-screen ) {
 			.entry-title {
 				@include span-columns(7);
-				h1 {
+				h2 {
 					margin: 0;
 				}
 			}
 			.entry-content {
+				@include span-columns(5);
 				p {
-					margin: $fifteen 0 0;
+					margin: $ten 0 0;
 				}
 			}
 		}
@@ -931,7 +980,10 @@ body {
 				bottom: 0;
 				color: $white;
 				display: none;
-				padding: $thirty;
+				padding: $fifteen;
+				@include media( $xlarge-screen ) {
+					padding: 30px;
+				}
 				position: absolute;
 				text-transform: uppercase;
 				h2 {
@@ -945,7 +997,8 @@ body {
 					display: block;
 				}
 				.person-details {
-					font-size: 10px;
+					font-size: $ten;
+					line-height: 12px;
 					h2 {
 						font-size: 16px;
 					}
@@ -1017,9 +1070,8 @@ body {
 
 .page-sub-nav {
 	background: $white;
-	display: none;
+	position: relative;
 	@include media( $xlarge-screen ) {
-		display: block;
 		padding: $twentyfive 0;
 	}
 	text-transform: uppercase;
@@ -1045,6 +1097,10 @@ body {
 	}
 	.subnav {
 		@include outer-container;
+		ul {
+			margin-bottom: $ten;
+			padding-left: 16px;
+		}
 	}
 }
 
@@ -1238,6 +1294,9 @@ body {
 .work-archive-container {
 	.page-top {
 		.page-top-work-content {
+			h1 {
+				margin-bottom: $fifteen;
+			}
 			@include media( $xlarge-screen ) {
 				display: none;
 			}
@@ -1245,6 +1304,7 @@ body {
 	}
 	.featured-project {
 		@include media( $xlarge-screen ) {
+			@include row();
 			position: relative;
 		}
 		.featured-content {
@@ -1484,6 +1544,7 @@ body {
 		}
 		ul {
 			display: inline-block;
+			padding-left: $ten;
 			text-align: left;
 			li {
 				text-transform: uppercase;
@@ -1498,11 +1559,10 @@ body {
 		}
 		.back-to-top {
 			@include span-columns(4);
-			text-align: center;
+			border-right: $dark-thin-border;
 			svg {
-				border-right: $dark-thin-border;
 				height: $seventyfive;
-				padding-right: $ten;
+				padding-left: $ten;
 				width: $seventyfive;
 			}
 		}
@@ -1539,7 +1599,7 @@ body {
 			text-align: right;
 		}
 		&:last-of-type {
-			border-top: $thin-border;
+			border-top: $dark-thin-border;
 			padding: $twentyfive 0;
 		}
 	}
@@ -1605,7 +1665,7 @@ body {
 	.footer-row {
 		@include outer-container;
 		border-top: $thin-border;
-		@include pad( $fifty 0 );
+		@include pad( $fifty 16px );
 		@include media( $large-screen ) {
 		}
 		.site-info {

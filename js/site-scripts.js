@@ -22,7 +22,7 @@
 			$(".mobile-footer").fadeIn('slow');
 
 			$(".page-sub-nav").sticky({
-				topSpacing: 50
+				topSpacing: 73
 			});
 
 		}

@@ -53,17 +53,11 @@ get_header(); ?>
 
 			    if($query->have_posts()) : ?>
 
-				<?php $i = 0;?>
-
 				  <?php while($query->have_posts()) : ?>
 
 			        <?php $query->the_post(); ?>
 
 					<?php if ( get_field('executive') ) : ?>
-
-					<?php if ($i == 0 || $i % 3 == 0) { ?>
-			            <div class="people-row">
-			          <?php }; ?>
 
 					<article class="person">
 
@@ -99,13 +93,7 @@ get_header(); ?>
 
 					</article>
 
-					<?php
-				      $i++;
-				      if ($i % 3 == 0){echo "</div>";}
-
-					wp_reset_query();
-
-					?>
+					<?php wp_reset_query(); ?>
 
 					<?php endif; ?>
 
