@@ -75,7 +75,7 @@ $(function() {
 
 				<?php $query->the_post(); ?>
 
-				<article id="<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>" class="location">
+				<article class="anchorLink" id="<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>" name="<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>" class="location">
 
 					<!-- Mobile version -->
 					<?php if( have_rows('location_images') ) : ?>
@@ -169,7 +169,7 @@ $(function() {
 
 					<?php endif; ?>
 
-					<section class="page-content">
+					<section name="<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>-content" id="<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>-content" class="page-content">
 
 						<div class="entry-title">
 							<h2><?php the_title(); ?></h2>

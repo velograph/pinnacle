@@ -26,7 +26,7 @@ get_header(); ?>
 
 			</section>
 
-			<div class="form-container">
+			<div class="page-content">
 				<form class="exhibit-force-form" action="https://www.exhibitforce.com/CLIENTS/default.asp" method="post" name="mainform">
 					<ul>
 						<li>

@@ -69,7 +69,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<section class="project-details-container">
+			<section class="page-content project-details-container">
 
 				<div class="detail-column">
 					<div class="project-detail">

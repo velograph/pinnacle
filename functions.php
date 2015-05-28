@@ -422,9 +422,9 @@ add_image_size( 'tablet-work-featured', 860, 573, true );
 add_image_size( 'mobile-work-featured', 400, 350, true );
 
 add_image_size( 'retina-process-wide', 2600, 845, true);
-add_image_size( 'desktop-process-wide', 1420, 600, true);
-add_image_size( 'tablet-process-wide', 960, 406, true);
-add_image_size( 'mobile-process-wide', 500, 211, true);
+add_image_size( 'desktop-process-wide', 1420, 463, true);
+add_image_size( 'tablet-process-wide', 780, 253, true);
+add_image_size( 'mobile-process-wide', 400, 350, true);
 
 add_image_size( 'retina-hero', 2600, 1733, false);
 add_image_size( 'desktop-hero', 1180, 787, false);

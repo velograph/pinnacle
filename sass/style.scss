@@ -509,7 +509,7 @@ body {
 
 .site-content {
 	background: $white;
-	padding-bottom: $fifty;
+	// padding-bottom: $fifty;
 }
 
 .home {
@@ -645,6 +645,9 @@ body {
 			margin-bottom: 2.35765%;
 			position: relative;
 			text-align: center;
+			&:nth-last-child(-n+3) {
+				margin-bottom: $hundred;
+			}
 		}
 	}
 	@include media( $xlarge-screen ) {
@@ -726,7 +729,7 @@ body {
 			content: url(../images/three_dots.svg);
 			display: block;
 			height: 35px;
-			margin: 0 auto $twentyfive;
+			margin: 0 auto 2.35765%;;
 			text-align: center;
 			width: $twentyfive;
 		}
@@ -734,12 +737,15 @@ body {
 }
 
 .resources-inventory {
-	.form-container {
-		@include row();
+	.page-content {
 		.exhibit-force-form {
-			@include media( $xlarge-screen ) {
-				@include span-columns(4);
-				@include shift(4);
+			margin: 0 auto;
+			width: 25%;
+			.exhibit-force-form {
+				@include media( $xlarge-screen ) {
+					@include span-columns(4);
+					@include shift(4);
+				}
 			}
 		}
 	}
@@ -747,9 +753,6 @@ body {
 
 .site-content {
 	margin: 16px;
-	@include media( $xlarge-screen ) {
-		margin: 16px;
-	}
 	position: relative;
 	.page-top {
 		@include outer-container;
@@ -786,6 +789,10 @@ body {
 	.page-content {
 		@include outer-container;
 		@include pad( $hundred 16px );
+		@include media( $xlarge-screen ) {
+			margin: 0 16px;
+			@include pad(100px 16px);
+		}
 		.entry-title {
 			h1 {
 				margin-bottom: $twentyfive;
@@ -855,6 +862,15 @@ body {
 			}
 		}
 	}
+	.process-page {
+		.page-content {
+			.entry-content {
+				@include media( $xlarge-screen ) {
+					@include span-columns(5);
+				}
+			}
+		}
+	}
 }
 
 .archive,
@@ -915,7 +931,7 @@ body {
 				bottom: 0;
 				color: $white;
 				display: none;
-				padding: $fifteen;
+				padding: $thirty;
 				position: absolute;
 				text-transform: uppercase;
 				h2 {
@@ -937,19 +953,28 @@ body {
 			}
 		}
 	}
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		.people-container {
 			.person {
-				.square-portal-overlay {
-					opacity: .8;
+				.square-portal-overlay,
+				.person-details {
+					display: block;
+					opacity: 0;
+					transition: opacity .75s ease-in-out;
+				}
+				.person-details {
+					font-size: $base-font-size;
+					h2 {
+						font-size: $h2-font-size;
+					}
 				}
 				&:hover {
-					.square-portal-overlay,
-					.person-details {
-						display: block;
+					.square-portal-overlay {
+						opacity: .8;
 					}
 					.person-details {
 						font-size: $base-font-size;
+						opacity: 1;
 						h2 {
 							font-size: $h2-font-size;
 						}
@@ -960,7 +985,7 @@ body {
 	}
 	.pagination {
 		@include outer-container;
-		@include pad( $fifty 0 );
+		@include pad( $fifty 0 $hundred );
 		clear: both;
 		text-align: center;
 		.page-numbers {
@@ -1009,6 +1034,7 @@ body {
 	}
 	a {
 		color: $dark-grey;
+		font-weight: 700;
 		@include media( $large-screen ) {
 			margin-right: $fifty;
 		}
@@ -1036,7 +1062,7 @@ body {
 				bottom: 0;
 				left: 50%;
 				opacity: 1;
-				padding: $five;
+				padding: $ten;
 				position: absolute;
 				text-transform: uppercase;
 				@include transform(translateX(-50%));
@@ -1048,6 +1074,7 @@ body {
 					}
 					.location-city {
 						font-weight: 900;
+						line-height: 16px;
 					}
 				}
 			}
@@ -1132,7 +1159,7 @@ body {
 			}
 		}
 		.entry-content {
-			margin-right: 50%;
+			margin-right: 40%;
 			@include media( $large-screen ) {
 				@include span-columns(4);
 			}
@@ -1147,6 +1174,7 @@ body {
 	.contact-form-container {
 		@include outer-container;
 		border-top: $thin-border;
+		margin-bottom: $seventyfive;
 		.form {
 			@include media( $large-screen ) {
 				@include span-columns(5);
@@ -1169,14 +1197,13 @@ body {
 					br {
 						display: none;
 					}
+					.ajax-loader {
+						display: none;
+					}
 				}
 			}
 		}
 	}
-}
-
-.cff-item {
-	@include span-columns(4);
 }
 
 .lead-in-container {
@@ -1217,9 +1244,7 @@ body {
 		}
 	}
 	.featured-project {
-		display: none;
 		@include media( $xlarge-screen ) {
-			@include row();
 			position: relative;
 		}
 		.featured-content {
@@ -1227,9 +1252,11 @@ body {
 			background: $off-white-opacity;
 			color: $dark-grey;
 			float: left;
+			margin-bottom: $hundred;
 			@include media( $large-screen ) {
 				height: 100%;
 				left: -300px;
+				margin: 0;
 				position: absolute;
 				transition: all .75s ease-in-out;
 				width: 300px;
@@ -1284,7 +1311,7 @@ body {
 		}
 		color: transparent;
 		height: 70px;
-		margin: $fifty 0;
+		margin: $hundred 0;
 		&.done {
 			display: none;
 		}
@@ -1339,10 +1366,6 @@ body {
 		}
 		.project-details-container {
 			@include outer-container;
-			padding: $hundred 16px $fifty;
-			@include media( $xlarge-screen ) {
-				@include pad(100px 0);
-			}
 			.detail-column {
 				@include media( $large-screen ) {
 					@include span-columns(4);
@@ -1362,6 +1385,9 @@ body {
 								}
 							}
 						}
+					}
+					&:last-of-type {
+						margin-bottom: 0;
 					}
 				}
 				.industry-list {
@@ -1385,10 +1411,15 @@ body {
 		width: $twentyfive;
 		path {
 			fill: $dark-grey;
+			transition: all .75s ease-in-out;
 		}
 	}
 	.feeds-container {
 		@include outer-container;
+		margin-bottom: $hundred;
+		a {
+			transition: color .75s ease-in-out;
+		}
 		.two-feeds {
 			@include media( $large-screen ) {
 				@include span-columns(8);
@@ -1402,7 +1433,7 @@ body {
 				border-bottom: $thin-border;
 				display: block;
 				.twitter-title {
-					background-color: $light-grey;
+					background-color: $dark-grey;
 					border-top: $thin-border;
 					border-top-left-radius: 0;
 			      	border-top-right-radius: 0;

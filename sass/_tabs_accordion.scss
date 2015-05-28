@@ -9,7 +9,7 @@
   $light-gray: #d7d6d6;
   $medium-screen: em(640) !default;
   $tab-border: 1px solid $base-border-color;
-  $tab-content-background: $light-grey;
+  $tab-content-background: $dark-grey;
   $tab-active-background: $tab-content-background;
   $tab-inactive-color: $base-background-color;
   $tab-inactive-hover-color: darken($light-gray, 5);
@@ -17,7 +17,6 @@
 
   @include clearfix;
   line-height: 1.5;
-  margin-bottom: $base-spacing;
   padding: 0;
 
   @include media(max-width $tab-mode) {
@@ -52,7 +51,7 @@
   .tab-link {
     background-color: $tab-inactive-color;
     border-top: $tab-border;
-    color: $light-gray;
+    color: $dark-gray;
     display: block;
     font-weight: 700;
     padding: $base-spacing/2 $gutter/2;
@@ -71,7 +70,7 @@
     svg {
         vertical-align: bottom;
         path {
-            fill: $light-grey;
+            fill: $dark-grey;
         }
     }
 
@@ -120,7 +119,7 @@
     display: none;
     padding: $twentyfive;
     @include media( $large-screen ) {
-        padding: $twentyfive 0;
+        padding: $twentyfive 16px 0;
     }
     width: 100%;
     a {

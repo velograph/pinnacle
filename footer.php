@@ -188,7 +188,7 @@
 
 							<?php $query->the_post(); ?>
 
-							<li><a href="/locations/"><?php the_title() ?></a></li>
+							<li><a href="/contact/#<?php global $post; $slug = get_post( $post )->post_name; echo $slug; ?>"><?php the_title() ?></a></li>
 
 						<?php endwhile; ?>
 					</ul>
