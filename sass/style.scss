@@ -956,6 +956,15 @@ body {
 	}
 }
 
+.page-template-page-executives {
+	.people-container {
+		margin-bottom: $hundred;
+		.person:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .people-archive {
 	.page-sub-nav {
 		color: $cyan;
@@ -1303,8 +1312,8 @@ body {
 		}
 	}
 	.featured-project {
+		@include row();
 		@include media( $xlarge-screen ) {
-			@include row();
 			position: relative;
 		}
 		.featured-content {
@@ -1407,6 +1416,13 @@ body {
 				.sharedaddy {
 					display: none;
 				}
+			}
+		}
+		.work-section-no-text {
+			@include row();
+			img {
+				float: left;
+				margin-bottom: 16px;
 			}
 		}
 		.work-section {

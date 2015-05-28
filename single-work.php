@@ -65,6 +65,29 @@ get_header(); ?>
 
 			        <?php endif; ?>
 
+					<?php if( get_row_layout() == 'section_no_text' ) : ?>
+
+						<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile-work-featured'); ?>
+						<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet-work-featured'); ?>
+						<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop-work-featured'); ?>
+						<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina-work-featured'); ?>
+
+						<div class="work-section-no-text">
+
+							<picture>
+								<!--[if IE 9]><video style="display: none;"><![endif]-->
+								<source srcset="<?php echo $mobile[0]; ?>" media="(max-width: 400px)">
+								<source srcset="<?php echo $tablet[0]; ?>" media="(max-width: 801px)">
+								<source srcset="<?php echo $desktop[0]; ?>" media="(max-width: 1024px)">
+								<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop[0]; ?>">
+							</picture>
+
+						</div>
+
+			        <?php endif; ?>
+
 			    <?php endwhile; ?>
 
 			<?php endif; ?>
