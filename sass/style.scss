@@ -18,7 +18,6 @@
 @import "base/base";
 
 @import "variables";
-@import "tabs_accordion";
 @import "veno";
 
 body {
@@ -104,6 +103,7 @@ body {
 .home {
 	.site-branding {
 		svg {
+			height: 37px;
 			width: 150px;
 			path {
 				fill: $white;
@@ -129,6 +129,7 @@ body {
 		width: inherit !important;
 		.site-branding {
 			svg {
+				height: 37px;
 				width: 150px;
 				path {
 					fill: $dark-grey;
@@ -271,6 +272,7 @@ body {
 					@include pad(15px 15px 15px 0);
 					float: left;
 					svg {
+						height: 49px;
 						width: 200px;
 						path {
 							fill: $dark-grey;
@@ -282,15 +284,19 @@ body {
 					float: right;
 					margin-top: 15px;
 					ul {
+						margin-top: $ten;
 						li {
 							display: inline-block;
-							margin-left: 50px;
+							margin-left: 40px;
 							&:first-child {
 								margin: 0;
 							}
 							a {
 								color: $dark-grey;
-								font-weight: 700;
+								font: {
+									size: 16px;
+									weight: 700;
+								}
 								text-transform: uppercase;
 							}
 						}
@@ -309,6 +315,7 @@ body {
 			.inner-header {
 				.site-branding {
 					svg {
+						height: 49px;
 						width: 200px;
 						path {
 							fill: $dark-grey;
@@ -521,6 +528,13 @@ body {
 			color: $cyan !important;
 		}
 	}
+	.work-portals {
+		.square-portal-container {
+			&:nth-of-type(3) {
+				margin-right: 0;
+			}
+		}
+	}
 }
 
 .post-type-archive-people {
@@ -586,27 +600,13 @@ body {
 			}
 		}
 	}
-	.home-page-content {
-		@include outer-container;
-		@include pad(150px 0);
-		.content-title {
-			@include media( $xlarge-screen ) {
-				@include span-columns(5);
-			}
-			h2 {
-				font-size: 36px;
-				font-weight: 900;
-				color: #666;
-			}
+	.entry-content {
+		@include media( $large-screen ) {
+			@include span-columns(5);
 		}
-		.entry-content {
-			@include media( $xlarge-screen ) {
-				@include span-columns(7);
-			}
-			p {
-				color: #999;
-				font-size: 20px;
-			}
+		p {
+			color: #999;
+			font-size: 20px;
 		}
 	}
 	.work-portals {
@@ -620,7 +620,7 @@ body {
 .work-portals {
 	.square-portal-container {
 		@include row();
-		margin-bottom: $twentyfive;
+		margin-bottom: 16px;
 		position: relative;
 		.square-portal-overlay {
 			display: none;
@@ -645,7 +645,7 @@ body {
 			background: $cyan-opacity;
 			bottom: 0;
 			color: $white;
-			padding: $ten;
+			padding: $fifteen;
 			position: absolute;
 			text: {
 				align: center;
@@ -661,10 +661,13 @@ body {
 					size: 18px;
 					weight: 900;
 				}
+				line-height: 18px;
+				margin-bottom: 5px;
 				@include media( $xlarge-screen ) {
 					font: {
 						size: 40px;
 					}
+					line-height: 40px;
 				}
 				&:after {
 					display: none;
@@ -678,10 +681,12 @@ body {
 				font: {
 					size: 14px;
 				}
+				line-height: 14px;
 				@include media( $xlarge-screen ) {
 					font: {
 						size: 18px;
 					}
+					line-height: 18px;
 				}
 			}
 		}
@@ -693,9 +698,6 @@ body {
 			margin-bottom: 2.35765%;
 			position: relative;
 			text-align: center;
-			&:nth-last-child(-n+3) {
-				margin-bottom: $hundred;
-			}
 		}
 	}
 	@include media( $xlarge-screen ) {
@@ -770,16 +772,29 @@ body {
 }
 
 // Loads more work examples and reveals three dots
-.ajax-load-more-wrap {
-	.alm-reveal {
-		&:before {
-			clear: both;
-			content: url(../images/three_dots.svg);
-			display: block;
-			height: 35px;
-			margin: 0 auto 2.35765%;;
-			text-align: center;
-			width: $twentyfive;
+.work-portals {
+	.ajax-load-more-wrap {
+		clear: both;
+		.alm-listing {
+			.alm-reveal {
+				&:before {
+					clear: both;
+					content: url(../images/three_dots.svg);
+					display: block;
+					height: 35px;
+					margin: 0 auto 16px;
+					text-align: center;
+					width: $twentyfive;
+				}
+				.square-portal-container {
+					@include media( $xlarge-screen ) {
+						@include span-columns(4);
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -788,7 +803,10 @@ body {
 	.page-content {
 		.exhibit-force-form {
 			margin: 0 auto;
-			width: 25%;
+			width: 50%;
+			@include media( $xlarge-screen ) {
+				width: 25%;
+			}
 			.exhibit-force-form {
 				@include media( $xlarge-screen ) {
 					@include span-columns(4);
@@ -838,8 +856,8 @@ body {
 		@include outer-container;
 		@include pad( $hundred 32px );
 		@include media( $xlarge-screen ) {
-			margin: 0 16px;
-			@include pad(100px 32px);
+			// margin: 0 16px;
+			@include pad(100px 16px);
 		}
 		.entry-title {
 			h1 {
@@ -932,21 +950,6 @@ body {
 			@include outer-container;
 			padding: 150px 0;
 		}
-		.person {
-			@include span-columns(6);
-			@include omega(2n);
-		}
-		.people-container {
-			@include outer-container(100%);
-			@include media( $large-screen ) {
-				.person {
-					@include span-columns(4);
-					@include omega(3n);
-					clear: none;
-					text-transform: uppercase;
-				}
-			}
-		}
 	}
 }
 
@@ -965,100 +968,121 @@ body {
 	}
 }
 
-.people-archive {
-	.page-sub-nav {
-		color: $cyan;
-	}
-	.people-container {
-		.person {
-			margin-bottom: 2.35765%;
-			position: relative;
-			img {
-				float: left;
-			}
-			.square-portal-overlay {
-				background: $cyan;
-				display: none;
-				height: 100%;
-				opacity: .8;
-				position: absolute;
-				top: 0;
-				width: 100%;
-			}
-			.person-details {
-				bottom: 0;
-				color: $white;
-				display: none;
-				padding: $fifteen;
-				@include media( $xlarge-screen ) {
-					padding: 30px;
-				}
-				position: absolute;
-				text-transform: uppercase;
-				h2 {
-					margin: 0;
-				}
-			}
-			&:active,
-			&:hover {
-				.square-portal-overlay,
-				.person-details {
-					display: block;
-				}
-				.person-details {
-					font-size: $ten;
-					line-height: 12px;
-					h2 {
-						font-size: 16px;
-					}
-				}
-			}
+.post-type-archive-people,
+.page-template-page-executives {
+	.people-archive {
+		.page-sub-nav {
+			color: $cyan;
 		}
-	}
-	@include media( $xlarge-screen ) {
 		.people-container {
 			.person {
-				.square-portal-overlay,
-				.person-details {
-					display: block;
-					opacity: 0;
-					transition: opacity .75s ease-in-out;
+				@include span-columns(6);
+				@include omega(2n);
+				margin-bottom: 2.35765%;
+				position: relative;
+				img {
+					float: left;
+				}
+				.square-portal-overlay {
+					background: $cyan;
+					display: none;
+					height: 100%;
+					opacity: .8;
+					position: absolute;
+					top: 0;
+					width: 100%;
 				}
 				.person-details {
-					font-size: $base-font-size;
+					bottom: 0;
+					color: $white;
+					display: none;
+					font-size: $ten;
+					line-height: 12px;
+					padding: $fifteen;
+					@include media( $xlarge-screen ) {
+						padding: 30px;
+					}
+					position: absolute;
+					text-transform: uppercase;
 					h2 {
-						font-size: $h2-font-size;
+						margin: 0;
 					}
 				}
+				&:active,
 				&:hover {
-					.square-portal-overlay {
-						opacity: .8;
+					.square-portal-overlay,
+					.person-details {
+						display: block;
 					}
 					.person-details {
-						font-size: $base-font-size;
-						opacity: 1;
 						h2 {
-							font-size: $h2-font-size;
+							font-size: 16px;
+							line-height: 16px;
 						}
 					}
 				}
 			}
 		}
-	}
-	.pagination {
-		@include outer-container;
-		@include pad( $fifty 0 $hundred );
-		clear: both;
-		text-align: center;
-		.page-numbers {
-			margin: 0 $fifteen;
-			&.current {
-				color: $cyan;
-				font-weight: bold;
+		@mixin omega-reset($nth) {
+			&:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+			&:nth-child(#{$nth}+1) { clear: none }
+		}
+		@include media( $xlarge-screen ) {
+			.people-container {
+				.person {
+					@include span-columns(4);
+					@include omega-reset(2n);
+					@include omega(3n);
+					text-transform: uppercase;
+					.square-portal-overlay,
+					.person-details {
+						display: block;
+						opacity: 0;
+						transition: opacity .75s ease-in-out;
+					}
+					.person-details {
+						font-size: $base-font-size;
+						h2 {
+							font-size: $h2-font-size;
+							line-height: 36px;
+							margin-bottom: $ten;
+						}
+						span {
+							line-height: 22px;
+						}
+					}
+					&:hover {
+						.square-portal-overlay {
+							opacity: .8;
+						}
+						.person-details {
+							font-size: $base-font-size;
+							opacity: 1;
+							h2 {
+								font-size: $h2-font-size;
+								line-height: 36px;
+								margin-bottom: $ten;
+							}
+						}
+					}
+				}
 			}
 		}
-		a {
-			color: $medium-grey;
+		.pagination {
+			@include outer-container;
+			@include pad( $fifty 0 $hundred );
+			clear: both;
+			text-align: center;
+			.page-numbers {
+				margin: 0 $fifteen;
+				&.current {
+					color: $cyan;
+					font-weight: bold;
+				}
+			}
+			a {
+				color: $medium-grey;
+			}
 		}
 	}
 }
@@ -1068,6 +1092,9 @@ body {
 		display: none;
 		@include media( $xlarge-screen ) {
 			display: block;
+		}
+		.subnav {
+			padding-left: 16px;
 		}
 	}
 	.page-content {
@@ -1088,14 +1115,17 @@ body {
 	li {
 		display: inline-block;
 		font: {
-			size: $base-font-size;
+			size: 16px;
 			weight: 700;
 		}
 		margin-right: $fifty;
 	}
 	a {
 		color: $dark-grey;
-		font-weight: 700;
+		font: {
+			size: 16px;
+			weight: 700;
+		}
 		@include media( $large-screen ) {
 			margin-right: $fifty;
 		}
@@ -1148,7 +1178,7 @@ body {
 	.desktop-image-container {
 		display: none;
 	}
-	@include media( $large-screen ) {
+	@include media( $xlarge-screen ) {
 		.mobile-image-container {
 			display: none;
 		}
@@ -1156,7 +1186,7 @@ body {
 			display: inline-block;
 			.desktop-image {
 				@include span-columns(4);
-				@include omega(3);
+				// @include omega(2n);
 				position: relative;
 				text-align: center;
 				margin-bottom: 2.35765%;
@@ -1197,6 +1227,9 @@ body {
 				&:nth-child(n+3) {
 					margin-bottom: 0;
 				}
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
 			}
 		}
 	}
@@ -1224,7 +1257,7 @@ body {
 			}
 		}
 		.entry-content {
-			margin-right: 40%;
+			margin-right: 30%;
 			@include media( $large-screen ) {
 				@include span-columns(4);
 			}
@@ -1302,18 +1335,19 @@ body {
 
 .work-archive-container {
 	.page-top {
+		h1 {
+			margin-bottom: $fifteen;
+		}
 		.page-top-work-content {
-			h1 {
-				margin-bottom: $fifteen;
-			}
 			@include media( $xlarge-screen ) {
 				display: none;
 			}
 		}
 	}
 	.featured-project {
-		@include row();
+		display: none;
 		@include media( $xlarge-screen ) {
+			@include row();
 			position: relative;
 		}
 		.featured-content {
@@ -1396,8 +1430,9 @@ body {
 			height: inherit;
 			padding: $hundred $twenty $fifty;
 			@include media( $large-screen ) {
+				@include outer-container;
 				height: 500px;
-				padding: $hundred 0 0 0;
+				// padding: $hundred 16px 0 0;
 			}
 			.page-top-content {
 				top: inherit;
@@ -1462,8 +1497,10 @@ body {
 							}
 						}
 					}
-					&:last-of-type {
-						margin-bottom: 0;
+					@include media( $xlarge-screen ) {
+						&:last-of-type {
+							margin-bottom: 0;
+						}
 					}
 				}
 				.industry-list {
@@ -1479,65 +1516,87 @@ body {
 	}
 }
 
-.social-feeds {
-	@include row();
-	svg {
-		display: inline-block;
-		height: $twentyfive;
-		width: $twentyfive;
-		path {
-			fill: $dark-grey;
-			transition: all .75s ease-in-out;
-		}
-	}
-	.feeds-container {
-		@include outer-container;
-		margin-bottom: $hundred;
-		a {
-			transition: color .75s ease-in-out;
-		}
-		.two-feeds {
-			@include media( $large-screen ) {
-				@include span-columns(8);
-			}
-		}
-		.one-feed {
-			@include media( $large-screen ) {
-				@include span-columns(4);
-			}
-			.twitter-title-container {
-				border-bottom: $thin-border;
-				display: block;
-				.twitter-title {
-					background-color: $dark-grey;
-					border-top: $thin-border;
-					border-top-left-radius: 0;
-			      	border-top-right-radius: 0;
+.social-media-feeds {
+    @include outer-container;
+	padding: 0 16px $hundred;
+    .tab-links {
+		border-bottom: $dark-thin-border;
+		margin-bottom: $twentyfive;
+        &:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+        li {
+            float: left;
+			transition: all 0.75s ease-in-out;
+			&.active {
+				background: $dark-grey;
+				border-top-left-radius: 2px;
+				border-top-right-radius: 2px;
+				a {
 					color: $white;
-					@include media( $large-screen ) {
-						display: inline-block;
-					}
-					font-weight: 700;
-					padding: (25px/2) ($gutter/2);
-					text: {
-						decoration: none;
-						transform: uppercase;
-					}
 					svg {
-						vertical-align: bottom;
 						path {
 							fill: $white;
 						}
 					}
 				}
+				&:hover {
+					a {
+						color: $white;
+					}
+				}
 			}
-			.twitter-content {
-				padding: $twentyfive ($gutter/2);
+			&:hover {
+				a {
+					color: $cyan;
+				}
+				svg {
+					path {
+						fill: $cyan;
+					}
+				}
 			}
-		}
-	}
+			.tab-title {
+				display: none;
+				font: {
+					size: 16px;
+					weight: 700;
+				}
+				text-transform: uppercase;
+				@include media( $xlarge-screen ) {
+					display: inline;
+				}
+			}
+			svg {
+				height: $twentyfive;
+				vertical-align: bottom;
+				width: $twentyfive;
+				path {
+					fill: $dark-grey;
+				}
+			}
+            a {
+				color: $dark-grey;
+                display: inline-block;
+				margin: $ten $fifteen;
+            }
+        }
+    }
+    .tab-content {
+        .tab {
+            display: none;
+			@include media( $xlarge-screen ) {
+				@include outer-container;
+				@include span-columns(8);
+			}
+            &.active {
+                display: block;
+            }
+        }
+    }
 }
-
 
 .mobile-footer {
 	clear: both;
@@ -1561,7 +1620,7 @@ body {
 		ul {
 			display: inline-block;
 			padding-left: $ten;
-			text-align: left;
+			text-align: center;
 			li {
 				text-transform: uppercase;
 				a {
@@ -1575,18 +1634,18 @@ body {
 		}
 		.back-to-top {
 			@include span-columns(4);
-			border-right: $dark-thin-border;
+			text-align: center;
 			svg {
 				height: $seventyfive;
-				padding-left: $ten;
 				width: $seventyfive;
 			}
 		}
 		.social-links {
 			@include span-columns(8);
+			border-left: $dark-thin-border;
 			position: absolute;
 			right: 0;
-			text-align: right;
+			text-align: center;
 			top: 50%;
 			@include transform( translateY(-50%));
 			a {
@@ -1595,10 +1654,11 @@ body {
 		}
 		.client-tools {
 			@include span-columns(6);
-			border-right: $dark-thin-border;
+			text-align: center;
 		}
 		.careers {
 			@include span-columns(6);
+			border-left: $dark-thin-border;
 			text-align: center;
 		}
 		a {
@@ -1636,13 +1696,15 @@ body {
 	}
 	ul {
 		li {
+			line-height: 20px;
+			margin-bottom: $ten;
 			text-transform: uppercase;
 			a {
 				color: $dark-grey;
 				font: {
 					size: 10px;
 				}
-				line-height: 30px;
+				line-height: 7px;
 			}
 		}
 	}

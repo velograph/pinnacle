@@ -79,7 +79,6 @@
 
 			<div class="social-links">
 				<a href="<?php the_field('facebook_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 14.5 14.5" enable-background="new 0 0 14.5 14.5" xml:space="preserve">
 					<path fill="#00A9C5" d="M13.7,0.1H0.8c-0.4,0-0.8,0.4-0.8,0.8v12.8c0,0.4,0.4,0.8,0.8,0.8h6.9V8.9H5.9V6.7h1.9V5.1
@@ -89,7 +88,6 @@
 				</a>
 
 				<a href="<?php the_field('twitter_link', 130); ?><?php the_field(''); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve">
 					<path fill="#00A9C5" d="M15.8,1.7c-0.6,0.3-1.2,0.4-1.8,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2,0.8c-0.6-0.6-1.4-1-2.3-1
@@ -101,7 +99,6 @@
 				</a>
 
 				<a href="<?php the_field('instagram_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 					<g>
@@ -115,7 +112,6 @@
 				</a>
 
 				<a href="<?php the_field('pinterest_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 					<g>
@@ -223,7 +219,6 @@
 
 			<div class="social-links">
 				<a href="<?php the_field('facebook_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 14.5 14.5" enable-background="new 0 0 14.5 14.5" xml:space="preserve">
 					<path fill="#00A9C5" d="M13.7,0.1H0.8c-0.4,0-0.8,0.4-0.8,0.8v12.8c0,0.4,0.4,0.8,0.8,0.8h6.9V8.9H5.9V6.7h1.9V5.1
@@ -233,7 +228,6 @@
 				</a>
 
 				<a href="<?php the_field('twitter_link', 130); ?><?php the_field(''); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve">
 					<path fill="#00A9C5" d="M15.8,1.7c-0.6,0.3-1.2,0.4-1.8,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2,0.8c-0.6-0.6-1.4-1-2.3-1
@@ -245,7 +239,6 @@
 				</a>
 
 				<a href="<?php the_field('instagram_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 					<g>
@@ -259,7 +252,6 @@
 				</a>
 
 				<a href="<?php the_field('pinterest_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 					<g>

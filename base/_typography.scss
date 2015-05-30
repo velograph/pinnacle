@@ -24,6 +24,12 @@ h1 {
       size: $h1-font-size;
       weight: 900;
   }
+  @include media( $medium-screen ) {
+      font: {
+          size: 42px;
+      }
+      line-height: 67px;
+  }
   @include media( $xlarge-screen ) {
       font: {
           size: 60px;
@@ -38,9 +44,14 @@ h2 {
       weight: 900;
   }
   margin-bottom: 25px;
+  @include media( $medium-screen ) {
+      font: {
+          size: 28px;
+      }
+  }
   @include media( $xlarge-screen ) {
       font: {
-          size: 40px;
+          size: 34px;
       }
   }
 }
@@ -60,7 +71,7 @@ h3 {
 
 h4 {
   font: {
-      size: $h4-font-size;
+      size: 18px;
       weight: 800;
   }
   text-transform: uppercase;
@@ -75,7 +86,7 @@ h4 {
 // List Values
 h5 {
   font: {
-      size: 18px;
+      size: 16px;
       weight: 700;
   }
   line-height: 25px;

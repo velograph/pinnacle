@@ -14,7 +14,7 @@
 		if (jQuery(window).width() > 860) {
 
 			$(".page-sub-nav").sticky({
-				topSpacing: 80
+				topSpacing: 70
 			});
 		}
 

@@ -13,24 +13,18 @@
 get_header(); ?>
 
 <script>
-	jQuery(document).ready(function () {
-	  jQuery('.accordion-tabs').each(function(index) {
-	    jQuery(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
-	  });
+	jQuery(document).ready(function() {
+		jQuery('.social-media-feeds .tab-links a').on('click', function(e)  {
+			var currentAttrValue = jQuery(this).attr('href');
 
-	  jQuery('.accordion-tabs').on('click', 'li > a', function(event) {
-	    if (!jQuery(this).hasClass('is-active')) {
-	      event.preventDefault();
-	      var accordionTabs = jQuery(this).closest('.accordion-tabs');
-	      accordionTabs.find('.is-open').removeClass('is-open').hide();
+			// Show/Hide Tabs
+			jQuery('.social-media-feeds ' + currentAttrValue).show().siblings().hide();
 
-	      jQuery(this).next().toggleClass('is-open').toggle();
-	      accordionTabs.find('.is-active').removeClass('is-active');
-	      jQuery(this).addClass('is-active');
-	    } else {
-	      event.preventDefault();
-	    }
-	  });
+			// Change/remove current tab to active
+			jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+			e.preventDefault();
+		});
 	});
 </script>
 
@@ -44,30 +38,15 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section class="feeds-container">
 
-				<div class="two-feeds">
 
-					<ul class="accordion-tabs">
-					  <li class="tab-header-and-content">
-					    <a href="javascript:void(0)" class="is-active tab-link">
-							Culture&nbsp;
+			<div class="social-media-feeds">
+			    <ul class="tab-links">
+			        <li class="active">
+						<a href="#tab1">
+							<span class="tab-title">Design&nbsp;</span>
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 viewBox="0 0 14.5 14.5" enable-background="new 0 0 14.5 14.5" xml:space="preserve">
-							<path fill="#00A9C5" d="M13.7,0.1H0.8c-0.4,0-0.8,0.4-0.8,0.8v12.8c0,0.4,0.4,0.8,0.8,0.8h6.9V8.9H5.9V6.7h1.9V5.1
-								c0-1.9,1.1-2.9,2.8-2.9c0.8,0,1.5,0.1,1.7,0.1v1.9l-1.2,0c-0.9,0-1.1,0.4-1.1,1.1v1.4h2.2l-0.3,2.2H10v5.6h3.7
-								c0.4,0,0.8-0.4,0.8-0.8V0.8C14.4,0.4,14.1,0.1,13.7,0.1z"/>
-							</svg>
-						</a>
-					    <div class="tab-content">
-							<?php echo do_shortcode('[custom-facebook-feed]'); ?>
-					    </div>
-					  </li>
-					  <li class="tab-header-and-content">
-					    <a href="javascript:void(0)" class="tab-link">
-							Design&nbsp;
-							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
+								viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 							<g>
 								<path fill-rule="evenodd" clip-rule="evenodd" fill="#00A9C5" d="M13,6.4h-1.3c0.1,0.4,0.1,0.7,0.1,1.1c0,2.4-2,4.4-4.4,4.4
 									c-2.4,0-4.4-2-4.4-4.4c0-0.4,0.1-0.8,0.1-1.1H2v6.1C2,12.8,2.2,13,2.5,13h10c0.3,0,0.6-0.2,0.6-0.6V6.4z M13,2.5
@@ -77,18 +56,23 @@ get_header(); ?>
 							</g>
 							</svg>
 						</a>
-					    <div class="tab-content">
-							<?php echo do_shortcode('[instagram-feed]'); ?>
-					    </div>
-					  </li>
-					</ul>
+					</li>
 
-				</div>
+			        <li>
+						<a href="#tab2">
+							<span class="tab-title">Culture&nbsp;</span>
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								viewBox="0 0 14.5 14.5" enable-background="new 0 0 14.5 14.5" xml:space="preserve">
+							<path fill="#00A9C5" d="M13.7,0.1H0.8c-0.4,0-0.8,0.4-0.8,0.8v12.8c0,0.4,0.4,0.8,0.8,0.8h6.9V8.9H5.9V6.7h1.9V5.1
+								c0-1.9,1.1-2.9,2.8-2.9c0.8,0,1.5,0.1,1.7,0.1v1.9l-1.2,0c-0.9,0-1.1,0.4-1.1,1.1v1.4h2.2l-0.3,2.2H10v5.6h3.7
+								c0.4,0,0.8-0.4,0.8-0.8V0.8C14.4,0.4,14.1,0.1,13.7,0.1z"/>
+							</svg>
+						</a>
+					</li>
 
-				<aside class="one-feed">
-					<div class="twitter-title-container">
-						<div class="twitter-title">
-							Industry&nbsp;
+					<li>
+						<a href="#tab3">
+							<span class="tab-title">Industry&nbsp;</span>
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve">
 							<path fill="#00A9C5" d="M15.8,1.7c-0.6,0.3-1.2,0.4-1.8,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2,0.8c-0.6-0.6-1.4-1-2.3-1
@@ -97,14 +81,24 @@ get_header(); ?>
 								c-1.1,0.9-2.5,1.4-4,1.4c-0.3,0-0.5,0-0.8,0c1.4,0.9,3.1,1.4,4.9,1.4c5.9,0,9.1-4.9,9.1-9.1c0-0.1,0-0.3,0-0.4
 								C14.8,2.9,15.3,2.3,15.8,1.7z"/>
 							</svg>
-						</div>
-					</div>
-					<div class="twitter-content">
-						<?php dynamic_sidebar( 'sidebar-1' ); ?>
-					</div>
-				</aside>
+						</a>
+					</li>
+			    </ul>
 
-			</section>
+			    <div class="tab-content">
+			        <div id="tab1" class="tab instagram-tab active">
+						<?php echo do_shortcode('[instagram-feed]'); ?>
+			        </div>
+
+			        <div id="tab2" class="facebook-tab tab">
+						<?php echo do_shortcode('[custom-facebook-feed]'); ?>
+			        </div>
+
+			        <div id="tab3" class="twitter-tab tab">
+						<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			        </div>
+			    </div>
+			</div>
 
 		<?php endwhile; // end of the loop. ?>
 

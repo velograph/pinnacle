@@ -84,10 +84,12 @@ get_header(); ?>
 
 						<div class="person-details">
 							<h2><?php the_title(); ?></h2>
-							<?php the_field('location'); ?> /
-							<?php the_field('position'); ?>
-							<?php $terms = get_the_term_list( $post->ID, 'people_roles' );
-							echo strip_tags($terms); ?>
+							<span>
+								<?php the_field('location'); ?> /
+								<?php the_field('position'); ?>
+								<?php $terms = get_the_term_list( $post->ID, 'people_roles' );
+								echo strip_tags($terms); ?>
+							</span>
 
 						</div>
 

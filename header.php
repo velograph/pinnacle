@@ -14,6 +14,14 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<!--[if IE 10]>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie10.css">
+<![endif]-->
+
+<!--[if IE 9]>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css">
+<![endif]-->
+
 <?php wp_head(); ?>
 </head>
 
@@ -30,7 +38,6 @@
 	<div class="overlay overlay-pinnacle">
 
 		<a class="mobile-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<?xml version="1.0" encoding="utf-8"?>
 			<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				viewBox="0 0 104.6 25.4" enable-background="new 0 0 104.6 25.4" xml:space="preserve">
@@ -75,7 +82,6 @@
 		</a>
 
 		<button type="button" class="overlay-close">
-			<?xml version="1.0" encoding="utf-8"?>
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				viewBox="0 0 12.5 12.5" enable-background="new 0 0 12.5 12.5" xml:space="preserve">
 			<path fill="#FFFFFF" d="M7.9,6.2l4.2-4.2c0.2-0.2,0.2-0.4,0-0.6L11,0.4c-0.2-0.2-0.4-0.2-0.6,0L6.3,4.6L2.1,0.4
@@ -95,7 +101,6 @@
 
 			<div class="social-links">
 				<a href="<?php the_field('facebook_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 14.5 14.5" enable-background="new 0 0 14.5 14.5" xml:space="preserve">
 					<path fill="#00A9C5" d="M13.7,0.1H0.8c-0.4,0-0.8,0.4-0.8,0.8v12.8c0,0.4,0.4,0.8,0.8,0.8h6.9V8.9H5.9V6.7h1.9V5.1
@@ -105,7 +110,6 @@
 				</a>
 
 				<a href="<?php the_field('twitter_link', 130); ?><?php the_field(''); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve">
 					<path fill="#00A9C5" d="M15.8,1.7c-0.6,0.3-1.2,0.4-1.8,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2,0.8c-0.6-0.6-1.4-1-2.3-1
@@ -117,7 +121,6 @@
 				</a>
 
 				<a href="<?php the_field('instagram_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 					<g>
@@ -131,7 +134,6 @@
 				</a>
 
 				<a href="<?php the_field('pinterest_link', 130); ?>" target="_blank">
-					<?xml version="1.0" encoding="utf-8"?>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 					<g>
@@ -158,7 +160,6 @@
 
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?xml version="1.0" encoding="utf-8"?>
 				<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					viewBox="0 0 104.6 25.4" enable-background="new 0 0 104.6 25.4" xml:space="preserve">
@@ -204,7 +205,6 @@
 		</div><!-- .site-branding -->
 
 		<button id="trigger-overlay" type="button">
-			<?xml version="1.0" encoding="utf-8"?>
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				viewBox="0 0 14 11.5" enable-background="new 0 0 14 11.5" xml:space="preserve">
 			<g>
@@ -226,7 +226,6 @@
 
 			<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?xml version="1.0" encoding="utf-8"?>
 					<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 104.6 25.4" enable-background="new 0 0 104.6 25.4" xml:space="preserve">
