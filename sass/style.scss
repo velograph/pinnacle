@@ -1539,20 +1539,17 @@ body {
             float: left;
 			@include transition(all .75s ease-in-out);
 			&.active {
-				background: $dark-grey;
-				border-top-left-radius: 2px;
-				border-top-right-radius: 2px;
 				a {
-					color: $white;
+					color: $cyan;
 					svg {
 						path {
-							fill: $white;
+							fill: $cyan;
 						}
 					}
 				}
 				&:hover {
 					a {
-						color: $white;
+						color: $cyan;
 					}
 				}
 			}
