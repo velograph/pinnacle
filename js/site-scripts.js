@@ -1,13 +1,5 @@
 
 	$(document).ready(function(){
-		// $.fn.almComplete = function(alm){
-		//
-		// 	$(".alm-reveal .square-portal-container").hide();
-		// 	setTimeout(function(){
-		// 		$(".alm-reveal .square-portal-container").fadeIn('slow');
-		// 	}, 1000);
-		// }
-
 		$(".site-header").fadeIn('fast');
 		$(".site-content").fadeIn('slow');
 
