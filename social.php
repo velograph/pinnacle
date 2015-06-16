@@ -41,7 +41,7 @@ get_header(); ?>
 
 
 			<div class="social-media-feeds">
-			    <ul class="tab-links">
+			    <ul class="tab-links page-sub-nav">
 			        <li class="active">
 						<a href="#tab1">
 							<span class="tab-title">Creative&nbsp;</span>
