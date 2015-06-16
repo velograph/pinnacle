@@ -151,7 +151,7 @@ body {
 	@include media( $xlarge-screen ) {
 		display: none;
 	}
-	transition: background .75s ease-in-out;
+	@include transition(background .75s ease-in-out);
 	.site-branding {
 		float: left;
 	}
@@ -177,7 +177,8 @@ body {
 		}
 	}
 
-	.page-template-page-executives {
+	.page-template-page-executives,
+	.page-template-people-all-php {
 		.main-navigation {
 			li.people-link {
 				a {
@@ -265,7 +266,7 @@ body {
 		z-index: 9;
 		.site-header {
 			background: transparent;
-			transition: all .75s ease-in-out;
+			@include transition(background .75s ease-in-out);
 			.inner-header {
 				@include outer-container;
 				.site-branding {
@@ -418,8 +419,7 @@ body {
 	top: 50%;
 	height: 50%;
 	font-size: 24px;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+	@include transform(translateY(-50%));
 }
 
 .overlay ul {
@@ -458,8 +458,7 @@ body {
 .overlay-pinnacle {
 	opacity: 0;
 	visibility: hidden;
-	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-	transition: opacity 0.5s, visibility 0s 0.5s;
+	@include transition(opacity 0.5s, visibility 0s 0.5s);
 	z-index: 10;
 	@include media( $xlarge-screen ) {
 		display: none;
@@ -471,8 +470,7 @@ body {
 .overlay-pinnacle.open {
 	opacity: 1;
 	visibility: visible;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
+	@include transition(opacity 0.5s);
 	@include media( $xlarge-screen ) {
 		display: none;
 		opacity: 0;
@@ -487,21 +485,17 @@ body {
 
 .overlay-pinnacle nav ul {
 	opacity: 0.4;
-	-webkit-transform: translateY(-25%) rotateX(35deg);
-	transform: translateY(-25%) rotateX(35deg);
-	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-	transition: transform 0.5s, opacity 0.5s;
+	@include transform(translateY(-25%) rotateX(35deg));
+	@include transition(opacity 0.5s, visibility 0s 0.5s);
 }
 
 .overlay-pinnacle.open nav ul {
 	opacity: 1;
-	-webkit-transform: rotateX(0deg);
-	transform: rotateX(0deg);
+	@include transform(rotateX(0deg));
 }
 
 .overlay-pinnacle.close nav ul {
-	-webkit-transform: translateY(25%) rotateX(-35deg);
-	transform: translateY(25%) rotateX(-35deg);
+	@include transform(translateY(-25%) rotateX(35deg));
 }
 
 @media screen and (max-height: 30.5em) {
@@ -627,6 +621,8 @@ body {
 		}
 		img {
 			float: left;
+			height: 100%;
+			width: 100%;
 		}
 		// Video icon
 		.video-play-icon {
@@ -713,7 +709,7 @@ body {
 				opacity: .8;
 				position: absolute;
 				top: 0;
-				transition: opacity .75s ease-in-out;
+				@include transition(opacity .75s ease-in-out);
 				width: 100%;
 			}
 			.square-portal {
@@ -726,7 +722,7 @@ body {
 				position: absolute;
 				text-transform: uppercase;
 				top: 50%;
-				transition: opacity .75s ease-in-out;
+				@include transition(opacity .75s ease-in-out);
 				@include transform(translate(-50%,-50%));
 				width: 100%;
 				.rollover-top {
@@ -898,7 +894,7 @@ body {
 						opacity: 0;
 						position: absolute;
 						top: 0;
-						transition: opacity .75s ease-in-out;
+						@include transition(opacity .75s ease-in-out);
 						width: 100%;
 						z-index: 1;
 					}
@@ -909,7 +905,7 @@ body {
 						position: absolute;
 						text-transform: uppercase;
 						top: 50%;
-						transition: opacity .75s ease-in-out;
+						@include transition(opacity .75s ease-in-out);
 						@include transform(translate(-50%,-50%));
 						width: 100%;
 						z-index: 2;
@@ -942,7 +938,7 @@ body {
 
 .archive,
 .single,
-.page-template-page-alphabetical,
+.page-template-people-all-php,
 .page-template-page-executives,
 .page-template-contact {
 	.site-content {
@@ -959,8 +955,11 @@ body {
 	}
 }
 
-.page-template-page-executives {
+.page-template-people-all-php,
+.page-template-page-executives,
+.page-template-archive-people {
 	.people-container {
+		@include row();
 		margin-bottom: $hundred;
 		.person:last-of-type {
 			margin-bottom: 0;
@@ -969,6 +968,7 @@ body {
 }
 
 .post-type-archive-people,
+.page-template-people-all-php,
 .page-template-page-executives {
 	.people-archive {
 		.page-sub-nav {
@@ -1038,7 +1038,7 @@ body {
 					.person-details {
 						display: block;
 						opacity: 0;
-						transition: opacity .75s ease-in-out;
+						@include transition(opacity .75s ease-in-out);
 					}
 					.person-details {
 						font-size: $base-font-size;
@@ -1118,7 +1118,10 @@ body {
 			size: 16px;
 			weight: 700;
 		}
-		margin-right: $fifty;
+		margin-right: $twenty;
+		@include media( $xlarge-screen ) {
+			margin-right: $fifty;
+		}
 	}
 	a {
 		color: $dark-grey;
@@ -1199,7 +1202,7 @@ body {
 					opacity: .8;
 					position: absolute;
 					top: 0;
-					transition: opacity .75s ease-in-out;
+					@include transition(opacity .75s ease-in-out);
 					width: 100%;
 				}
 				.square-portal {
@@ -1209,7 +1212,7 @@ body {
 					position: absolute;
 					text-transform: uppercase;
 					top: 50%;
-					transition: opacity .75s ease-in-out;
+					@include transition(opacity .75s ease-in-out);
 					@include transform(translate(-50%,-50%));
 					width: 100%;
 					a {
@@ -1361,7 +1364,7 @@ body {
 				left: -300px;
 				margin: 0;
 				position: absolute;
-				transition: all .75s ease-in-out;
+				@include transition(all .75s ease-in-out);
 				width: 300px;
 			}
 			h4 {
@@ -1474,6 +1477,11 @@ body {
 					}
 				}
 			}
+			@include media( $xlarge-screen ) {
+				.entry-content {
+					@include span-columns(10);
+				}
+			}
 		}
 		.project-details-container {
 			@include outer-container;
@@ -1529,7 +1537,7 @@ body {
         }
         li {
             float: left;
-			transition: all 0.75s ease-in-out;
+			@include transition(all .75s ease-in-out);
 			&.active {
 				background: $dark-grey;
 				border-top-left-radius: 2px;

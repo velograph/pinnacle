@@ -105,7 +105,7 @@ get_header(); ?>
 
 			    $args = array(
 			        'post_type' => 'work',
-					'posts_per_page' => 6,
+					'posts_per_page' => -1,
 			    );
 			    $query = new WP_Query($args);
 
@@ -162,9 +162,9 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<div class="work-portals">
+			<!-- <div class="work-portals">
 				<?php echo do_shortcode('[ajax_load_more post_type="work" transition="fade" cache="true" posts_per_page="6" offset="6" pause="true" scroll="false" button_label="Load More"]'); ?>
-			</div>
+			</div> -->
 
 		</div>
 

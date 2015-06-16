@@ -5,3 +5,8 @@
 .home .site-branding svg {
 	height: 37px;
 }
+
+.archive .alm-reveal .square-portal-container img {
+	height: 100%;
+	width: 100%;
+}

@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" />
 
 <!--[if IE 10]>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie10.css">
@@ -38,7 +39,6 @@
 	<div class="overlay overlay-pinnacle">
 
 		<a class="mobile-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				viewBox="0 0 104.6 25.4" enable-background="new 0 0 104.6 25.4" xml:space="preserve">
 			<path fill="#727374" d="M0,0.4h7.7c2.2,0,4.3,1.1,4.3,4.1c0,2.7-1.8,4.2-5,4.2H1.5v6H0c0,0,0,0,0-7.4C0,0.3,0,0.4,0,0.4z M1.5,7.3
@@ -160,7 +160,6 @@
 
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					viewBox="0 0 104.6 25.4" enable-background="new 0 0 104.6 25.4" xml:space="preserve">
 				<path fill="#727374" d="M0,0.4h7.7c2.2,0,4.3,1.1,4.3,4.1c0,2.7-1.8,4.2-5,4.2H1.5v6H0c0,0,0,0,0-7.4C0,0.3,0,0.4,0,0.4z M1.5,7.3
@@ -226,7 +225,6 @@
 
 			<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 104.6 25.4" enable-background="new 0 0 104.6 25.4" xml:space="preserve">
 					<path fill="#727374" d="M0,0.4h7.7c2.2,0,4.3,1.1,4.3,4.1c0,2.7-1.8,4.2-5,4.2H1.5v6H0c0,0,0,0,0-7.4C0,0.3,0,0.4,0,0.4z M1.5,7.3

@@ -44,7 +44,7 @@ get_header(); ?>
 			    <ul class="tab-links">
 			        <li class="active">
 						<a href="#tab1">
-							<span class="tab-title">Design&nbsp;</span>
+							<span class="tab-title">Creative&nbsp;</span>
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
 							<g>
@@ -90,11 +90,11 @@ get_header(); ?>
 						<?php echo do_shortcode('[instagram-feed]'); ?>
 			        </div>
 
-			        <div id="tab2" class="facebook-tab tab">
+			        <div id="tab2" class="facebook-tab tab" style="display: none;">
 						<?php echo do_shortcode('[custom-facebook-feed]'); ?>
 			        </div>
 
-			        <div id="tab3" class="twitter-tab tab">
+			        <div id="tab3" class="twitter-tab tab" style="display: none;">
 						<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			        </div>
 			    </div>

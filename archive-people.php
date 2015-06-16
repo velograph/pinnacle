@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+* The template for displaying archive pages.
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
@@ -26,6 +26,9 @@ get_header(); ?>
 			<div class="subnav">
 
 				<ul class="people-navigation">
+					<li>
+						<a href="/people-all/">All</a>
+					</li>
 					<li>
 						A-Z
 					</li>
