@@ -437,6 +437,19 @@ add_image_size( 'tablet-home-featured', 780, 253, false);
 add_image_size( 'mobile-home-featured', 400, 350, true);
 
 
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    if( is_tax() ) {
+
+        $title = single_cat_title( 'Projects in: ', false );
+
+    }
+
+    return $title;
+
+});
+
+
 add_action('wp_footer', 'add_googleanalytics');
 function add_googleanalytics() { ?>
 	<script>
