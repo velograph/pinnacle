@@ -126,6 +126,15 @@ function people_custom_post_type() {
 
 }
 
+//REDIRECT CTP STAFF SINGLE PAGE REQUESTS TO ABOUT US
+add_action('wp', 'redirect_ctps');
+function redirect_ctps(){
+    global $post;
+    if( (is_singular('people')) ){
+        wp_redirect( home_url('/people/') ); exit;
+    }
+}
+
 // Hook into the 'init' action
 add_action( 'init', 'people_custom_post_type', 0 );
 
