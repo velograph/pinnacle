@@ -423,7 +423,7 @@ add_action( 'wp_head', 'theme_typekit_inline' );
  */
 add_image_size( 'desktop-squared', 1000, 1000, true);
 add_image_size( 'tablet-squared', 780, 780, true);
-add_image_size( 'mobile-squared', 400, 400, true);
+add_image_size( 'mobile-squared', 400, 300, true);
 
 add_image_size( 'retina-work-featured', 2600, 1420, true );
 add_image_size( 'desktop-work-featured', 1420, 947, true );
@@ -438,7 +438,7 @@ add_image_size( 'mobile-process-wide', 400, 350, true);
 add_image_size( 'retina-hero', 2600, 1733, false);
 add_image_size( 'desktop-hero', 1180, 787, false);
 add_image_size( 'tablet-hero', 860, 573, false);
-add_image_size( 'mobile-hero', 480, 480, true);
+add_image_size( 'mobile-hero', 480, 360, true);
 
 add_image_size( 'retina-home-featured', 2600, 842, false);
 add_image_size( 'desktop-home-featured', 1400, 453, false);
