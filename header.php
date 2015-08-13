@@ -11,9 +11,15 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!-- pinterest_include -->
+<meta name="p:domain_verify" content="7be61ac196a267ed7b6ffa38801f6576"/>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" />
+
+<!--[if IE 11]>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie11.css">
+<![endif]-->
 
 <!--[if IE 10]>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie10.css">

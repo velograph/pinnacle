@@ -103,9 +103,12 @@ get_header(); ?>
 
 			<?php
 
+				global $query_string;
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			    $args = array(
 			        'post_type' => 'work',
-					'posts_per_page' => -1,
+					'paged' => $paged,
+					// 'posts_per_page' => 6,
 			    );
 			    $query = new WP_Query($args);
 
@@ -160,11 +163,22 @@ get_header(); ?>
 
 				</div>
 
-			<?php endif; ?>
+				<div class="pagination">
+					<?php
+						$big = 999999999; // need an unlikely integer
 
-			<!-- <div class="work-portals">
-				<?php echo do_shortcode('[ajax_load_more post_type="work" transition="fade" cache="true" posts_per_page="6" offset="6" pause="true" scroll="false" button_label="Load More"]'); ?>
-			</div> -->
+						echo paginate_links( array(
+							'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+							'format' => '?paged=%#%',
+							'prev_next' => 0,
+							'show_all'=> 1,
+							'current' => max( 1, get_query_var('paged') ),
+							'total' => $wp_query->max_num_pages
+						) );
+					?>
+				</div>
+
+			<?php endif; ?>
 
 		</div>
 

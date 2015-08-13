@@ -50,6 +50,7 @@ get_header(); ?>
 		    	$args = array(
 					'post_type' => 'people',
 					'orderby' => 'title',
+					// 'posts_per_page' => 6,
 					'order' => 'ASC',
 					'paged' => $paged,
 				);

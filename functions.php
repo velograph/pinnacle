@@ -423,7 +423,7 @@ add_action( 'wp_head', 'theme_typekit_inline' );
  */
 add_image_size( 'desktop-squared', 1000, 1000, true);
 add_image_size( 'tablet-squared', 780, 780, true);
-add_image_size( 'mobile-squared', 400, 300, true);
+add_image_size( 'mobile-squared', 400, 250, true);
 
 add_image_size( 'retina-work-featured', 2600, 1420, true );
 add_image_size( 'desktop-work-featured', 1420, 947, true );
@@ -443,7 +443,7 @@ add_image_size( 'mobile-hero', 480, 360, true);
 add_image_size( 'retina-home-featured', 2600, 842, false);
 add_image_size( 'desktop-home-featured', 1400, 453, false);
 add_image_size( 'tablet-home-featured', 780, 253, false);
-add_image_size( 'mobile-home-featured', 400, 350, true);
+add_image_size( 'mobile-home-featured', 400, 250, true);
 
 
 add_filter( 'get_the_archive_title', function ( $title ) {
@@ -472,3 +472,48 @@ function add_googleanalytics() { ?>
 
 	</script>
 <?php } ?>
+
+<?php
+
+/**
+ * Add checkbox field to the checkout
+ **/
+add_action('woocommerce_after_order_notes', 'my_custom_checkout_field');
+
+function my_custom_checkout_field( $checkout ) {
+
+    echo '<div id="my-new-field"><h3>'.__('My Checkbox: ').'</h3>';
+
+    woocommerce_form_field( 'my_checkbox', array(
+        'type'          => 'checkbox',
+        'class'         => array('input-checkbox'),
+        'label'         => __('I have read and agreed.'),
+        'required'  => true,
+        ), $checkout->get_value( 'my_checkbox' ));
+
+    echo '</div>';
+}
+
+/**
+ * Process the checkout
+ **/
+add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
+
+function my_custom_checkout_field_process() {
+    global $woocommerce;
+
+    // Check if set, if its not set add an error.
+    if (!$_POST['my_checkbox'])
+         $woocommerce->add_error( __('Please agree to my checkbox.') );
+}
+
+/**
+ * Update the order meta with field value
+ **/
+add_action('woocommerce_checkout_update_order_meta', 'my_custom_checkout_field_update_order_meta');
+
+function my_custom_checkout_field_update_order_meta( $order_id ) {
+    if ($_POST['my_checkbox']) update_post_meta( $order_id, 'My Checkbox', esc_attr($_POST['my_checkbox']));
+}
+
+?>
