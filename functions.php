@@ -515,5 +515,3 @@ add_action('woocommerce_checkout_update_order_meta', 'my_custom_checkout_field_u
 function my_custom_checkout_field_update_order_meta( $order_id ) {
     if ($_POST['my_checkbox']) update_post_meta( $order_id, 'My Checkbox', esc_attr($_POST['my_checkbox']));
 }
-
-?>

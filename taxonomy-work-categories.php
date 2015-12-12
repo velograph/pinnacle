@@ -29,6 +29,8 @@ get_header(); ?>
 
 			        <?php the_post(); ?>
 
+					<?php $i = 1; ?>
+
 					<?php if ($i == 0 || $i % 3 == 0) { ?>
 						<div class="three-up-row">
 					<?php }; ?>

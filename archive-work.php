@@ -120,10 +120,6 @@ get_header(); ?>
 
 			        <?php $query->the_post(); ?>
 
-					<?php if ($i == 0 || $i % 3 == 0) { ?>
-						<div class="three-up-row">
-					<?php }; ?>
-
 						<div class="square-portal-container">
 
 							<a href="<?php the_permalink(); ?>">
@@ -139,7 +135,7 @@ get_header(); ?>
 									<source srcset="<?php echo $medium_squared[0]; ?>" media="(min-width: 601px)">
 									<source srcset="<?php echo $large_squared[0]; ?>" media="(min-width: 801px)">
 									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $large_squared[0]; ?>">
+									<img style="display:none;" srcset="<?php echo $large_squared[0]; ?>">
 								</picture>
 
 								<div class="square-portal">
@@ -152,9 +148,6 @@ get_header(); ?>
 						</div>
 
 						<?php
-					      $i++;
-					      if ($i % 3 == 0){echo "</div>";}
-
 						wp_reset_query();
 
 						?>

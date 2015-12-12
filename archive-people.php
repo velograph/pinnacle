@@ -71,7 +71,7 @@ get_header(); ?>
 						<picture class="image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								srcset="<?php echo $mobile_squared[0]; ?>"
+								srcset="<?php echo $thumbnail[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
 								srcset="<?php echo $tablet_squared[0]; ?>"

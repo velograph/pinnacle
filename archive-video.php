@@ -31,6 +31,7 @@ jQuery(document).ready(function(){
 				<div class="square-portal-container">
 
 					<a class="venobox" data-type="vimeo" href="<?php the_field('video'); ?>">
+                        <?php $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'thumbnail'); ?>
 						<?php $mobile_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'mobile-squared'); ?>
 						<?php $tablet_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'tablet-squared'); ?>
 						<?php $desktop_squared = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'desktop-squared'); ?>
@@ -38,7 +39,7 @@ jQuery(document).ready(function(){
 						<picture class="home-featured-image">
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								srcset="<?php echo $mobile_squared[0]; ?>"
+								srcset="<?php echo $thumbnail[0]; ?>"
 								media="(max-width: 500px)" />
 							<source
 								srcset="<?php echo $tablet_squared[0]; ?>"

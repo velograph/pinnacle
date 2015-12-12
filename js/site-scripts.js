@@ -1,5 +1,12 @@
 
 	$(document).ready(function(){
+
+		$(".square-portal-container img").load(function() {
+			$(this).show('fast');
+		}).each(function() {
+			if(this.complete) $(this).load();
+		});
+
 		$(".site-header").fadeIn('fast');
 		$(".site-content").fadeIn('slow');
 

@@ -329,7 +329,7 @@ body {
 							a {
 								color: $dark-grey;
 								&:hover {
-									color: $white;
+									color: $cyan;
 								}
 							}
 						}
@@ -524,7 +524,7 @@ body {
 	}
 	.work-portals {
 		.square-portal-container {
-			&:nth-of-type(3) {
+			&:nth-of-type(3n) {
 				margin-right: 0;
 			}
 		}
@@ -690,7 +690,7 @@ body {
 	@include media( $medium-screen ) {
 		.square-portal-container {
 			@include span-columns(4);
-			@include omega(3);
+			@include omega(3n);
 			margin-bottom: 2.35765%;
 			position: relative;
 			text-align: center;
@@ -1071,24 +1071,27 @@ body {
 	}
 }
 
-@include media( $xlarge-screen ) {
-	.post-type-archive-people,
-	.post-type-archive-work {
+.post-type-archive-people,
+.post-type-archive-work {
+	.pagination {
+		margin-bottom: 2.35765%;
+		text-align: center;
 		.pagination {
-			@include outer-container;
-			@include pad( $fifty 0 $hundred );
-			clear: both;
-			text-align: center;
-			.page-numbers {
-				margin: 0 $fifteen;
-				&.current {
-					color: $cyan;
-					font-weight: bold;
-				}
+			@include media( $large-screen ) {
+				@include outer-container;
+				@include pad( $fifty 0 $hundred );
+				clear: both;
 			}
-			a {
-				color: $medium-grey;
+		}
+		.page-numbers {
+			margin: 0 $fifteen;
+			&.current {
+				color: $cyan;
+				font-weight: bold;
 			}
+		}
+		a {
+			color: $medium-grey;
 		}
 	}
 }
@@ -1282,6 +1285,23 @@ body {
 		@include outer-container;
 		border-top: $thin-border;
 		margin-bottom: $seventyfive;
+		.mailto-link {
+			@include span-columns(4);
+			@include shift(4);
+			margin-top: $seventyfive;
+			text-align: center;
+			svg	 {
+				display: block;
+				margin: 0 auto;
+				max-width: $twentyfive;
+			}
+			a {
+				color: $dark-grey;
+				&:hover {
+					color: $cyan;
+				}
+			}
+		}
 		.form {
 			@include media( $large-screen ) {
 				@include span-columns(5);
