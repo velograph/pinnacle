@@ -539,6 +539,46 @@ body {
 	}
 }
 
+.page-template-concierge {
+	.site-content {
+		.entry-content {
+			@include outer-container;
+			padding: 0 16px;
+			.entry-title {
+				@include span-columns(12);
+				margin-bottom: $hundred;
+				margin-top: $hundred;
+				h2 {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.concierge-listings {
+			@include outer-container;
+			.concierge_listing {
+				margin-bottom: $hundred;
+				@include media( $medium-screen ) {
+					@include span-columns(4);
+					@include omega(3n);
+				}
+				h5 {
+					margin-bottom: $twentyfive;
+					text-transform: uppercase;
+				}
+				.listing {
+					margin-bottom: $twentyfive;
+					a {
+						color: $dark-grey;
+						&:hover {
+							color: $cyan;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 .page-template-contact {
 	.contact-link {
 		a {
@@ -940,6 +980,7 @@ body {
 .single,
 .page-template-people-all-php,
 .page-template-page-executives,
+.page-template-concierge,
 .page-template-contact {
 	.site-content {
 		.page-title {
@@ -1074,6 +1115,7 @@ body {
 .post-type-archive-people,
 .post-type-archive-work {
 	.pagination {
+		clear: both;
 		margin-bottom: 2.35765%;
 		text-align: center;
 		.pagination {
@@ -1096,6 +1138,7 @@ body {
 	}
 }
 
+.page-template-concierge,
 .page-template-contact {
 	.page-sub-nav {
 		display: none;
@@ -1549,7 +1592,7 @@ body {
 		}
 	}
 	.post-navigation {
-		border-top: $dark-thin-border;
+		border-top: $thin-border;
 		margin-top: 16px;
 		svg {
 			height: $twenty;

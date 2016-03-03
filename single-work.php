@@ -175,19 +175,19 @@ get_header(); ?>
 		<section class="page-content post-navigation">
 
 			<?php
-				$prev_post = get_previous_post();
-				$prev_id = $prev_post->ID ;
-				$prev_permalink = get_permalink( $prev_id );
-
-				$next_post = get_next_post();
-				$next_id = $next_post->ID ;
-				$next_permalink = get_permalink($next_id);
 			?>
 
 			<div class="mobile-navigation">
 
-				<?php if( get_next_post() ) : ?>
-					<div class="nav-next">
+				<div class="nav-next">
+					<?php
+					if( get_next_post() ) :
+
+					$next_post = get_next_post();
+					$next_id = $next_post->ID ;
+					$next_permalink = get_permalink($next_id);
+
+					?>
 						<a href="<?php echo $next_permalink; ?>">
 							<svg viewBox="0 0 11 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -195,11 +195,20 @@ get_header(); ?>
 							    </g>
 							</svg>
 						</a>
-					</div>
-				<?php endif; ?>
+					<?php else:  ?>
+						&nbsp;
+					<?php endif; ?>
+				</div>
 
-				<?php if( get_previous_post() ) : ?>
-					<div class="nav-previous">
+				<div class="nav-previous">
+					<?php
+					if( get_previous_post() ) :
+
+					$prev_post = get_previous_post();
+					$prev_id = $prev_post->ID ;
+					$prev_permalink = get_permalink( $prev_id );
+
+					?>
 						<a href="<?php echo $prev_permalink; ?>">
 							<svg viewBox="0 0 11 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -207,15 +216,24 @@ get_header(); ?>
 							    </g>
 							</svg>
 						</a>
-					</div>
-				<?php endif; ?>
+					<?php else:  ?>
+						&nbsp;
+					<?php endif; ?>
+				</div>
 
 			</div>
 
 			<div class="desktop-navigation">
 
-				<?php if( get_next_post() ) : ?>
-					<div class="nav-next">
+				<div class="nav-next">
+					<?php
+					if( get_next_post() ) :
+
+					$next_post = get_next_post();
+					$next_id = $next_post->ID ;
+					$next_permalink = get_permalink($next_id);
+
+					?>
 						<a href="<?php echo $next_permalink; ?>">
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 86 14" enable-background="new 0 0 86 14" xml:space="preserve">
@@ -378,11 +396,20 @@ get_header(); ?>
 							</g>
 							</svg>
 						</a>
-					</div>
-				<?php endif; ?>
+					<?php else:  ?>
+						&nbsp;
+					<?php endif; ?>
+				</div>
 
-				<?php if( get_previous_post() ) : ?>
-					<div class="nav-previous">
+				<div class="nav-previous">
+					<?php
+					if( get_previous_post() ) :
+
+						$prev_post = get_previous_post();
+						$prev_id = $prev_post->ID ;
+						$prev_permalink = get_permalink( $prev_id );
+
+					?>
 						<a href="<?php echo $prev_permalink; ?>">
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 70 14" enable-background="new 0 0 70 14" xml:space="preserve">
@@ -483,8 +510,10 @@ get_header(); ?>
 							</g>
 							</svg>
 						</a>
-					</div>
-				<?php endif; ?>
+					<?php else:  ?>
+						&nbsp;
+					<?php endif; ?>
+				</div>
 
 			</div>
 
