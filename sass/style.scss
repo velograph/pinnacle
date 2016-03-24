@@ -1560,6 +1560,12 @@ body {
 				}
 				.project-detail {
 					margin-bottom: 25px;
+					a {
+						color: $dark-grey;
+						&:hover {
+							color: $cyan;
+						}
+					}
 					img {
 						margin: $five 0;
 						width: $hundred + $fifty;
@@ -1586,6 +1592,9 @@ body {
 					a {
 						color: $dark-grey;
 						font-weight: 700;
+						&:hover {
+							color: $cyan;
+						}
 					}
 				}
 			}

@@ -98,13 +98,15 @@ get_header(); ?>
 					<div class="project-detail">
 						<?php if( get_field('client') ) : ?>
 							<h6>Client:</h6>
-							<h5><?php the_field('client'); ?></h5>
+							<h5>
+								<?php if( get_field('client_link') ) : ?><a href="<?php the_field('client_link'); ?>" target="_blank"><?php endif; ?><?php the_field('client'); ?><?php if( get_field('client_link') ) : ?></a><?php endif; ?>
+							</h5>
 						<?php endif; ?>
 					</div>
 					<div class="project-detail">
 						<?php if( get_field('project') ) : ?>
 							<h6>Project:</h6>
-							<h5><?php the_field('project'); ?></h5>
+							<h5><?php if( get_field('project_link') ) : ?><a href="<?php the_field('project_link'); ?>" target="_blank"><?php endif; ?><?php the_field('project'); ?><?php if( get_field('project_link') ) : ?></a><?php endif; ?></h5>
 						<?php endif; ?>
 					</div>
 					<div class="project-detail">
@@ -118,19 +120,32 @@ get_header(); ?>
 				<div class="detail-column">
 					<div class="project-detail industry-list">
 						<h6>Tags:</h6>
-						<!-- Strip link wrappers -->
+
 						<h5><?php
 							$terms_as_text = get_the_term_list( $post->ID, 'work-categories', '', ', ', '' ) ;
 							echo strip_tags($terms_as_text);
 						?></h5>
-						<!-- Use this when we turn the taxonomies into links
-							<?php the_terms( $post->ID, 'work-categories' ); ?>
-						-->
+						<!-- <h5><?php the_terms($post->ID, 'work-categories'); ?></h5> -->
 					</div>
 					<div class="project-detail">
-						<?php if( get_field('credits') ) : ?>
+						<?php if( get_field('multiple_photographers') ) : ?>
+
+							<?php if( have_rows('photo_credits') ) : ?>
+
+								<h6>Credits:</h6>
+							    <?php while ( have_rows('photo_credits') ) : ?>
+
+							        <?php the_row(); ?>
+
+							        <h5><a href="<?php the_sub_field('photo_credit_link'); ?>" target="_blank"><?php the_sub_field('credit'); ?></a></h5>
+
+							    <?php endwhile; ?>
+
+							<?php endif; ?>
+
+						<?php else: ?>
 							<h6>Credits:</h6>
-							<h5><?php the_field('credits'); ?></h5>
+							<h5><a href="<?php the_field('photo_credit_link'); ?>" target="_blank"><?php the_field('photo_credit_link'); ?></a></h5>
 						<?php endif; ?>
 					</div>
 					<div class="project-detail">
@@ -139,32 +154,69 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<?php if( get_field('awards') ) : ?>
+				<?php if( get_field('awards') || get_field('related_projects') ) : ?>
 					<div class="detail-column">
+				<?php endif; ?>
 
+						<?php if( get_field('awards') ) : ?>
+							<div class="project-detail">
+								<h6>Award:</h6>
+
+								<?php if( get_field('award_logo') ) : ?>
+									<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+									<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+									<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+									<?php $retina_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source srcset="<?php echo $mobile_award[0]; ?>" media="(max-width: 400px)">
+										<source srcset="<?php echo $tablet_award[0]; ?>" media="(max-width: 801px)">
+										<source srcset="<?php echo $desktop_award[0]; ?>" media="(max-width: 1024px)">
+										<source srcset="<?php echo $retina_award[0]; ?>" media="(min-device-pixel-ratio: 2)">
+										<!--[if IE 9]></video><![endif]-->
+										<img srcset="<?php echo $desktop_award[0]; ?>">
+									</picture>
+								<?php endif; ?>
+
+								<h5><?php the_field('award_title'); ?></h5>
+							</div>
+						<?php endif; ?>
+
+						<?php if( get_field('related_projects') ) : ?>
 						<div class="project-detail">
-							<h6>Award:</h6>
+							<h6>Related Projects:</h6>
+							<?php if( have_rows('related_projects') ): ?>
 
-							<?php if( get_field('award_logo') ) : ?>
-								<?php $mobile_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
-								<?php $tablet_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
-								<?php $desktop_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
-								<?php $retina_award = wp_get_attachment_image_src(get_field('award_logo'), 'thumbnail'); ?>
+					            <ul>
 
-								<picture>
-									<!--[if IE 9]><video style="display: none;"><![endif]-->
-									<source srcset="<?php echo $mobile_award[0]; ?>" media="(max-width: 400px)">
-									<source srcset="<?php echo $tablet_award[0]; ?>" media="(max-width: 801px)">
-									<source srcset="<?php echo $desktop_award[0]; ?>" media="(max-width: 1024px)">
-									<source srcset="<?php echo $retina_award[0]; ?>" media="(min-device-pixel-ratio: 2)">
-									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $desktop_award[0]; ?>">
-								</picture>
-							<?php endif; ?>
+					            <?php while ( have_rows('related_projects') ) : the_row(); ?>
 
-							<h5><?php the_field('award_title'); ?></h5>
+					                <li>
+
+					                    <?php $post_object = get_sub_field('project'); ?>
+
+					                    <?php if( $post_object ): ?>
+
+					                        <?php $post = $post_object; setup_postdata( $post ); ?>
+
+					                        <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+
+					                        <?php wp_reset_postdata(); ?>
+
+					                    <?php endif; ?>
+
+					                </li>
+
+					            <?php endwhile; ?>
+
+					            </ul>
+
+						    <?php endif; ?>
 						</div>
+						<?php endif; ?>
 
+				<?php if( get_field('awards') || get_field('related_projects') ) : ?>
 					</div>
 				<?php endif; ?>
 
