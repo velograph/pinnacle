@@ -137,15 +137,15 @@ get_header(); ?>
 
 							        <?php the_row(); ?>
 
-							        <h5><a href="<?php the_sub_field('photo_credit_link'); ?>" target="_blank"><?php the_sub_field('credit'); ?></a></h5>
+							        <h5><?php if( the_sub_field('photo_credit_link') ) : ?><a href="<?php the_sub_field('photo_credit_link'); ?>" target="_blank"><?php endif; ?><?php the_sub_field('credit'); ?><?php if( the_sub_field('photo_credit_link') ) : ?></a><?php endif; ?></h5>
 
 							    <?php endwhile; ?>
 
 							<?php endif; ?>
 
-						<?php else: ?>
+						<?php elseif( get_field('credits') ): ?>
 							<h6>Credits:</h6>
-							<h5><a href="<?php the_field('photo_credit_link'); ?>" target="_blank"><?php the_field('photo_credit_link'); ?></a></h5>
+							<h5><?php if( the_field('photo_credit_link') ) : ?><a href="<?php the_field('photo_credit_link'); ?>" target="_blank"><?php endif; ?><?php the_field('photo_credit_link'); ?><?php if( the_field('photo_credit_link') ) : ?></a><?php endif; ?></h5>
 						<?php endif; ?>
 					</div>
 					<div class="project-detail">
@@ -200,7 +200,10 @@ get_header(); ?>
 
 					                        <?php $post = $post_object; setup_postdata( $post ); ?>
 
-					                        <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+					                        <a href="<?php the_permalink(); ?>">
+												<h5><?php the_title(); ?></h5>
+												<h6><?php the_field('subtitle'); ?></h6>
+											</a>
 
 					                        <?php wp_reset_postdata(); ?>
 
