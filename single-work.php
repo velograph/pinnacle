@@ -137,15 +137,12 @@ get_header(); ?>
 
 							        <?php the_row(); ?>
 
-							        <h5><?php if( the_sub_field('photo_credit_link') ) : ?><a href="<?php the_sub_field('photo_credit_link'); ?>" target="_blank"><?php endif; ?><?php the_sub_field('credit'); ?><?php if( the_sub_field('photo_credit_link') ) : ?></a><?php endif; ?></h5>
+							        <h5><?php if( get_sub_field('photo_credit_link') ) : ?><a href="<?php the_sub_field('photo_credit_link'); ?>" target="_blank"><?php endif; ?><?php the_sub_field('credit'); ?><?php if( get_sub_field('photo_credit_link') ) : ?></a><?php endif; ?></h5>
 
 							    <?php endwhile; ?>
 
 							<?php endif; ?>
 
-						<?php elseif( get_field('credits') ): ?>
-							<h6>Credits:</h6>
-							<h5><?php if( the_field('photo_credit_link') ) : ?><a href="<?php the_field('photo_credit_link'); ?>" target="_blank"><?php endif; ?><?php the_field('photo_credit_link'); ?><?php if( the_field('photo_credit_link') ) : ?></a><?php endif; ?></h5>
 						<?php endif; ?>
 					</div>
 					<div class="project-detail">
